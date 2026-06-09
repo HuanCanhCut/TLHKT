@@ -1,0 +1,525 @@
+<!doctype html>
+<html class="light" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>EnglishBoost - Advanced Reading Session</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-surface-variant": "#434655",
+              primary: "#004ac6",
+              error: "#ba1a1a",
+              "inverse-on-surface": "#eaf1ff",
+              "tertiary-fixed": "#ffddb8",
+              "on-primary": "#ffffff",
+              "tertiary-fixed-dim": "#ffb95f",
+              "surface-container-highest": "#d3e4fe",
+              "on-error-container": "#93000a",
+              "on-primary-container": "#eeefff",
+              "error-container": "#ffdad6",
+              "on-primary-fixed-variant": "#003ea8",
+              "on-background": "#0b1c30",
+              "primary-fixed-dim": "#b4c5ff",
+              "tertiary-container": "#996100",
+              "surface-container-high": "#dce9ff",
+              "surface-bright": "#f8f9ff",
+              "on-error": "#ffffff",
+              "surface-container-low": "#eff4ff",
+              "inverse-primary": "#b4c5ff",
+              "on-tertiary-container": "#ffeedd",
+              "surface-container-lowest": "#ffffff",
+              "on-tertiary-fixed-variant": "#653e00",
+              "surface-container": "#e5eeff",
+              "surface-dim": "#cbdbf5",
+              background: "#f8f9ff",
+              tertiary: "#784b00",
+              "on-tertiary": "#ffffff",
+              "on-primary-fixed": "#00174b",
+              "surface-variant": "#d3e4fe",
+              "on-secondary": "#ffffff",
+              "secondary-container": "#6cf8bb",
+              secondary: "#006c49",
+              "primary-container": "#2563eb",
+              "secondary-fixed-dim": "#4edea3",
+              "on-secondary-fixed": "#002113",
+              "secondary-fixed": "#6ffbbe",
+              "on-surface": "#0b1c30",
+              "inverse-surface": "#213145",
+              "surface-tint": "#0053db",
+              surface: "#f8f9ff",
+              "on-tertiary-fixed": "#2a1700",
+              "outline-variant": "#c3c6d7",
+              "primary-fixed": "#dbe1ff",
+              outline: "#737686",
+              "on-secondary-container": "#00714d",
+              "on-secondary-fixed-variant": "#005236",
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+            spacing: {
+              md: "24px",
+              lg: "48px",
+              xs: "4px",
+              base: "8px",
+              xl: "80px",
+              sm: "12px",
+              gutter: "24px",
+              "container-max": "1200px",
+            },
+            fontFamily: {
+              "headline-lg-mobile": ["Inter"],
+              "headline-xl": ["Inter"],
+              "label-sm": ["Inter"],
+              "body-lg": ["Inter"],
+              "headline-md": ["Inter"],
+              "headline-lg": ["Inter"],
+              "body-md": ["Inter"],
+              "label-md": ["Inter"],
+            },
+            fontSize: {
+              "headline-lg-mobile": [
+                "24px",
+                { lineHeight: "1.2", fontWeight: "700" },
+              ],
+              "headline-xl": [
+                "48px",
+                {
+                  lineHeight: "1.1",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "700",
+                },
+              ],
+              "label-sm": ["12px", { lineHeight: "1", fontWeight: "500" }],
+              "body-lg": ["18px", { lineHeight: "1.6", fontWeight: "400" }],
+              "headline-md": ["24px", { lineHeight: "1.3", fontWeight: "600" }],
+              "headline-lg": [
+                "32px",
+                {
+                  lineHeight: "1.2",
+                  letterSpacing: "-0.01em",
+                  fontWeight: "700",
+                },
+              ],
+              "body-md": ["16px", { lineHeight: "1.6", fontWeight: "400" }],
+              "label-md": [
+                "14px",
+                { lineHeight: "1", letterSpacing: "0.02em", fontWeight: "600" },
+              ],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-background text-on-surface">
+    <!-- TopNavBar -->
+    <header
+      class="bg-surface-container-lowest dark:bg-surface-dim border-b border-outline-variant dark:border-outline top-0 z-50 sticky"
+    >
+      <div
+        class="flex justify-between items-center w-full px-gutter max-w-container-max mx-auto h-16"
+      >
+        <div class="flex items-center gap-md">
+          <div
+            class="text-headline-md font-headline-md font-bold text-primary dark:text-primary-fixed-dim"
+          >
+            EnglishBoost
+          </div>
+          <div
+            class="hidden sm:flex items-center gap-xs px-sm py-1 bg-secondary-container/30 text-on-secondary-container rounded-full text-label-sm border border-secondary/10"
+          >
+            <span
+              class="w-2 h-2 rounded-full bg-secondary focus-indicator-pulse"
+            ></span>
+            <span class="font-medium">Reading Focus Mode</span>
+          </div>
+        </div>
+        <nav class="hidden md:flex space-x-md">
+          <a
+            class="text-on-surface-variant text-label-md font-label-md hover:text-primary transition-colors duration-200"
+            href="flashcard_eval.html"
+            >Vocabulary</a
+          >
+          <a
+            class="text-on-surface-variant text-label-md font-label-md hover:text-primary transition-colors duration-200"
+            href="listening.html"
+            >Listening</a
+          >
+          <a
+            class="text-primary font-bold border-b-2 border-primary pb-1 text-label-md font-label-md"
+            href="reading.html"
+            >Reading</a
+          >
+          <a
+            class="text-on-surface-variant text-label-md font-label-md hover:text-primary transition-colors duration-200"
+            href="roadmap.html"
+            >Progress</a
+          >
+        </nav>
+        <div class="flex items-center space-x-sm">
+          <button
+            class="p-xs hover:bg-surface-container rounded-full transition-colors"
+          >
+            <span
+              class="material-symbols-outlined text-primary"
+              data-icon="notifications"
+              >notifications</span
+            >
+          </button>
+          <button
+            class="p-xs hover:bg-surface-container rounded-full transition-colors"
+          >
+            <span
+              class="material-symbols-outlined text-primary"
+              data-icon="account_circle"
+              >account_circle</span
+            >
+          </button>
+        </div>
+      </div>
+    </header>
+    <main
+      class="max-w-[1100px] mx-auto px-gutter py-xl flex flex-col lg:flex-row gap-xl"
+    >
+      <!-- Left Side: Article Content (Increased Whitespace for Focus) -->
+      <section class="flex-1 space-y-lg">
+        <!-- Article Header & Meta -->
+        <div class="space-y-md">
+          <div class="flex items-center gap-base">
+            <span
+              class="bg-surface-container-high text-on-surface-variant px-sm py-xs rounded text-label-sm font-label-sm"
+              >Cognitive Science</span
+            >
+            <span class="text-outline text-label-sm">•</span>
+            <span
+              class="text-on-surface-variant text-label-sm font-label-sm flex items-center gap-xs"
+            >
+              <span
+                class="material-symbols-outlined text-[16px]"
+                data-icon="schedule"
+                >schedule</span
+              >
+              8 min read
+            </span>
+          </div>
+          <h1
+            class="text-headline-xl font-headline-xl text-on-surface leading-tight"
+          >
+            The Psychology of Cognitive Load in Modern Learning
+          </h1>
+        </div>
+        <!-- Image Hero with controlled width -->
+        <div
+          class="w-full aspect-video rounded-2xl overflow-hidden bg-surface-container shadow-sm"
+        >
+          <img
+            alt="Learning Environment"
+            class="w-full h-full object-cover"
+            src="https://lh3.googleusercontent.com/aida/AP1WRLuMPuGz3FJBZhflPBevrlzV3zZZuztGq0Y3yDszSeyZx0_KUjlFnqqa3jOdPbpScdA3djAkaFhGzW3pWGcbKqJXJstWlV5OtkxXi-_7CxmG7hI71S6C-ozK52Ap3FJ0437cDr7T3BAEwsBIPH3Nv-8cFxw_Bgmp6WP5O2RX-G5bKQ1VNzxsSQrzA8xRWmvGBy-o0SYfFapgGZqB4Bq1cbyc4TpbXv-lPr752cC5hf3_ijwYh3Fn3f8XT9M"
+          />
+        </div>
+        <!-- Distinct Article Card -->
+        <article
+          class="bg-surface-container-lowest p-lg lg:p-xl rounded-2xl shadow-sm border border-outline-variant"
+        >
+          <div
+            class="text-body-lg font-body-lg text-on-surface leading-[2] space-y-lg"
+          >
+            <p>
+              In the realm of educational design, understanding
+              <span
+                class="highlight-active"
+                onclick="showWord('Cognitive Load')"
+                >cognitive load</span
+              >
+              is paramount. It refers to the used amount of working memory
+              resources. Engineering psychology suggests that by reducing
+              extraneous load, we can maximize the learner's ability to process
+              and retain complex information.
+            </p>
+            <p>
+              The human brain has a finite capacity for
+              <span
+                class="highlight-active"
+                onclick="showWord('Simultaneous Processing')"
+                >simultaneous processing</span
+              >. When a student is presented with overly complex visual stimuli
+              or disjointed information, their mental effort is diverted away
+              from the core educational content. This phenomenon often leads to
+              a "bottleneck" in the learning experience.
+            </p>
+            <p>
+              To counter this, educators and UI designers utilize
+              <span
+                class="highlight-active"
+                onclick="showWord('Gestalt Principles')"
+                >Gestalt principles</span
+              >
+              of grouping. By visually associating related concepts, we allow
+              the brain to perceive information as unified "chunks" rather than
+              isolated fragments. This reduction in architectural friction
+              allows the student to focus solely on the nuanced
+              <span class="highlight-active" onclick="showWord('Lexical')"
+                >lexical</span
+              >
+              structures and semantic meanings.
+            </p>
+            <p>
+              Finally, the
+              <span class="highlight-active" onclick="showWord('Fitts’s Law')"
+                >Fitts’s Law</span
+              >
+              application ensures that interactions within the learning
+              interface are predictable and effortless, further streamlining the
+              transition from passive reading to active comprehension.
+            </p>
+          </div>
+        </article>
+        <!-- Separate Comprehension Card (Gestalt: Task-specific) -->
+        <div
+          class="bg-surface-container-lowest p-lg rounded-2xl border border-outline-variant shadow-sm space-y-md"
+        >
+          <div class="flex items-center gap-sm">
+            <span
+              class="material-symbols-outlined text-primary text-[28px]"
+              data-icon="quiz"
+              >quiz</span
+            >
+            <h3 class="text-headline-md font-headline-md text-on-surface">
+              Comprehension Check
+            </h3>
+          </div>
+          <div class="space-y-md">
+            <div class="p-md bg-surface-container-low rounded-xl">
+              <p
+                class="text-body-md font-body-md mb-md text-on-surface font-medium"
+              >
+                1. According to the text, what is the primary goal of reducing
+                'extraneous load'?
+              </p>
+              <div class="space-y-sm">
+                <label
+                  class="flex items-center p-md bg-surface-container-lowest border border-outline-variant rounded-xl cursor-pointer hover:border-primary transition-all group"
+                >
+                  <input
+                    class="w-4 h-4 text-primary focus:ring-primary border-outline"
+                    name="q1"
+                    type="radio"
+                    value="incorrect"
+                  />
+                  <span
+                    class="ml-sm text-on-surface-variant group-hover:text-on-surface"
+                    >To increase the difficulty of the text.</span
+                  >
+                </label>
+                <label
+                  class="flex items-center p-md bg-surface-container-lowest border border-outline-variant rounded-xl cursor-pointer hover:border-primary transition-all group"
+                >
+                  <input
+                    class="w-4 h-4 text-primary focus:ring-primary border-outline"
+                    name="q1"
+                    type="radio"
+                    value="correct"
+                  />
+                  <span
+                    class="ml-sm text-on-surface-variant group-hover:text-on-surface"
+                    >To maximize the learner's ability to retain
+                    information.</span
+                  >
+                </label>
+                <label
+                  class="flex items-center p-md bg-surface-container-lowest border border-outline-variant rounded-xl cursor-pointer hover:border-primary transition-all group"
+                >
+                  <input
+                    class="w-4 h-4 text-primary focus:ring-primary border-outline"
+                    name="q1"
+                    type="radio"
+                    value="incorrect"
+                  />
+                  <span
+                    class="ml-sm text-on-surface-variant group-hover:text-on-surface"
+                    >To promote multitasking during learning.</span
+                  >
+                </label>
+              </div>
+            </div>
+            <button
+              id="submit-answers-btn"
+              class="bg-primary text-on-primary w-full py-md rounded-xl font-bold hover:bg-primary/90 transition-colors shadow-sm"
+            >
+              Submit Answers
+            </button>
+          </div>
+        </div>
+      </section>
+      <!-- Right Side: Dedicated Sidebar Cards -->
+      <aside class="w-full lg:w-80 space-y-md">
+        <!-- Separate Card: Vocabulary Focus -->
+        <div class="sticky top-md space-y-md">
+          <div
+            class="bg-surface-container-lowest p-md rounded-2xl shadow-sm border border-outline-variant transition-all duration-300 min-h-[300px]"
+            id="explanation-card"
+          >
+            <div
+              class="flex items-center justify-between mb-sm border-b border-outline-variant pb-sm"
+            >
+              <span
+                class="text-label-sm font-bold uppercase tracking-widest text-primary"
+                >Vocabulary Focus</span
+              >
+              <span
+                class="material-symbols-outlined text-primary"
+                data-icon="menu_book"
+                >menu_book</span
+              >
+            </div>
+            <div class="pt-sm" id="word-content">
+              <h2
+                class="text-headline-md font-headline-md text-on-surface mb-xs"
+                id="current-word"
+              >
+                Select a Word
+              </h2>
+              <p
+                class="text-label-md font-label-md text-on-surface-variant italic mb-md"
+                id="word-pronunciation"
+              >
+                Click any highlighted word in the text to see its definition.
+              </p>
+              <div class="hidden space-y-md" id="word-def-box">
+                <div
+                  class="bg-primary/5 p-sm rounded-lg border-l-4 border-primary"
+                >
+                  <p
+                    class="text-body-md font-body-md text-on-surface"
+                    id="word-definition"
+                  ></p>
+                </div>
+                <div class="space-y-xs">
+                  <h4
+                    class="text-label-sm font-bold text-outline uppercase tracking-wider"
+                  >
+                    Example Usage
+                  </h4>
+                  <p
+                    class="text-body-md text-on-surface-variant italic leading-relaxed"
+                    id="word-example"
+                  ></p>
+                </div>
+                <button
+                  id="save-to-lexicon-btn"
+                  class="w-full flex items-center justify-center gap-xs py-sm bg-primary text-on-primary rounded-xl font-label-md hover:brightness-110 transition-all shadow-sm"
+                >
+                  <span
+                    class="material-symbols-outlined text-[18px]"
+                    data-icon="bookmark_add"
+                    >bookmark_add</span
+                  >
+                  Save to Lexicon
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- Separate Card: Reading Progress -->
+          <div
+            class="bg-surface-container-lowest p-md rounded-2xl border border-outline-variant shadow-sm space-y-sm"
+          >
+            <div class="flex items-center justify-between mb-xs">
+              <h4 class="text-label-md font-bold text-on-surface">
+                Reading Progress
+              </h4>
+              <span id="progress-percentage" class="text-label-sm font-medium text-secondary">0%</span>
+            </div>
+            <div
+              class="w-full h-2 bg-surface-container-high rounded-full overflow-hidden"
+            >
+              <div id="progress-bar-fill" class="w-0 h-full bg-secondary rounded-full transition-all duration-300"></div>
+            </div>
+            <p class="text-label-sm text-on-surface-variant">
+              1,240 words left in this session
+            </p>
+          </div>
+          <!-- Separate Card: Achievement -->
+          <div
+            class="bg-tertiary-fixed p-md rounded-2xl flex items-center gap-md shadow-sm"
+          >
+            <div class="bg-on-tertiary-fixed-variant p-sm rounded-full">
+              <span
+                class="material-symbols-outlined text-tertiary-fixed"
+                data-icon="military_tech"
+                style="font-variation-settings: &quot;FILL&quot; 1"
+                >military_tech</span
+              >
+            </div>
+            <div>
+              <p
+                class="text-label-sm font-bold text-on-tertiary-fixed-variant uppercase tracking-tight"
+              >
+                Focus Streak
+              </p>
+              <p class="text-body-md font-bold text-on-tertiary-fixed">
+                4 consecutive days!
+              </p>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </main>
+    <!-- Footer -->
+    <footer
+      class="bg-surface-container-lowest border-t border-outline-variant w-full py-xl mt-xl"
+    >
+      <div
+        class="flex flex-col md:flex-row justify-between items-center px-gutter max-w-container-max mx-auto space-y-lg md:space-y-0"
+      >
+        <div class="flex flex-col items-center md:items-start gap-xs">
+          <div class="text-label-md font-bold text-on-surface">
+            EnglishBoost Academic Portal
+          </div>
+          <div class="text-label-sm text-on-surface-variant italic">
+            Refined for Engineering Psychology Lab
+          </div>
+        </div>
+        <div class="flex gap-lg">
+          <a
+            class="text-on-surface-variant text-label-sm font-medium hover:text-primary transition-colors"
+            href="#"
+            >Curriculum</a
+          >
+          <a
+            class="text-on-surface-variant text-label-sm font-medium hover:text-primary transition-colors"
+            href="#"
+            >Research</a
+          >
+          <a
+            class="text-on-surface-variant text-label-sm font-medium hover:text-primary transition-colors"
+            href="#"
+            >Methodology</a
+          >
+        </div>
+        <div class="text-label-sm text-on-surface-variant">
+          © 2024 EnglishBoost Lab
+        </div>
+      </div>
+    </footer>
+    <script src="js/reading.js"></script>
+  </body>
+</html>

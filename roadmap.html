@@ -1,0 +1,529 @@
+<!doctype html>
+<html class="light" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>EnglishBoost - Learning Path</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-surface-variant": "#434655",
+              primary: "#004ac6",
+              error: "#ba1a1a",
+              "inverse-on-surface": "#eaf1ff",
+              "tertiary-fixed": "#ffddb8",
+              "on-primary": "#ffffff",
+              "tertiary-fixed-dim": "#ffb95f",
+              "surface-container-highest": "#d3e4fe",
+              "on-error-container": "#93000a",
+              "on-primary-container": "#eeefff",
+              "error-container": "#ffdad6",
+              "on-primary-fixed-variant": "#003ea8",
+              "on-background": "#0b1c30",
+              "primary-fixed-dim": "#b4c5ff",
+              "tertiary-container": "#996100",
+              "surface-container-high": "#dce9ff",
+              "surface-bright": "#f8f9ff",
+              "on-error": "#ffffff",
+              "surface-container-low": "#eff4ff",
+              "inverse-primary": "#b4c5ff",
+              "on-tertiary-container": "#ffeedd",
+              "surface-container-lowest": "#ffffff",
+              "on-tertiary-fixed-variant": "#653e00",
+              "surface-container": "#e5eeff",
+              "surface-dim": "#cbdbf5",
+              background: "#f8f9ff",
+              tertiary: "#784b00",
+              "on-tertiary": "#ffffff",
+              "on-primary-fixed": "#00174b",
+              "surface-variant": "#d3e4fe",
+              "on-secondary": "#ffffff",
+              "secondary-container": "#6cf8bb",
+              secondary: "#006c49",
+              "primary-container": "#2563eb",
+              "secondary-fixed-dim": "#4edea3",
+              "on-secondary-fixed": "#002113",
+              "secondary-fixed": "#6ffbbe",
+              "on-surface": "#0b1c30",
+              "inverse-surface": "#213145",
+              "surface-tint": "#0053db",
+              surface: "#f8f9ff",
+              "on-tertiary-fixed": "#2a1700",
+              "outline-variant": "#c3c6d7",
+              "primary-fixed": "#dbe1ff",
+              outline: "#737686",
+              "on-secondary-container": "#00714d",
+              "on-secondary-fixed-variant": "#005236",
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+            spacing: {
+              md: "24px",
+              lg: "48px",
+              xs: "4px",
+              base: "8px",
+              xl: "80px",
+              sm: "12px",
+              gutter: "24px",
+              "container-max": "1200px",
+            },
+            fontFamily: {
+              "headline-lg-mobile": ["Inter"],
+              "headline-xl": ["Inter"],
+              "label-sm": ["Inter"],
+              "body-lg": ["Inter"],
+              "headline-md": ["Inter"],
+              "headline-lg": ["Inter"],
+              "body-md": ["Inter"],
+              "label-md": ["Inter"],
+            },
+            fontSize: {
+              "headline-lg-mobile": [
+                "24px",
+                { lineHeight: "1.2", fontWeight: "700" },
+              ],
+              "headline-xl": [
+                "48px",
+                {
+                  lineHeight: "1.1",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "700",
+                },
+              ],
+              "label-sm": ["12px", { lineHeight: "1", fontWeight: "500" }],
+              "body-lg": ["18px", { lineHeight: "1.6", fontWeight: "400" }],
+              "headline-md": ["24px", { lineHeight: "1.3", fontWeight: "600" }],
+              "headline-lg": [
+                "32px",
+                {
+                  lineHeight: "1.2",
+                  letterSpacing: "-0.01em",
+                  fontWeight: "700",
+                },
+              ],
+              "body-md": ["16px", { lineHeight: "1.6", fontWeight: "400" }],
+              "label-md": [
+                "14px",
+                { lineHeight: "1", letterSpacing: "0.02em", fontWeight: "600" },
+              ],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-surface text-on-surface font-body-md overflow-x-hidden">
+    <!-- Desktop SideNav -->
+    <nav
+      class="hidden md:flex h-screen w-64 fixed left-0 top-0 bg-surface-container-low border-r border-outline-variant flex-col p-md space-y-sm z-50"
+    >
+      <div class="mb-lg">
+        <h1 class="text-headline-md font-headline-md font-bold text-primary">
+          EnglishBoost
+        </h1>
+        <p class="text-label-sm font-label-sm text-on-surface-variant">
+          University Edition
+        </p>
+      </div>
+      <div class="space-y-xs flex-1">
+        <a class="flex items-center gap-sm p-sm text-on-surface-variant hover:bg-surface-container-high rounded-lg hover:scale-[1.02] transition-transform duration-200"
+          href="flashcard_eval.html"
+        >
+          <span class="material-symbols-outlined">menu_book</span>
+          <span class="text-label-md font-label-md">Vocabulary</span>
+        </a>
+        <a class="flex items-center gap-sm p-sm text-on-surface-variant hover:bg-surface-container-high rounded-lg hover:scale-[1.02] transition-transform duration-200"
+          href="listening.html"
+        >
+          <span class="material-symbols-outlined">headset</span>
+          <span class="text-label-md font-label-md">Listening</span>
+        </a>
+        <a class="flex items-center gap-sm p-sm text-on-surface-variant hover:bg-surface-container-high rounded-lg hover:scale-[1.02] transition-transform duration-200"
+          href="reading.html"
+        >
+          <span class="material-symbols-outlined">auto_stories</span>
+          <span class="text-label-md font-label-md">Reading</span>
+        </a>
+        <a class="flex items-center gap-sm p-sm bg-primary-container text-on-primary-container rounded-lg font-bold scale-[0.98]"
+          href="roadmap.html"
+        >
+          <span class="material-symbols-outlined">insights</span>
+          <span class="text-label-md font-label-md">Progress</span>
+        </a>
+      </div>
+      <div class="border-t border-outline-variant pt-md space-y-xs">
+        <a
+          class="flex items-center gap-sm p-sm text-on-surface-variant hover:bg-surface-container-high rounded-lg"
+          href="#"
+        >
+          <span class="material-symbols-outlined">settings</span>
+          <span class="text-label-md font-label-md">Settings</span>
+        </a>
+        <a
+          class="flex items-center gap-sm p-sm text-on-surface-variant hover:bg-surface-container-high rounded-lg"
+          href="#"
+        >
+          <span class="material-symbols-outlined">help_outline</span>
+          <span class="text-label-md font-label-md">Help</span>
+        </a>
+      </div>
+    </nav>
+    <!-- Mobile TopBar -->
+    <header
+      class="md:hidden fixed top-0 w-full z-40 bg-surface h-16 border-b border-outline-variant flex items-center justify-between px-gutter"
+    >
+      <h1 class="text-headline-md font-headline-md font-bold text-primary">
+        EnglishBoost
+      </h1>
+      <div class="flex items-center gap-md">
+        <span class="material-symbols-outlined text-primary"
+          >notifications</span
+        >
+        <span class="material-symbols-outlined text-primary"
+          >account_circle</span
+        >
+      </div>
+    </header>
+    <main class="md:ml-64 pt-20 md:pt-md min-h-screen pb-32">
+      <div class="max-w-container-max mx-auto px-gutter">
+        <!-- Header Section -->
+        <div class="mb-lg">
+          <span
+            class="text-label-md font-label-md text-primary bg-primary-fixed px-sm py-xs rounded-full inline-block mb-base"
+            >Unit 4: Engineering Psychology</span
+          >
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-md">
+            <div>
+              <h2 class="text-headline-lg font-headline-lg text-on-surface">
+                Your Learning Journey
+              </h2>
+              <p class="text-body-md font-body-md text-on-surface-variant mt-xs">
+                Follow the path to master core engineering terminology.
+              </p>
+            </div>
+            <button
+              id="reset-progress-btn"
+              class="flex items-center gap-xs px-md py-base border border-outline hover:bg-surface-container-high text-on-surface rounded-xl font-label-md transition-all shadow-sm cursor-pointer self-start sm:self-center"
+            >
+              <span class="material-symbols-outlined text-sm">restart_alt</span>
+              Reset Progress
+            </button>
+          </div>
+        </div>
+        <!-- Learning Path Bento Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-md items-start">
+          <!-- Roadmap Visualization Column -->
+          <div
+            class="lg:col-span-8 bg-surface-container-low rounded-xl p-md md:p-lg"
+          >
+            <div class="relative flex flex-col items-center">
+              <!-- Step 1: Vocabulary (Completed) -->
+              <div
+                id="step-vocab"
+                class="relative flex flex-col items-center w-full group mb-12 cursor-pointer"
+              >
+                <div
+                  class="z-10 w-16 h-16 rounded-full bg-secondary text-on-secondary flex items-center justify-center shadow-md transition-transform group-hover:scale-110"
+                >
+                  <span
+                    class="material-symbols-outlined"
+                    style="font-variation-settings: &quot;FILL&quot; 1"
+                    >check_circle</span
+                  >
+                </div>
+                <div class="mt-base text-center">
+                  <h3 class="text-headline-md font-headline-md text-on-surface">
+                    Vocabulary
+                  </h3>
+                  <div class="flex items-center justify-center gap-xs mt-xs">
+                    <span
+                      class="material-symbols-outlined text-secondary text-sm"
+                      >done_all</span
+                    >
+                    <p class="text-label-md font-label-md text-secondary">
+                      Done
+                    </p>
+                  </div>
+                </div>
+                <!-- Connector -->
+                <div
+                  class="absolute top-16 w-0.5 h-12 roadmap-line-active"
+                ></div>
+              </div>
+              <!-- Step 2: Listening (Current/Active) -->
+              <div
+                id="step-listening"
+                class="relative flex flex-col items-center w-full group mb-12 cursor-pointer"
+              >
+                <div
+                  class="z-10 w-24 h-24 rounded-full bg-primary text-on-primary flex items-center justify-center shadow-lg transition-all scale-105 group-hover:scale-110 ring-8 ring-primary/20 relative"
+                >
+                  <span class="material-symbols-outlined text-[40px]"
+                    >headset</span
+                  >
+                  <!-- Floating Progress Badge -->
+                  <div
+                    class="absolute -top-2 -right-2 bg-secondary text-on-secondary text-[10px] font-bold px-2 py-1 rounded-full border-2 border-surface-container-low shadow-sm"
+                  >
+                    65%
+                  </div>
+                </div>
+                <div class="mt-md text-center">
+                  <h3
+                    class="text-headline-md font-headline-md text-primary font-bold"
+                  >
+                    Listening
+                  </h3>
+                  <div class="flex items-center justify-center gap-xs mt-xs">
+                    <span
+                      class="w-2.5 h-2.5 rounded-full bg-primary animate-pulse"
+                    ></span>
+                    <p
+                      class="text-label-md font-label-md text-primary font-semibold"
+                    >
+                      Active Session (65%)
+                    </p>
+                  </div>
+                  <p
+                    class="text-label-sm font-label-sm text-on-surface-variant mt-xs max-w-[240px]"
+                  >
+                    Mastering acoustic cues in industrial environments.
+                  </p>
+                </div>
+                <!-- Connector -->
+                <div class="absolute top-24 w-0.5 h-12 roadmap-line"></div>
+              </div>
+              <!-- Step 3: Reading (Next) -->
+              <div
+                id="step-reading"
+                class="relative flex flex-col items-center w-full group mb-12 opacity-60 grayscale-[0.5] cursor-pointer"
+              >
+                <div
+                  class="z-10 w-16 h-16 rounded-full bg-surface-container-highest text-on-surface-variant flex items-center justify-center border border-outline-variant transition-transform group-hover:scale-110"
+                >
+                  <span class="material-symbols-outlined">auto_stories</span>
+                </div>
+                <div class="mt-base text-center">
+                  <h3 class="text-headline-md font-headline-md text-on-surface">
+                    Reading
+                  </h3>
+                  <div class="flex items-center justify-center gap-xs mt-xs">
+                    <span class="material-symbols-outlined text-sm">lock</span>
+                    <p
+                      class="text-label-md font-label-md text-on-surface-variant"
+                    >
+                      Locked
+                    </p>
+                  </div>
+                </div>
+                <!-- Connector -->
+                <div class="absolute top-16 w-0.5 h-12 roadmap-line"></div>
+              </div>
+              <!-- Step 4: Quiz -->
+              <div
+                id="step-quiz"
+                class="relative flex flex-col items-center w-full group mb-12 opacity-60 grayscale-[0.5] cursor-pointer"
+              >
+                <div
+                  class="z-10 w-16 h-16 rounded-full bg-surface-container-highest text-on-surface-variant flex items-center justify-center border border-outline-variant transition-transform group-hover:scale-110"
+                >
+                  <span class="material-symbols-outlined">quiz</span>
+                </div>
+                <div class="mt-base text-center">
+                  <h3 class="text-headline-md font-headline-md text-on-surface">
+                    Quiz
+                  </h3>
+                  <div class="flex items-center justify-center gap-xs mt-xs">
+                    <span class="material-symbols-outlined text-sm">lock</span>
+                    <p
+                      class="text-label-md font-label-md text-on-surface-variant"
+                    >
+                      Locked
+                    </p>
+                  </div>
+                </div>
+                <!-- Connector -->
+                <div class="absolute top-16 w-0.5 h-12 roadmap-line"></div>
+              </div>
+              <!-- Step 5: Completion -->
+              <div
+                id="step-completion"
+                class="relative flex flex-col items-center w-full group opacity-60 grayscale-[0.5] cursor-pointer"
+              >
+                <div
+                  class="z-10 w-16 h-16 rounded-full bg-surface-container-highest text-on-surface-variant flex items-center justify-center border border-outline-variant transition-transform group-hover:scale-110"
+                >
+                  <span class="material-symbols-outlined">emoji_events</span>
+                </div>
+                <div class="mt-base text-center">
+                  <h3 class="text-headline-md font-headline-md text-on-surface">
+                    Completion
+                  </h3>
+                  <p
+                    class="text-label-md font-label-md text-on-surface-variant"
+                  >
+                    Finish Line
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Stats/Preview Column -->
+          <div class="lg:col-span-4 space-y-md">
+            <!-- Unit Card -->
+            <div
+              class="glass-card border border-outline-variant rounded-xl p-md shadow-sm"
+            >
+              <img
+                class="w-full h-40 object-cover rounded-lg mb-md"
+                data-alt="Office"
+                src="https://lh3.googleusercontent.com/aida/AP1WRLtxnlvJcYjByUIsx2U1LmaGcMttCU6ncsp0Jqfj28srPbR_lGmMVP0TY86uKC-7UMuyQJURDWe91vVspTFKYzuK1T9njfwJoeRPa60PmCMPF0j0x34afKS0iy1FcsVDhH-SilNWtqzjxC_U6_jmToaZvEhxL-yrf_t_cZOAsxK-VwDFThYImzm58g-2B2gBLG_0ZKoJqC_DbRldzY_d3XEViNGYMCLZbHuFgxyXVJG6WR07xn-oom6rbA"
+              />
+              <h4 class="text-headline-md font-headline-md text-on-surface">
+                Design for Humans
+              </h4>
+              <p
+                class="text-body-md font-body-md text-on-surface-variant mt-sm"
+              >
+                Understand the cognitive principles behind user interface design
+                and human interaction.
+              </p>
+              <div class="mt-md bg-surface-container p-sm rounded-lg">
+                <div class="flex justify-between mb-xs">
+                  <span class="text-label-sm font-label-sm">Unit Progress</span>
+                  <span class="text-label-sm font-label-sm text-primary"
+                    >28% Overall</span
+                  >
+                </div>
+                <div class="w-full bg-outline-variant rounded-full h-2">
+                  <div class="bg-primary h-2 rounded-full w-[28%]"></div>
+                </div>
+              </div>
+            </div>
+            <!-- Tips Card -->
+            <div
+              class="bg-tertiary-fixed rounded-xl p-md border border-on-tertiary-fixed-variant/10"
+            >
+              <div class="flex items-start gap-sm">
+                <span class="material-symbols-outlined text-tertiary"
+                  >lightbulb</span
+                >
+                <div>
+                  <h4
+                    class="text-label-md font-label-md text-on-tertiary-fixed"
+                  >
+                    Student Tip
+                  </h4>
+                  <p
+                    class="text-body-md font-body-md text-on-tertiary-fixed mt-xs"
+                  >
+                    "Cognitive Load Reduction: Focus on one task at a time. Your
+                    current focus is Listening — master this before moving to
+                    Reading."
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- Continue Button -->
+            <div
+              class="fixed bottom-0 left-0 right-0 p-gutter md:static md:p-0 z-30"
+            >
+              <button
+                id="continue-btn"
+                class="w-full bg-primary text-on-primary font-headline-md py-md rounded-xl shadow-lg hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-base"
+              >
+                <span>Tiếp tục Listening</span>
+                <span class="material-symbols-outlined">arrow_forward</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- Mobile Bottom NavBar -->
+    <nav
+      class="md:hidden fixed bottom-0 w-full bg-surface-container-low border-t border-outline-variant flex justify-around items-center h-16 z-40"
+    >
+      <a class="flex flex-col items-center gap-xs text-on-surface-variant"
+        href="flashcard_eval.html"
+      >
+        <span class="material-symbols-outlined">menu_book</span>
+        <span class="text-label-sm font-label-sm">Vocabulary</span>
+      </a>
+      <a class="flex flex-col items-center gap-xs text-on-surface-variant"
+        href="listening.html"
+      >
+        <span class="material-symbols-outlined">headset</span>
+        <span class="text-label-sm font-label-sm">Listening</span>
+      </a>
+      <a class="flex flex-col items-center gap-xs text-on-surface-variant"
+        href="reading.html"
+      >
+        <span class="material-symbols-outlined">auto_stories</span>
+        <span class="text-label-sm font-label-sm">Reading</span>
+      </a>
+      <a class="flex flex-col items-center gap-xs text-primary font-bold"
+        href="roadmap.html"
+      >
+        <span
+          class="material-symbols-outlined"
+          style="font-variation-settings: &quot;FILL&quot; 1"
+          >insights</span
+        >
+        <span class="text-label-sm font-label-sm">Progress</span>
+      </a>
+    </nav>
+    <!-- Footer -->
+    <footer
+      class="md:ml-64 bg-surface-container-lowest border-t border-outline-variant w-full py-lg"
+    >
+      <div
+        class="flex flex-col md:flex-row justify-between items-center px-gutter max-w-container-max mx-auto gap-md"
+      >
+        <div class="text-center md:text-left">
+          <p class="text-label-md font-label-md font-bold text-on-surface">
+            EnglishBoost
+          </p>
+          <p class="text-label-sm font-label-sm text-on-surface-variant mt-xs">
+            © 2024 EnglishBoost Engineering Psychology Lab
+          </p>
+        </div>
+        <div class="flex gap-lg">
+          <a
+            class="text-on-surface-variant text-label-sm font-label-sm hover:text-primary transition-colors"
+            href="#"
+            >Privacy Policy</a
+          >
+          <a
+            class="text-on-surface-variant text-label-sm font-label-sm hover:text-primary transition-colors"
+            href="#"
+            >Terms of Service</a
+          >
+          <a
+            class="text-on-surface-variant text-label-sm font-label-sm hover:text-primary transition-colors"
+            href="#"
+            >University Portal</a
+          >
+        </div>
+      </div>
+    </footer>
+    <script src="js/roadmap.js"></script>
+  </body>
+</html>

@@ -1,0 +1,588 @@
+<!doctype html>
+<html class="light" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Listening - EnglishBoost</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-surface-variant": "#434655",
+              primary: "#004ac6",
+              error: "#ba1a1a",
+              "inverse-on-surface": "#eaf1ff",
+              "tertiary-fixed": "#ffddb8",
+              "on-primary": "#ffffff",
+              "tertiary-fixed-dim": "#ffb95f",
+              "surface-container-highest": "#d3e4fe",
+              "on-error-container": "#93000a",
+              "on-primary-container": "#eeefff",
+              "error-container": "#ffdad6",
+              "on-primary-fixed-variant": "#003ea8",
+              "on-background": "#0b1c30",
+              "primary-fixed-dim": "#b4c5ff",
+              "tertiary-container": "#996100",
+              "surface-container-high": "#dce9ff",
+              "surface-bright": "#f8f9ff",
+              "on-error": "#ffffff",
+              "surface-container-low": "#eff4ff",
+              "inverse-primary": "#b4c5ff",
+              "on-tertiary-container": "#ffeedd",
+              "surface-container-lowest": "#ffffff",
+              "on-tertiary-fixed-variant": "#653e00",
+              "surface-container": "#e5eeff",
+              "surface-dim": "#cbdbf5",
+              background: "#f8f9ff",
+              tertiary: "#784b00",
+              "on-tertiary": "#ffffff",
+              "on-primary-fixed": "#00174b",
+              "surface-variant": "#d3e4fe",
+              "on-secondary": "#ffffff",
+              "secondary-container": "#6cf8bb",
+              secondary: "#006c49",
+              "primary-container": "#2563eb",
+              "secondary-fixed-dim": "#4edea3",
+              "on-secondary-fixed": "#002113",
+              "secondary-fixed": "#6ffbbe",
+              "on-surface": "#0b1c30",
+              "inverse-surface": "#213145",
+              "surface-tint": "#0053db",
+              surface: "#f8f9ff",
+              "on-tertiary-fixed": "#2a1700",
+              "outline-variant": "#c3c6d7",
+              "primary-fixed": "#dbe1ff",
+              outline: "#737686",
+              "on-secondary-container": "#00714d",
+              "on-secondary-fixed-variant": "#005236",
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+            spacing: {
+              md: "24px",
+              lg: "48px",
+              xs: "4px",
+              base: "8px",
+              xl: "80px",
+              sm: "12px",
+              gutter: "24px",
+              "container-max": "1200px",
+            },
+            fontFamily: {
+              "headline-lg-mobile": ["Inter"],
+              "headline-xl": ["Inter"],
+              "label-sm": ["Inter"],
+              "body-lg": ["Inter"],
+              "headline-md": ["Inter"],
+              "headline-lg": ["Inter"],
+              "body-md": ["Inter"],
+              "label-md": ["Inter"],
+            },
+            fontSize: {
+              "headline-lg-mobile": [
+                "24px",
+                { lineHeight: "1.2", fontWeight: "700" },
+              ],
+              "headline-xl": [
+                "48px",
+                {
+                  lineHeight: "1.1",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "700",
+                },
+              ],
+              "label-sm": ["12px", { lineHeight: "1", fontWeight: "500" }],
+              "body-lg": ["18px", { lineHeight: "1.6", fontWeight: "400" }],
+              "headline-md": ["24px", { lineHeight: "1.3", fontWeight: "600" }],
+              "headline-lg": [
+                "32px",
+                {
+                  lineHeight: "1.2",
+                  letterSpacing: "-0.01em",
+                  fontWeight: "700",
+                },
+              ],
+              "body-md": ["16px", { lineHeight: "1.6", fontWeight: "400" }],
+              "label-md": [
+                "14px",
+                { lineHeight: "1", letterSpacing: "0.02em", fontWeight: "600" },
+              ],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body
+    class="bg-background text-on-surface font-body-md selection:bg-primary-fixed selection:text-on-primary-fixed"
+  >
+    <!-- TopNavBar (Shared Component) -->
+    <header
+      class="bg-surface dark:bg-surface-dim border-b border-outline-variant dark:border-outline fixed top-0 w-full z-50"
+    >
+      <nav
+        class="flex justify-between items-center w-full px-gutter max-w-container-max mx-auto h-16"
+      >
+        <div
+          class="text-headline-md font-headline-md font-bold text-primary dark:text-primary-fixed-dim"
+        >
+          EnglishBoost
+        </div>
+        <div class="hidden md:flex items-center space-x-lg">
+          <a
+            class="text-on-surface-variant dark:text-on-surface-variant font-label-md text-label-md hover:text-primary transition-colors duration-200"
+            href="flashcard_eval.html"
+            >Vocabulary</a
+          >
+          <a
+            class="text-primary font-bold border-b-2 border-primary pb-1 font-label-md text-label-md"
+            href="listening.html"
+            >Listening</a
+          >
+          <a
+            class="text-on-surface-variant dark:text-on-surface-variant font-label-md text-label-md hover:text-primary transition-colors duration-200"
+            href="reading.html"
+            >Reading</a
+          >
+          <a
+            class="text-on-surface-variant dark:text-on-surface-variant font-label-md text-label-md hover:text-primary transition-colors duration-200"
+            href="roadmap.html"
+            >Progress</a
+          >
+        </div>
+        <div class="flex items-center space-x-md">
+          <button
+            class="material-symbols-outlined text-primary hover:scale-[0.98] transition-transform"
+          >
+            notifications
+          </button>
+          <button
+            class="material-symbols-outlined text-primary hover:scale-[0.98] transition-transform"
+          >
+            account_circle
+          </button>
+        </div>
+      </nav>
+    </header>
+    <main class="pt-16 pb-xl px-gutter max-w-container-max mx-auto">
+      <div class="mt-lg">
+        <!-- Header Section -->
+        <div class="mb-lg">
+          <h1 class="text-headline-lg font-headline-lg text-on-surface mb-xs">
+            Advanced Engineering Lecture: Aerodynamics
+          </h1>
+          <p class="text-body-md text-on-surface-variant max-w-2xl">
+            Signal Detection Focus: High-contrast cues for key transitions and
+            terminology.
+          </p>
+        </div>
+        <!-- Bento-style Learning Layout -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-md">
+          <!-- Left: Media Player (8 columns) -->
+          <div class="lg:col-span-8 flex flex-col space-y-md">
+            <div
+              class="relative aspect-video rounded-xl overflow-hidden bg-surface-container shadow-sm border border-outline-variant group"
+            >
+              <img
+                alt="Engineering diagram of air currents over a wing"
+                class="w-full h-full object-cover"
+                src="https://lh3.googleusercontent.com/aida/AP1WRLsFrZAMmyk6_-FeAeS5wqt_sjyp62UFWMjcTh9oj4xYV8jmrb8eN2Stpm4bhtY1RsaiRPt8VcDymI6rkyDA9GDla2nLQmNIOSPbXd8oSmUbnLSG5L5dEwS_1aPX-lS9uJCAX9dD35hfY_Gly5TIPZfNpJd8rBYoZHXKJ8K8NVzQJoLYKrAgOuelANsGlrIKyMYYpj0H_klrORAiqkAF0aiXcuHZ_WeK3XY4gwubhqXxxDPJhVVg-aIeDVE"
+              />
+              <div
+                class="absolute inset-0 bg-black/20 flex items-center justify-center transition-opacity opacity-0 group-hover:opacity-100"
+              >
+                <button
+                  id="overlay-play-btn"
+                  class="bg-primary-container text-on-primary-container w-20 h-20 rounded-full flex items-center justify-center shadow-lg hover:scale-110 active:scale-95 transition-all"
+                >
+                  <span
+                    class="material-symbols-outlined text-[48px]"
+                    style="font-variation-settings: &quot;FILL&quot; 1"
+                    >play_arrow</span
+                  >
+                </button>
+              </div>
+              <!-- Interactive Progress Bar (Fitts's Law applied: larger hit target on hover) -->
+              <div
+                id="player-progress-container"
+                class="absolute bottom-0 left-0 right-0 h-3 bg-surface-container-highest/40 hover:bg-surface-container-highest/80 cursor-pointer flex items-end transition-all"
+              >
+                <div
+                  id="player-progress-bar"
+                  class="h-1.5 bg-secondary w-[0%] transition-all duration-300 pointer-events-none"
+                ></div>
+              </div>
+            </div>
+            <!-- Audio/Video Controls -->
+            <div
+              class="bg-surface-container-low p-md rounded-xl border border-outline-variant flex items-center justify-between"
+            >
+              <div class="flex items-center space-x-md">
+                <button
+                  id="skip-previous"
+                  class="material-symbols-outlined text-primary hover:scale-110 transition-transform"
+                >
+                  skip_previous
+                </button>
+                <button
+                  id="play-pause-btn"
+                  class="bg-primary text-on-primary p-base rounded-full hover:scale-105 active:scale-95 transition-all"
+                >
+                  <span
+                    class="material-symbols-outlined"
+                    style="font-variation-settings: &quot;FILL&quot; 1"
+                    >play_arrow</span
+                  >
+                </button>
+                <button
+                  id="skip-next"
+                  class="material-symbols-outlined text-primary hover:scale-110 transition-transform"
+                >
+                  skip_next
+                </button>
+                <span
+                  id="time-text"
+                  class="text-label-md font-label-md text-on-surface-variant ml-md"
+                  >00:00 / 05:30</span
+                >
+              </div>
+              <div class="flex items-center space-x-md">
+                <button
+                  class="material-symbols-outlined text-on-surface-variant"
+                >
+                  closed_caption
+                </button>
+                <button
+                  class="material-symbols-outlined text-on-surface-variant"
+                >
+                  settings
+                </button>
+                <button
+                  class="material-symbols-outlined text-on-surface-variant"
+                >
+                  fullscreen
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- Right: Transcript (4 columns) -->
+          <div
+            class="lg:col-span-4 bg-surface-container-lowest rounded-xl border border-outline-variant flex flex-col h-[520px]"
+          >
+            <div
+              class="p-md border-b border-outline-variant flex items-center justify-between"
+            >
+              <div class="flex items-center space-x-sm">
+                <h2 class="text-headline-md font-headline-md">
+                  Live Transcript
+                </h2>
+                <span
+                  class="text-[10px] font-bold bg-error text-on-error px-1.5 py-0.5 rounded animate-pulse"
+                  >LIVE</span
+                >
+              </div>
+              <span
+                class="text-label-sm font-label-sm bg-secondary-container text-on-secondary-container px-base py-xs rounded-full"
+                >Sync Active</span
+              >
+            </div>
+             <div
+              class="p-md overflow-y-auto transcript-container flex-1 space-y-md"
+            >
+              <p
+                class="transcript-line text-body-md text-on-surface-variant leading-relaxed opacity-50 cursor-pointer hover:bg-surface-container/30 p-1 rounded transition-colors"
+                data-time="0"
+              >
+                <span
+                  class="text-label-sm font-label-sm text-primary block mb-1"
+                  >00:00</span
+                >
+                <span class="transition-keyword">Welcome</span> back, class. In today's session of Engineering Psychology, we are focusing on advanced Fluid Dynamics interface designs.
+              </p>
+              <p
+                class="transcript-line text-body-md text-on-surface-variant leading-relaxed opacity-50 cursor-pointer hover:bg-surface-container/30 p-1 rounded transition-colors"
+                data-time="45"
+              >
+                <span
+                  class="text-label-sm font-label-sm text-primary block mb-1"
+                  >00:45</span
+                >
+                <span class="transition-keyword">First</span>, let's review the fundamental aerodynamic principles. Understanding how lift and drag operate is crucial for display design.
+              </p>
+              <p
+                class="transcript-line text-body-md text-on-surface-variant leading-relaxed opacity-50 cursor-pointer hover:bg-surface-container/30 p-1 rounded transition-colors"
+                data-time="90"
+              >
+                <span
+                  class="text-label-sm font-label-sm text-primary block mb-1"
+                  >01:30</span
+                >
+                <span class="transition-keyword">As we discussed</span> last week, reducing cognitive friction on control panels helps pilots make faster decisions under high-stress scenarios.
+              </p>
+              <p
+                class="transcript-line text-body-md text-on-surface-variant leading-relaxed opacity-50 cursor-pointer hover:bg-surface-container/30 p-1 rounded transition-colors"
+                data-time="125"
+              >
+                <span
+                  class="text-label-sm font-label-sm text-primary block mb-1"
+                  >02:05</span
+                >
+                <span class="transition-keyword">Now</span>, let's examine the
+                <span class="active-word vocab-keyword">boundary layer</span> of
+                fluid flow. In engineering psychology, we often look at how
+                students process these visual cues.
+              </p>
+              <p
+                class="transcript-line text-body-md text-on-surface-variant leading-relaxed opacity-50 cursor-pointer hover:bg-surface-container/30 p-1 rounded transition-colors"
+                data-time="132"
+              >
+                <span
+                  class="text-label-sm font-label-sm text-primary block mb-1"
+                  >02:12</span
+                >
+                <span class="signal-keyword">CRUCIALLY</span>, we must
+                differentiate between
+                <span class="vocab-keyword">laminar</span> and
+                <span class="vocab-keyword">turbulent flow</span>. The
+                <span class="signal-keyword">FUNDAMENTAL PRINCIPLE</span> here
+                is the Reynolds number.
+              </p>
+              <p
+                class="transcript-line text-body-md text-on-surface-variant leading-relaxed opacity-50 cursor-pointer hover:bg-surface-container/30 p-1 rounded transition-colors"
+                data-time="148"
+              >
+                <span
+                  class="text-label-sm font-label-sm text-on-surface-variant block mb-1"
+                  >02:28</span
+                >
+                <span class="transition-keyword">HOWEVER</span>, when the
+                velocity exceeds a certain threshold, the flow becomes chaotic.
+                <span class="signal-keyword">IMPORTANTLY</span>, this has
+                significant implications for fuel efficiency...
+              </p>
+              <p
+                class="transcript-line text-body-md text-on-surface-variant leading-relaxed opacity-50 cursor-pointer hover:bg-surface-container/30 p-1 rounded transition-colors"
+                data-time="165"
+              >
+                <span
+                  class="text-label-sm font-label-sm text-on-surface-variant block mb-1"
+                  >02:45</span
+                >
+                <span class="transition-keyword">IN CONCLUSION</span> for this
+                segment, surface roughness is a factor. Even minor imperfections
+                can trigger early turbulence...
+              </p>
+            </div>
+            <!-- Signal Legend -->
+            <div
+              class="p-sm bg-surface-container-high border-t border-outline-variant flex flex-wrap gap-sm justify-center"
+            >
+              <div class="flex items-center space-x-1 text-[10px] font-bold">
+                <span
+                  class="w-2 h-2 bg-[#ffddb8] border border-[#784b00] rounded-sm"
+                ></span>
+                <span>SIGNAL</span>
+              </div>
+              <div class="flex items-center space-x-1 text-[10px] font-bold">
+                <span
+                  class="w-2 h-2 bg-[#6cf8bb] border border-[#006c49] rounded-sm"
+                ></span>
+                <span>TRANSITION</span>
+              </div>
+              <div class="flex items-center space-x-1 text-[10px] font-bold">
+                <span
+                  class="w-2 h-0.5 border-b-2 border-dashed border-primary"
+                ></span>
+                <span>VOCAB</span>
+              </div>
+            </div>
+            <div
+              class="p-md bg-surface-container-low border-t border-outline-variant rounded-b-xl"
+            >
+              <div
+                class="flex items-center text-primary text-label-md font-label-md cursor-pointer hover:bg-surface-container-highest p-1 rounded transition-colors"
+              >
+                <span class="material-symbols-outlined mr-xs text-body-md"
+                  >search</span
+                >
+                Search transcript...
+              </div>
+            </div>
+          </div>
+          <!-- Bottom: Exercise Section (12 columns) -->
+          <div class="lg:col-span-12 mt-md">
+            <div
+              class="bg-surface-bright p-lg rounded-xl border-2 border-primary/10 shadow-sm"
+            >
+              <div class="flex items-start justify-between mb-lg">
+                <div>
+                  <h3 class="text-headline-md font-headline-md text-on-surface">
+                    Comprehension Check: Signal Detection
+                  </h3>
+                  <p class="text-body-md text-on-surface-variant">
+                    Identify the keywords the speaker used to signal importance
+                    based on the highlighted cues.
+                  </p>
+                </div>
+                <div class="flex items-center space-x-xs">
+                  <span
+                    class="material-symbols-outlined text-secondary"
+                    style="font-variation-settings: &quot;FILL&quot; 1"
+                    >stars</span
+                  >
+                  <span class="text-label-md font-label-md text-secondary"
+                    >Earn 50 Points</span
+                  >
+                </div>
+              </div>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-lg">
+                <!-- Question Column -->
+                <div class="space-y-md">
+                  <p class="text-body-lg font-body-lg text-on-surface">
+                    Which phrase did the lecturer use to introduce the most
+                    critical concept?
+                  </p>
+                  <div class="grid grid-cols-1 gap-sm">
+                    <button
+                      class="quiz-option group flex items-center p-md border border-outline rounded-xl hover:bg-surface-container-high transition-all text-left w-full"
+                      data-correct="false"
+                    >
+                      <div
+                        class="radio-indicator w-6 h-6 rounded-full border-2 border-outline mr-md flex-shrink-0 group-hover:border-primary flex items-center justify-center"
+                      ></div>
+                      <span class="font-body-md"
+                        >"As we have seen previously..."</span
+                      >
+                    </button>
+                    <button
+                      class="quiz-option group flex items-center p-md border border-outline rounded-xl hover:bg-surface-container-high transition-all text-left w-full"
+                      data-correct="true"
+                    >
+                      <div
+                        class="radio-indicator w-6 h-6 rounded-full border-2 border-outline mr-md flex-shrink-0 group-hover:border-primary flex items-center justify-center"
+                      ></div>
+                      <span class="font-body-md"
+                        >"Crucially, we must differentiate..."</span
+                      >
+                    </button>
+                    <button
+                      class="quiz-option group flex items-center p-md border border-outline rounded-xl hover:bg-surface-container-high transition-all text-left w-full"
+                      data-correct="false"
+                    >
+                      <div
+                        class="radio-indicator w-6 h-6 rounded-full border-2 border-outline mr-md flex-shrink-0 group-hover:border-primary flex items-center justify-center"
+                      ></div>
+                      <span class="font-body-md"
+                        >"Let's move on to the next slide."</span
+                      >
+                    </button>
+                  </div>
+                </div>
+                <!-- Learning Context Column -->
+                <div
+                  class="bg-surface-container-lowest p-md rounded-xl border border-outline-variant"
+                >
+                  <h4
+                    class="text-label-md font-label-md text-on-surface-variant uppercase tracking-wider mb-md"
+                  >
+                    Signal Detection Insight
+                  </h4>
+                  <div class="flex items-start space-x-md">
+                    <div class="bg-tertiary-fixed p-base rounded-lg">
+                      <span
+                        class="material-symbols-outlined text-on-tertiary-fixed-variant"
+                        >psychology</span
+                      >
+                    </div>
+                    <div>
+                      <p class="text-body-md text-on-surface mb-base">
+                        In academic English, specific "Signal Words" act as
+                        perceptual cues. By highlighting these with
+                        high-contrast colors, we reduce your
+                        <span class="font-bold">cognitive load</span>, helping
+                        you filter "noise" from the most essential "signals" in
+                        the lecture.
+                      </p>
+                      <button
+                        class="text-primary font-label-md hover:underline flex items-center"
+                      >
+                        Practice Signal Filtering
+                        <span class="material-symbols-outlined text-sm ml-1"
+                          >arrow_forward</span
+                        >
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="mt-lg flex justify-between items-center">
+                <div
+                  class="text-label-sm text-on-surface-variant flex items-center"
+                >
+                  <span class="material-symbols-outlined text-sm mr-1"
+                    >info</span
+                  >
+                  Proximity principle applied: options grouped for faster
+                  processing.
+                </div>
+                <button
+                  id="check-answer-btn"
+                  class="bg-primary text-on-primary px-lg py-md rounded-xl font-label-md text-label-md hover:scale-[1.02] active:scale-[0.98] transition-transform shadow-md"
+                >
+                  Check Answer
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- Footer (Shared Component) -->
+    <footer
+      class="bg-surface-container-lowest dark:bg-surface-dim border-t border-outline-variant w-full py-lg"
+    >
+      <div
+        class="flex flex-col md:flex-row justify-between items-center px-gutter max-w-container-max mx-auto space-y-md md:space-y-0"
+      >
+        <div class="text-label-md font-label-md font-bold text-on-surface">
+          EnglishBoost
+        </div>
+        <div
+          class="flex space-x-md text-on-surface-variant font-label-sm text-label-sm"
+        >
+          <a class="hover:text-primary transition-colors" href="#"
+            >Privacy Policy</a
+          >
+          <a class="hover:text-primary transition-colors" href="#"
+            >Terms of Service</a
+          >
+          <a class="hover:text-primary transition-colors" href="#"
+            >University Portal</a
+          >
+        </div>
+        <div
+          class="text-label-sm font-label-sm text-on-surface-variant opacity-80"
+        >
+          © 2024 EnglishBoost Engineering Psychology Lab
+        </div>
+      </div>
+    </footer>
+    <script src="js/listening.js"></script>
+  </body>
+</html>

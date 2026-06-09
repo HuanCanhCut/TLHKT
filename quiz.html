@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>EnglishBoost - Chapter Quiz</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-surface-variant": "#434655",
+              primary: "#004ac6",
+              error: "#ba1a1a",
+              "inverse-on-surface": "#eaf1ff",
+              "tertiary-fixed": "#ffddb8",
+              "on-primary": "#ffffff",
+              "tertiary-fixed-dim": "#ffb95f",
+              "surface-container-highest": "#d3e4fe",
+              "on-error-container": "#93000a",
+              "on-primary-container": "#eeefff",
+              "error-container": "#ffdad6",
+              "on-primary-fixed-variant": "#003ea8",
+              "on-background": "#0b1c30",
+              "primary-fixed-dim": "#b4c5ff",
+              "tertiary-container": "#996100",
+              "surface-container-high": "#dce9ff",
+              "surface-bright": "#f8f9ff",
+              "on-error": "#ffffff",
+              "surface-container-low": "#eff4ff",
+              "inverse-primary": "#b4c5ff",
+              "on-tertiary-container": "#ffeedd",
+              "surface-container-lowest": "#ffffff",
+              "on-tertiary-fixed-variant": "#653e00",
+              "surface-container": "#e5eeff",
+              "surface-dim": "#cbdbf5",
+              background: "#f8f9ff",
+              tertiary: "#784b00",
+              "on-tertiary": "#ffffff",
+              "on-primary-fixed": "#00174b",
+              "surface-variant": "#d3e4fe",
+              "on-secondary": "#ffffff",
+              "secondary-container": "#6cf8bb",
+              secondary: "#006c49",
+              "primary-container": "#2563eb",
+              "secondary-fixed-dim": "#4edea3",
+              "on-secondary-fixed": "#002113",
+              "secondary-fixed": "#6ffbbe",
+              "on-surface": "#0b1c30",
+              "inverse-surface": "#213145",
+              "surface-tint": "#0053db",
+              surface: "#f8f9ff",
+              "on-tertiary-fixed": "#2a1700",
+              "outline-variant": "#c3c6d7",
+              "primary-fixed": "#dbe1ff",
+              outline: "#737686",
+              "on-secondary-container": "#00714d",
+              "on-secondary-fixed-variant": "#005236",
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+            spacing: {
+              md: "24px",
+              lg: "48px",
+              xs: "4px",
+              base: "8px",
+              xl: "80px",
+              sm: "12px",
+              gutter: "24px",
+              "container-max": "1200px",
+            },
+            fontFamily: {
+              "headline-lg-mobile": ["Inter"],
+              "headline-xl": ["Inter"],
+              "label-sm": ["Inter"],
+              "body-lg": ["Inter"],
+              "headline-md": ["Inter"],
+              "headline-lg": ["Inter"],
+              "body-md": ["Inter"],
+              "label-md": ["Inter"],
+            },
+            fontSize: {
+              "headline-lg-mobile": [
+                "24px",
+                { lineHeight: "1.2", fontWeight: "700" },
+              ],
+              "headline-xl": [
+                "48px",
+                {
+                  lineHeight: "1.1",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "700",
+                },
+              ],
+              "label-sm": ["12px", { lineHeight: "1", fontWeight: "500" }],
+              "body-lg": ["18px", { lineHeight: "1.6", fontWeight: "400" }],
+              "headline-md": ["24px", { lineHeight: "1.3", fontWeight: "600" }],
+              "headline-lg": [
+                "32px",
+                {
+                  lineHeight: "1.2",
+                  letterSpacing: "-0.01em",
+                  fontWeight: "700",
+                },
+              ],
+              "body-md": ["16px", { lineHeight: "1.6", fontWeight: "400" }],
+              "label-md": [
+                "14px",
+                { lineHeight: "1", letterSpacing: "0.02em", fontWeight: "600" },
+              ],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+    </style>
+  </head>
+  <body class="bg-surface text-on-surface font-body-md overflow-x-hidden">
+    <!-- Desktop SideNav -->
+    <nav
+      class="hidden md:flex h-screen w-64 fixed left-0 top-0 bg-surface-container-low border-r border-outline-variant flex-col p-md space-y-sm z-50"
+    >
+      <div class="mb-lg">
+        <h1 class="text-headline-md font-headline-md font-bold text-primary">
+          EnglishBoost
+        </h1>
+        <p class="text-label-sm font-label-sm text-on-surface-variant">
+          University Edition
+        </p>
+      </div>
+      <div class="space-y-xs flex-1">
+        <a class="flex items-center gap-sm p-sm text-on-surface-variant hover:bg-surface-container-high rounded-lg hover:scale-[1.02] transition-transform duration-200"
+          href="flashcard_eval.html"
+        >
+          <span class="material-symbols-outlined">menu_book</span>
+          <span class="text-label-md font-label-md">Vocabulary</span>
+        </a>
+        <a class="flex items-center gap-sm p-sm text-on-surface-variant hover:bg-surface-container-high rounded-lg hover:scale-[1.02] transition-transform duration-200"
+          href="listening.html"
+        >
+          <span class="material-symbols-outlined">headset</span>
+          <span class="text-label-md font-label-md">Listening</span>
+        </a>
+        <a class="flex items-center gap-sm p-sm text-on-surface-variant hover:bg-surface-container-high rounded-lg hover:scale-[1.02] transition-transform duration-200"
+          href="reading.html"
+        >
+          <span class="material-symbols-outlined">auto_stories</span>
+          <span class="text-label-md font-label-md">Reading</span>
+        </a>
+        <a class="flex items-center gap-sm p-sm bg-primary-container text-on-primary-container rounded-lg font-bold scale-[0.98]"
+          href="roadmap.html"
+        >
+          <span class="material-symbols-outlined">insights</span>
+          <span class="text-label-md font-label-md">Progress</span>
+        </a>
+      </div>
+      <div class="border-t border-outline-variant pt-md space-y-xs">
+        <a
+          class="flex items-center gap-sm p-sm text-on-surface-variant hover:bg-surface-container-high rounded-lg"
+          href="#"
+        >
+          <span class="material-symbols-outlined">settings</span>
+          <span class="text-label-md font-label-md">Settings</span>
+        </a>
+        <a
+          class="flex items-center gap-sm p-sm text-on-surface-variant hover:bg-surface-container-high rounded-lg"
+          href="#"
+        >
+          <span class="material-symbols-outlined">help_outline</span>
+          <span class="text-label-md font-label-md">Help</span>
+        </a>
+      </div>
+    </nav>
+    
+    <!-- Mobile TopBar -->
+    <header
+      class="md:hidden fixed top-0 w-full z-40 bg-surface h-16 border-b border-outline-variant flex items-center justify-between px-gutter"
+    >
+      <h1 class="text-headline-md font-headline-md font-bold text-primary">
+        EnglishBoost
+      </h1>
+      <div class="flex items-center gap-md">
+        <span class="material-symbols-outlined text-primary">notifications</span>
+        <span class="material-symbols-outlined text-primary">account_circle</span>
+      </div>
+    </header>
+
+    <main class="md:ml-64 pt-20 md:pt-md min-h-screen pb-32">
+      <div class="max-w-[800px] mx-auto px-gutter">
+        <!-- Header Section -->
+        <div class="mb-lg">
+          <span
+            class="text-label-md font-label-md text-primary bg-primary-fixed px-sm py-xs rounded-full inline-block mb-base"
+            >Unit 4: Final Challenge</span
+          >
+          <h2 class="text-headline-lg font-headline-lg text-on-surface">
+            Chapter Comprehension Quiz
+          </h2>
+          <p class="text-body-md font-body-md text-on-surface-variant mt-xs">
+            Test your knowledge of the keywords, listening lecture, and cognitive load theories.
+          </p>
+        </div>
+
+        <!-- Quiz Container (Dynamic) -->
+        <div class="bg-surface-container-low border border-outline-variant rounded-xl p-md md:p-lg shadow-sm relative overflow-hidden">
+          
+          <!-- Loading / Quiz Screen -->
+          <div id="quiz-play-screen">
+            <!-- Progress Bar -->
+            <div class="flex items-center justify-between mb-base text-label-md font-semibold text-primary">
+              <span id="question-index-text">Question 1 of 5</span>
+              <span id="quiz-progress-percent">20%</span>
+            </div>
+            <div class="w-full bg-surface-container-highest h-2 rounded-full overflow-hidden mb-lg">
+              <div id="quiz-progress-fill" class="h-full bg-primary transition-all duration-300 w-1/5"></div>
+            </div>
+
+            <!-- Question Box -->
+            <div class="mb-lg">
+              <h3 id="question-text" class="text-headline-md font-headline-md text-on-surface mb-md">
+                What is the fundamental difference between laminar and turbulent flow?
+              </h3>
+            </div>
+
+            <!-- Options Box -->
+            <div id="options-container" class="space-y-sm mb-lg">
+              <!-- Dynamically populated options -->
+            </div>
+
+            <!-- Footer Buttons -->
+            <div class="flex justify-between items-center border-t border-outline-variant pt-md">
+              <button
+                id="prev-btn"
+                class="hidden items-center gap-xs px-md py-base border border-outline hover:bg-surface-container-high text-on-surface rounded-xl font-label-md transition-all cursor-pointer"
+              >
+                <span class="material-symbols-outlined text-sm">arrow_back</span>
+                Back
+              </button>
+              <div class="flex-grow"></div>
+              <button
+                id="next-btn"
+                class="flex items-center gap-xs px-lg py-md bg-primary text-on-primary hover:bg-primary/90 rounded-xl font-label-md font-bold transition-all shadow-md cursor-pointer ml-auto"
+              >
+                <span>Check Answer</span>
+                <span class="material-symbols-outlined text-sm">arrow_forward</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Score & Completion Screen (Hidden by default) -->
+          <div id="quiz-result-screen" class="hidden flex flex-col items-center text-center py-lg">
+            <div class="w-20 h-20 bg-secondary-container text-secondary rounded-full flex items-center justify-center mb-md shadow-md animate-bounce">
+              <span class="material-symbols-outlined text-[48px]" style="font-variation-settings: 'FILL' 1">emoji_events</span>
+            </div>
+            
+            <h3 class="text-headline-lg font-headline-lg text-on-surface font-bold">
+              Congratulations!
+            </h3>
+            <p class="text-body-md text-on-surface-variant max-w-sm mt-xs">
+              You completed the Engineering Psychology final challenge with excellence.
+            </p>
+
+            <div class="grid grid-cols-2 gap-md my-lg w-full max-w-md">
+              <div class="bg-surface-container p-md rounded-xl border border-outline-variant">
+                <span class="text-label-sm text-on-surface-variant block mb-1">YOUR SCORE</span>
+                <span id="score-text" class="text-headline-lg font-bold text-primary">5 / 5</span>
+              </div>
+              <div class="bg-surface-container p-md rounded-xl border border-outline-variant">
+                <span class="text-label-sm text-on-surface-variant block mb-1">XP EARNED</span>
+                <span class="text-headline-lg font-bold text-secondary">+150 XP</span>
+              </div>
+            </div>
+
+            <button
+              id="finish-quiz-btn"
+              class="flex items-center justify-center gap-xs w-full max-w-md py-md bg-secondary text-on-secondary hover:bg-secondary/90 rounded-xl font-label-md font-bold transition-all shadow-md cursor-pointer"
+            >
+              <span class="material-symbols-outlined">insights</span>
+              Finish & Return to Roadmap
+            </button>
+          </div>
+
+        </div>
+      </div>
+    </main>
+
+    <script src="js/quiz.js"></script>
+  </body>
+</html>

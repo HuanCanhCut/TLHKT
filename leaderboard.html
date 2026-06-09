@@ -1,0 +1,739 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>EnglishBoost Leaderboard | Academic Excellence</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-tertiary-container": "#ffeedd",
+              "primary-fixed-dim": "#b4c5ff",
+              background: "#f8f9ff",
+              "surface-container-highest": "#d3e4fe",
+              "secondary-fixed-dim": "#4edea3",
+              "on-surface": "#0b1c30",
+              "on-primary-fixed-variant": "#003ea8",
+              "surface-container-lowest": "#ffffff",
+              "inverse-primary": "#b4c5ff",
+              "on-surface-variant": "#434655",
+              "on-secondary-container": "#00714d",
+              "inverse-on-surface": "#eaf1ff",
+              "tertiary-fixed-dim": "#ffb95f",
+              "inverse-surface": "#213145",
+              secondary: "#006c49",
+              "on-secondary-fixed": "#002113",
+              "surface-container-low": "#eff4ff",
+              "surface-tint": "#0053db",
+              "on-secondary-fixed-variant": "#005236",
+              "tertiary-container": "#996100",
+              "secondary-container": "#6cf8bb",
+              "surface-container": "#e5eeff",
+              "surface-bright": "#f8f9ff",
+              "on-tertiary": "#ffffff",
+              "primary-fixed": "#dbe1ff",
+              "outline-variant": "#c3c6d7",
+              "primary-container": "#2563eb",
+              "on-primary-container": "#eeefff",
+              "on-primary-fixed": "#00174b",
+              "on-error": "#ffffff",
+              "tertiary-fixed": "#ffddb8",
+              "error-container": "#ffdad6",
+              "on-tertiary-fixed": "#2a1700",
+              "on-secondary": "#ffffff",
+              "surface-variant": "#d3e4fe",
+              "on-tertiary-fixed-variant": "#653e00",
+              surface: "#f8f9ff",
+              "secondary-fixed": "#6ffbbe",
+              "on-primary": "#ffffff",
+              "on-error-container": "#93000a",
+              outline: "#737686",
+              error: "#ba1a1a",
+              "surface-container-high": "#dce9ff",
+              "surface-dim": "#cbdbf5",
+              primary: "#004ac6",
+              "on-background": "#0b1c30",
+              tertiary: "#784b00",
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+            spacing: {
+              sm: "12px",
+              "container-max": "1200px",
+              gutter: "24px",
+              xs: "4px",
+              xl: "80px",
+              md: "24px",
+              lg: "48px",
+              base: "8px",
+            },
+            fontFamily: {
+              "label-sm": ["Inter"],
+              "headline-xl": ["Inter"],
+              "headline-md": ["Inter"],
+              "headline-lg-mobile": ["Inter"],
+              "body-lg": ["Inter"],
+              "label-md": ["Inter"],
+              "body-md": ["Inter"],
+              "headline-lg": ["Inter"],
+            },
+            fontSize: {
+              "label-sm": ["12px", { lineHeight: "1", fontWeight: "500" }],
+              "headline-xl": [
+                "48px",
+                {
+                  lineHeight: "1.1",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "700",
+                },
+              ],
+              "headline-md": ["24px", { lineHeight: "1.3", fontWeight: "600" }],
+              "headline-lg-mobile": [
+                "24px",
+                { lineHeight: "1.2", fontWeight: "700" },
+              ],
+              "body-lg": ["18px", { lineHeight: "1.6", fontWeight: "400" }],
+              "label-md": [
+                "14px",
+                { lineHeight: "1", letterSpacing: "0.02em", fontWeight: "600" },
+              ],
+              "body-md": ["16px", { lineHeight: "1.6", fontWeight: "400" }],
+              "headline-lg": [
+                "32px",
+                {
+                  lineHeight: "1.2",
+                  letterSpacing: "-0.01em",
+                  fontWeight: "700",
+                },
+              ],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-background text-on-background font-body-md min-h-screen">
+    <!-- Top Navigation Bar -->
+    <header
+      class="bg-surface border-b border-outline-variant fixed top-0 z-50 w-full h-16"
+    >
+      <div
+        class="flex justify-between items-center w-full px-gutter max-w-container-max mx-auto h-16"
+      >
+        <div class="text-headline-md font-headline-md font-bold text-primary">
+          EnglishBoost
+        </div>
+        <nav class="hidden md:flex space-x-md">
+          <a class="text-on-surface-variant hover:text-primary transition-colors duration-200 font-label-md text-label-md"
+            href="flashcard_eval.html"
+            >Vocabulary</a
+          >
+          <a
+            class="text-on-surface-variant hover:text-primary transition-colors duration-200 font-label-md text-label-md"
+            href="listening.html"
+            >Listening</a
+          >
+          <a
+            class="text-on-surface-variant hover:text-primary transition-colors duration-200 font-label-md text-label-md"
+            href="reading.html"
+            >Reading</a
+          >
+          <a
+            class="text-primary font-bold border-b-2 border-primary pb-1 font-label-md text-label-md"
+            href="roadmap.html"
+            >Progress</a
+          >
+        </nav>
+        <div class="flex items-center space-x-sm">
+          <button
+            class="p-base rounded-full hover:bg-surface-container-high transition-colors"
+          >
+            <span
+              class="material-symbols-outlined text-on-surface-variant"
+              data-icon="notifications"
+              >notifications</span
+            >
+          </button>
+          <div
+            class="w-8 h-8 rounded-full overflow-hidden border border-outline-variant bg-surface-container"
+          >
+            <img
+              alt="Profile"
+              data-alt="Profile"
+              src="https://lh3.googleusercontent.com/aida/AP1WRLtwvyVLj8nNDbx1vEnIv71WvmytVQMTC4oyppNYHChbG5VwdXHYDDybsYrmEDaH7aR_Bp-dR1emlWRCfahZwtoml9TFtCFMLGDs8aaqAdXiHjGditm2P90ARLW15gdn7c8tNYt6W78KrsoHEq6Hy3KlqWlqmGDK2HuDif-NNgbwF99kKMx5TqFoUDjRPTFqimiQJG28qKoxboINygy9Etf1SJ-TfT8H-yQJ-mktw_3ebK0ih1qiFXnYvs0"
+            />
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="flex pt-16 h-screen">
+      <!-- Sidebar Navigation -->
+      <aside
+        class="hidden md:flex flex-col p-md space-y-sm bg-surface-container-low border-r border-outline-variant h-screen w-64 fixed left-0 top-16"
+      >
+        <div class="mb-lg">
+          <p
+            class="text-label-sm font-label-sm text-outline uppercase tracking-wider mb-xs"
+          >
+            Level
+          </p>
+          <h3 class="text-headline-md font-headline-md font-bold text-primary">
+            EnglishBoost
+          </h3>
+          <p class="text-label-md font-label-md text-on-surface-variant">
+            University Edition
+          </p>
+        </div>
+        <a
+          class="flex items-center space-x-sm p-sm text-on-surface-variant hover:bg-surface-container-high rounded-lg transition-transform duration-200 hover:scale-[1.02]"
+          href="flashcard_eval.html"
+        >
+          <span class="material-symbols-outlined" data-icon="menu_book"
+            >menu_book</span
+          >
+          <span class="font-label-md text-label-md">Vocabulary</span>
+        </a>
+        <a class="flex items-center space-x-sm p-sm text-on-surface-variant hover:bg-surface-container-high rounded-lg transition-transform duration-200 hover:scale-[1.02]"
+          href="listening.html"
+        >
+          <span class="material-symbols-outlined" data-icon="headset"
+            >headset</span
+          >
+          <span class="font-label-md text-label-md">Listening</span>
+        </a>
+        <a class="flex items-center space-x-sm p-sm text-on-surface-variant hover:bg-surface-container-high rounded-lg transition-transform duration-200 hover:scale-[1.02]"
+          href="reading.html"
+        >
+          <span class="material-symbols-outlined" data-icon="auto_stories"
+            >auto_stories</span
+          >
+          <span class="font-label-md text-label-md">Reading</span>
+        </a>
+        <a class="flex items-center space-x-sm p-sm bg-primary-container text-on-primary-container rounded-lg font-bold transition-transform duration-200 scale-[0.98]"
+          href="roadmap.html"
+        >
+          <span class="material-symbols-outlined" data-icon="insights"
+            >insights</span
+          >
+          <span class="font-label-md text-label-md">Progress</span>
+        </a>
+        <div class="mt-auto pt-lg border-t border-outline-variant">
+          <a
+            class="flex items-center space-x-sm p-sm text-on-surface-variant hover:bg-surface-container-high rounded-lg"
+            href="#"
+          >
+            <span class="material-symbols-outlined" data-icon="settings"
+              >settings</span
+            >
+            <span class="font-label-md text-label-md">Settings</span>
+          </a>
+        </div>
+      </aside>
+      <!-- Main Content Canvas -->
+      <main
+        class="flex-1 ml-0 md:ml-64 p-gutter max-w-container-max mx-auto w-full"
+      >
+        <!-- Hero Section / Header -->
+        <section class="mb-lg">
+          <div
+            class="flex flex-col md:flex-row md:items-end justify-between gap-md"
+          >
+            <div>
+              <h1
+                class="text-headline-lg font-headline-lg text-on-surface mb-xs"
+              >
+                Academic Leaders
+              </h1>
+              <p
+                class="text-body-md font-body-md text-on-surface-variant max-w-xl"
+              >
+                Recognizing the top learners in the university ecosystem. Your
+                consistent progress builds competence and commands respect.
+              </p>
+            </div>
+            <!-- Ranking Toggle (Engineering Psychology: Reduced Friction) -->
+            <div
+              class="bg-surface-container-high p-xs rounded-xl flex items-center shadow-sm"
+            >
+              <button
+                class="px-md py-sm rounded-lg text-label-md font-label-md transition-all duration-200 bg-primary-container text-on-primary-container shadow-sm active:scale-[0.98]"
+                id="toggle-weekly"
+              >
+                Weekly
+              </button>
+              <button
+                class="px-md py-sm rounded-lg text-label-md font-label-md transition-all duration-200 text-on-surface-variant hover:bg-surface-container-highest"
+                id="toggle-monthly"
+              >
+                Monthly
+              </button>
+            </div>
+          </div>
+        </section>
+        <!-- Leaderboard Bento Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+          <!-- Podium / Top 3 Highlight (Visual Hierarchy) -->
+          <div
+            class="lg:col-span-12 flex flex-col md:flex-row items-end justify-center gap-md py-lg bg-surface-container-low rounded-xl mb-md"
+          >
+            <!-- Rank 2 -->
+            <div id="podium-rank-2" class="flex flex-col items-center group order-2 md:order-1">
+              <div class="relative mb-sm">
+                <div
+                  class="w-16 h-16 rounded-full border-4 border-outline-variant overflow-hidden group-hover:scale-105 transition-transform"
+                >
+                  <img
+                    alt="Rank 2"
+                    data-alt="Rank 2"
+                    src="https://lh3.googleusercontent.com/aida/AP1WRLuNe723HjwlugBsXZ830w-ByCwKwzcmM8pu28BsIRXopdp63lMbhJ3UdM8BpyU5A260Ly-uVCtb7kYuZoTmONB5FxIMOnI9pUAi7oarGrB0GbBeGK_j56BQi7Td7ILYx7JkaykymMHX375GrPE1TiqU9RsCc9eOleoAlDG-HvPuiFxH-fK5zcqYQZTvPITMaZQOJh40WgZJCG13ZX_wgjvLROzUasZqyU23DEUNSUKEDP8UiofndRrpzQ"
+                  />
+                </div>
+                <div
+                  class="absolute -bottom-2 -right-2 bg-surface border border-outline-variant w-8 h-8 rounded-full flex items-center justify-center font-bold text-on-surface text-label-md"
+                >
+                  2
+                </div>
+              </div>
+              <p class="font-headline-md text-on-surface">Elena R.</p>
+              <p class="text-secondary font-bold text-label-md">12,450 XP</p>
+            </div>
+            <!-- Rank 1 (Maslow's Esteem: Prominence) -->
+            <div
+              id="podium-rank-1"
+              class="flex flex-col items-center group order-1 md:order-2 scale-110 md:mb-md"
+            >
+              <div class="relative mb-sm">
+                <div
+                  class="w-24 h-24 rounded-full border-4 border-tertiary-container overflow-hidden group-hover:scale-105 transition-transform shadow-lg"
+                >
+                  <img
+                    alt="Rank 1"
+                    data-alt="Rank 1"
+                    src="https://lh3.googleusercontent.com/aida/AP1WRLsdlwqkaP8xSBL2j5R_XgjYj0NSJEcyVphJc71V89ZUKxijVSrjNB8Q8m3JM--HBZPkh2Lojtb1f0jnilM6t1bXJ9eQi1pi3ze1etRXqfIVbzKFZAWOHP2AKCyOmZwW33CKEOyqJx5YCK9UR2od6YNB_fMEwO6DTWu0QKIGZe1yiikk5YBWRYfeYHBjeB6bF3CBIEAbZ9jGqXt3xsyqIudILmankwK8ixWIIRxlsYrJJVgPPscaR-eEk2s"
+                  />
+                </div>
+                <div
+                  class="absolute -bottom-2 -right-2 bg-tertiary-container text-on-tertiary-container w-10 h-10 rounded-full flex items-center justify-center font-bold text-headline-md ring-4 ring-surface-container-low"
+                >
+                  1
+                </div>
+              </div>
+              <p class="font-headline-md text-on-surface text-headline-md">
+                Marcus J.
+              </p>
+              <div
+                class="flex items-center space-x-xs bg-tertiary-fixed px-sm py-xs rounded-full mt-xs"
+              >
+                <span
+                  class="material-symbols-outlined text-on-tertiary-fixed text-[18px]"
+                  data-icon="stars"
+                  style="font-variation-settings: &quot;FILL&quot; 1"
+                  >stars</span
+                >
+                <p class="text-on-tertiary-fixed font-bold text-label-md">
+                  15,200 XP
+                </p>
+              </div>
+            </div>
+            <!-- Rank 3 -->
+            <div id="podium-rank-3" class="flex flex-col items-center group order-3 md:order-3">
+              <div class="relative mb-sm">
+                <div
+                  class="w-16 h-16 rounded-full border-4 border-outline-variant overflow-hidden group-hover:scale-105 transition-transform"
+                >
+                  <img
+                    alt="Rank 3"
+                    data-alt="Rank 3"
+                    src="https://lh3.googleusercontent.com/aida/AP1WRLuWUrwY0pwUxfx0oh3zSALavGor5Icwpr6O0e7EDpZqNNrkNK3Ec2LmYJMT5nCi2LPJdf3gVp4MzaywDrThtB8wLcjALN37MfxzpF_0_nUZCk8MmWVyy4IhM_YwSheQHJwNJ5bidxfN7TesFfbx2Ce2vgBSQrYfAL2Ury1sooU1JYwi9N-6cVOy1-Pxu78_NxwlJlOb3PNdZbprg9gchUAJHxFU_AJjnwMFKISiCzWfoam4-RK8QDuY8h0"
+                  />
+                </div>
+                <div
+                  class="absolute -bottom-2 -right-2 bg-surface border border-outline-variant w-8 h-8 rounded-full flex items-center justify-center font-bold text-on-surface text-label-md"
+                >
+                  3
+                </div>
+              </div>
+              <p class="font-headline-md text-on-surface">Sophia K.</p>
+              <p class="text-secondary font-bold text-label-md">11,980 XP</p>
+            </div>
+          </div>
+          <!-- Main Leaderboard List -->
+          <div
+            class="lg:col-span-8 bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden"
+          >
+            <div
+              class="p-md border-b border-outline-variant flex justify-between items-center bg-surface-container-low"
+            >
+              <span class="text-label-md font-label-md text-outline uppercase"
+                >Top 10 Students</span
+              >
+              <span class="text-label-sm font-label-sm text-outline"
+                >Refreshed 2m ago</span
+              >
+            </div>
+            <div id="leaderboard-list" class="divide-y divide-outline-variant">
+              <!-- Rank 4 -->
+              <div
+                class="flex items-center justify-between p-md hover:bg-surface-container transition-colors group"
+              >
+                <div class="flex items-center space-x-md">
+                  <span
+                    class="w-6 text-on-surface-variant font-bold text-body-md"
+                    >4</span
+                  >
+                  <div
+                    class="w-10 h-10 rounded-full overflow-hidden border border-outline-variant"
+                  >
+                    <img
+                      alt="Rank 4"
+                      data-alt="Rank 4"
+                      src="https://lh3.googleusercontent.com/aida/AP1WRLuiqUGepRYEhzTJa-af5epOc2EVmzqfPzKiSWMq2N3aAAMyfgGbgSSM2yiqCRmzRwYlA9pZW8GY8cdj1baGqL4PU5k76CyjjLcoirodQT3Ll1cKQZWFVh-gYRd0VlagSwHfKFyyazPzMuOi8U3hPPsZiYEUd1eiCC5GPaKxEdawcJ7fA6blFidBY7c1KhJ3RAsWVYwRT4HD6vAWChZDONZ2FVk4W4EEh5LX1LhjguNoIDEVMf5YdC0J7kg"
+                    />
+                  </div>
+                  <div>
+                    <p class="font-bold text-on-surface">Liam Chen</p>
+                    <div class="flex space-x-xs mt-1">
+                      <span
+                        class="px-xs py-[2px] bg-secondary-container text-on-secondary-container rounded text-[10px] font-bold uppercase"
+                        >Polyglot</span
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="text-right">
+                  <p class="font-bold text-primary">10,420</p>
+                  <p class="text-label-sm font-label-sm text-outline">XP</p>
+                </div>
+              </div>
+              <!-- Rank 5 - Current User Highlight -->
+              <div
+                class="flex items-center justify-between p-md bg-primary-container/10 border-l-4 border-primary group"
+              >
+                <div class="flex items-center space-x-md">
+                  <span class="w-6 text-primary font-extrabold text-body-md"
+                    >5</span
+                  >
+                  <div class="relative">
+                    <div
+                      class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary"
+                    >
+                      <img
+                        alt="User"
+                        data-alt="User"
+                        src="https://lh3.googleusercontent.com/aida/AP1WRLusAUoYwCcV1t8zHjzw53aklgGLwv9JzjjLGIkUveR2XVsYhRnavUt7pFjwRtW9XMvpvLvOSge4vhZw0F112UakAsrOTwFx75JIk1jw9bb9q0mjhjMeld0F_v8T8Jj73e_-h-TKbmAVeGUPUiMwF-GWNXrItN_IVyodn6nUbfmzzSJEN62yRuZ3UPPfS7vjP7IMTq7ZUiU-i1G_BHgyF-xpXdpHHX47vNex9JIs_7hgEvWhAn2LDvB2zw"
+                      />
+                    </div>
+                    <span
+                      class="absolute -top-1 -right-1 w-3 h-3 bg-secondary rounded-full border-2 border-surface"
+                    ></span>
+                  </div>
+                  <div>
+                    <p class="font-extrabold text-primary">You (Alex Smith)</p>
+                    <div class="flex space-x-xs mt-1">
+                      <span
+                        class="px-xs py-[2px] bg-tertiary-container text-on-tertiary-container rounded text-[10px] font-bold uppercase"
+                        >Rising Star</span
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="text-right">
+                  <p class="font-extrabold text-primary">9,850</p>
+                  <p class="text-label-sm font-label-sm text-primary/70">XP</p>
+                </div>
+              </div>
+              <!-- Rank 6 -->
+              <div
+                class="flex items-center justify-between p-md hover:bg-surface-container transition-colors group"
+              >
+                <div class="flex items-center space-x-md">
+                  <span
+                    class="w-6 text-on-surface-variant font-bold text-body-md"
+                    >6</span
+                  >
+                  <div
+                    class="w-10 h-10 rounded-full overflow-hidden border border-outline-variant"
+                  >
+                    <img
+                      alt="Rank 6"
+                      data-alt="Rank 6"
+                      src="https://lh3.googleusercontent.com/aida/AP1WRLuQLRYa7Ilo6UhJUTVGJcaiDdskpCjqgCPJhaIvauaNMxGyxjmcxbWY1v0dsbTleoK46lvVr6TD7ITVTVC0NgwHLjkn6N0znISP7WS96OcmeCG-86q5-0nrYdX1LlZDj9nfi0hD5DUo6ZqBCOtCpLWZEyw6d0bFfmsWIWkCAEJrdtW4p1XbOguMappC0Jv8BSdXS-gEI4M9RZi4nVmNoh98M7oV5j6HqVbUK2LBdvvRi6_01OrlXc3m9Sk"
+                    />
+                  </div>
+                  <div>
+                    <p class="font-bold text-on-surface">Aria V.</p>
+                    <div class="flex space-x-xs mt-1">
+                      <span
+                        class="px-xs py-[2px] bg-surface-container-highest text-on-surface-variant rounded text-[10px] font-bold uppercase"
+                        >Top 10%</span
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="text-right">
+                  <p class="font-bold text-primary">9,200</p>
+                  <p class="text-label-sm font-label-sm text-outline">XP</p>
+                </div>
+              </div>
+              <!-- Rank 7 -->
+              <div
+                class="flex items-center justify-between p-md hover:bg-surface-container transition-colors group"
+              >
+                <div class="flex items-center space-x-md">
+                  <span
+                    class="w-6 text-on-surface-variant font-bold text-body-md"
+                    >7</span
+                  >
+                  <div
+                    class="w-10 h-10 rounded-full overflow-hidden border border-outline-variant"
+                  >
+                    <img
+                      alt="Rank 7"
+                      data-alt="Rank 7"
+                      src="https://lh3.googleusercontent.com/aida/AP1WRLt1RnnNLI1D6L7oTSC27XCS9MuGEintk52W2MxNKYLz4H3ctchN0so7Xo7Du3iKxJeB6yw9gQDUxVkwyMj8mdsUlmbWX12cWtumpGeVa5BkSGyWJS2Gtxkk7C3RNUi52PIoSsk-pRsrwZwHTpm-WQEd1YkOAdyT35XngItsYEKUD_vBEhbuJO5QEc-YQMToybUj8RvzUZjyVfmZcwFyrj2ioNt1A3DCjWdmbD_RXSocZ7GpmcSjzt4jGg"
+                    />
+                  </div>
+                  <div>
+                    <p class="font-bold text-on-surface">David Miller</p>
+                  </div>
+                </div>
+                <div class="text-right">
+                  <p class="font-bold text-primary">8,750</p>
+                  <p class="text-label-sm font-label-sm text-outline">XP</p>
+                </div>
+              </div>
+              <!-- Rank 8 -->
+              <div
+                class="flex items-center justify-between p-md hover:bg-surface-container transition-colors group"
+              >
+                <div class="flex items-center space-x-md">
+                  <span
+                    class="w-6 text-on-surface-variant font-bold text-body-md"
+                    >8</span
+                  >
+                  <div
+                    class="w-10 h-10 rounded-full overflow-hidden border border-outline-variant"
+                  >
+                    <img
+                      alt="Rank 8"
+                      data-alt="Rank 8"
+                      src="https://lh3.googleusercontent.com/aida/AP1WRLu0YhEUFziMSDBK6PixkIoMfArJBiS7MSKNXlrh9YqvyswVHX-gGljoGs0HKJXxif8x22KTmS29_OwuHwuC4U3UnQGPkx37rTSDcEdSiYZCx0iheRWNcG4JhHZrFzw0jcVU5JXKJy43rf4dBAeeBVTbBRQRoYb7FcU17dWYvdvn858d4w1-YRCdlKl5CKFc50BRGSldrrEgJr_Y8zNAoLDjU50vlcmWjQL75OWaxq3d7NgJhtLp3Yf3rvw"
+                    />
+                  </div>
+                  <div>
+                    <p class="font-bold text-on-surface">Yuna Park</p>
+                  </div>
+                </div>
+                <div class="text-right">
+                  <p class="font-bold text-primary">8,100</p>
+                  <p class="text-label-sm font-label-sm text-outline">XP</p>
+                </div>
+              </div>
+              <!-- Rank 9 -->
+              <div
+                class="flex items-center justify-between p-md hover:bg-surface-container transition-colors group"
+              >
+                <div class="flex items-center space-x-md">
+                  <span
+                    class="w-6 text-on-surface-variant font-bold text-body-md"
+                    >9</span
+                  >
+                  <div
+                    class="w-10 h-10 rounded-full overflow-hidden border border-outline-variant"
+                  >
+                    <img
+                      alt="Rank 9"
+                      data-alt="Rank 9"
+                      src="https://lh3.googleusercontent.com/aida/AP1WRLuj8aYQkcGxqwIMusHN3WQvLDLZ5ImSYqM287gmie8KbxBb1VqYqSVYuFqbSG5etE4yRN68__mHKx2oj0pw7lC5UkGeWrtaq4N7w-igpQb_3Bi16w0WfQH31sw953MfDlNzctnnKv0GuGY1ylo65hngiRV9FURhZDe4xZjTD6anGbnCBugvn4K61DB1R03Fdn6j2AACktU5JOnXnOuxd4K5RDOJuPE10W5AuT1fJ_fDtawxn3ycb68kjdc"
+                    />
+                  </div>
+                  <div>
+                    <p class="font-bold text-on-surface">Jordan S.</p>
+                  </div>
+                </div>
+                <div class="text-right">
+                  <p class="font-bold text-primary">7,600</p>
+                  <p class="text-label-sm font-label-sm text-outline">XP</p>
+                </div>
+              </div>
+              <!-- Rank 10 -->
+              <div
+                class="flex items-center justify-between p-md hover:bg-surface-container transition-colors group"
+              >
+                <div class="flex items-center space-x-md">
+                  <span
+                    class="w-6 text-on-surface-variant font-bold text-body-md"
+                    >10</span
+                  >
+                  <div
+                    class="w-10 h-10 rounded-full overflow-hidden border border-outline-variant"
+                  >
+                    <img
+                      alt="Rank 10"
+                      data-alt="Rank 10"
+                      src="https://lh3.googleusercontent.com/aida/AP1WRLvRhgOBJKwQugIFPn6_Afm0dLNQgDqVnGrrGyY9aTvVE35T-SdMsIrj-QR586TD8pwiVUmoN-D9a4tQSJH20BEAQuvSTBqDnEMRH0v52d3DFrF-37EB5L223j8N3OZipZAme5jbGTXoDI0jwRkMw8M8AxatnEleG53CtEERxBY_-41A1H83tCZNmgcQuNzDcKJF4Pa3CaWvDhyf3-febkt7wLpjyM0eA-5LjUpPBw1sIxaSOdLd2_De9UA"
+                    />
+                  </div>
+                  <div>
+                    <p class="font-bold text-on-surface">Isabella Q.</p>
+                  </div>
+                </div>
+                <div class="text-right">
+                  <p class="font-bold text-primary">7,420</p>
+                  <p class="text-label-sm font-label-sm text-outline">XP</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Right Column: Sidebar Stats (Maslow's Esteem: Recognition) -->
+          <div class="lg:col-span-4 space-y-gutter">
+            <!-- Your Rank Status Card -->
+            <div
+              class="bg-primary-container text-on-primary-container p-md rounded-xl shadow-md"
+            >
+              <h3 class="font-bold text-label-md uppercase mb-sm opacity-90">
+                Personal Standing
+              </h3>
+              <div class="flex items-center justify-between mb-md">
+                <div>
+                  <p id="user-global-rank" class="text-[32px] font-bold leading-tight">#5</p>
+                  <p class="text-label-sm opacity-80">Global Ranking</p>
+                </div>
+                <span
+                  class="material-symbols-outlined text-[48px] opacity-20"
+                  data-icon="emoji_events"
+                  >emoji_events</span
+                >
+              </div>
+              <div class="bg-white/10 rounded-lg p-sm">
+                <p id="user-next-rank-label" class="text-label-sm font-bold mb-1">XP to Next Rank (#4)</p>
+                <div class="w-full bg-white/20 h-2 rounded-full mb-2">
+                  <div
+                    id="user-rank-progress-fill"
+                    class="bg-white h-2 rounded-full"
+                    style="width: 65%"
+                  ></div>
+                </div>
+                <p id="user-remaining-xp" class="text-[12px] text-right">570 XP remaining</p>
+              </div>
+            </div>
+            <!-- Achievements/Badges Card -->
+            <div
+              class="bg-surface-container-low border border-outline-variant rounded-xl p-md"
+            >
+              <h3
+                class="font-bold text-on-surface text-label-md uppercase mb-md"
+              >
+                Your Recent Recognition
+              </h3>
+              <div class="grid grid-cols-2 gap-sm">
+                <div
+                  class="bg-surface p-sm rounded-lg border border-outline-variant flex flex-col items-center text-center"
+                >
+                  <span
+                    class="material-symbols-outlined text-secondary mb-xs"
+                    data-icon="verified"
+                    style="font-variation-settings: &quot;FILL&quot; 1"
+                    >verified</span
+                  >
+                  <p class="text-label-sm font-bold">Fast Learner</p>
+                </div>
+                <div
+                  class="bg-surface p-sm rounded-lg border border-outline-variant flex flex-col items-center text-center"
+                >
+                  <span
+                    class="material-symbols-outlined text-tertiary-container mb-xs"
+                    data-icon="local_fire_department"
+                    style="font-variation-settings: &quot;FILL&quot; 1"
+                    >local_fire_department</span
+                  >
+                  <p class="text-label-sm font-bold">7 Day Streak</p>
+                </div>
+                <div
+                  class="bg-surface p-sm rounded-lg border border-outline-variant flex flex-col items-center text-center opacity-40"
+                >
+                  <span
+                    class="material-symbols-outlined text-outline mb-xs"
+                    data-icon="school"
+                    >school</span
+                  >
+                  <p class="text-label-sm font-bold">Scholar III</p>
+                </div>
+                <div
+                  class="bg-surface p-sm rounded-lg border border-outline-variant flex flex-col items-center text-center opacity-40"
+                >
+                  <span
+                    class="material-symbols-outlined text-outline mb-xs"
+                    data-icon="military_tech"
+                    >military_tech</span
+                  >
+                  <p class="text-label-sm font-bold">Top 1%</p>
+                </div>
+              </div>
+            </div>
+            <!-- Motivational Quote -->
+            <div
+              class="p-md bg-secondary-container/20 rounded-xl border border-secondary/10"
+            >
+              <p class="italic text-on-secondary-container text-body-md">
+                "Excellence is not a singular act, but a habit. You are what you
+                repeatedly do."
+              </p>
+              <p class="text-label-sm font-bold mt-sm text-secondary">
+                — Aristotle
+              </p>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <!-- Footer -->
+    <footer
+      class="bg-surface-container-lowest border-t border-outline-variant w-full py-lg mt-xl"
+    >
+      <div
+        class="flex flex-col md:flex-row justify-between items-center px-gutter max-w-container-max mx-auto space-y-md md:space-y-0"
+      >
+        <div class="text-label-md font-label-md font-bold text-on-surface">
+          EnglishBoost Engineering Psychology Lab
+        </div>
+        <div
+          class="flex space-x-md text-label-sm font-label-sm text-on-surface-variant"
+        >
+          <a class="hover:text-primary transition-colors" href="#"
+            >Privacy Policy</a
+          >
+          <a class="hover:text-primary transition-colors" href="#"
+            >Terms of Service</a
+          >
+          <a class="hover:text-primary transition-colors" href="#"
+            >University Portal</a
+          >
+        </div>
+        <p
+          class="text-label-sm font-label-sm text-on-surface-variant opacity-80"
+        >
+          © 2024 EnglishBoost
+        </p>
+      </div>
+    </footer>
+    <script src="js/leaderboard.js"></script>
+  </body>
+</html>
