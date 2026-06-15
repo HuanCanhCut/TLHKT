@@ -1,0 +1,483 @@
+<!doctype html>
+<html class="light" lang="en" style="">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>My Achievements | EnglishBoost</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 400,
+          "GRAD" 0,
+          "opsz" 24;
+      }
+      .achievement-card:hover .progress-fill {
+        width: 100% !important;
+        transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .bento-grid {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 24px;
+      }
+      @media (max-width: 768px) {
+        .bento-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "error-container": "#ffdad6",
+              "on-tertiary-fixed-variant": "#653e00",
+              "on-surface-variant": "#434655",
+              primary: "#004ac6",
+              "on-tertiary-container": "#ffeedd",
+              "on-error": "#ffffff",
+              "on-background": "#0b1c30",
+              "tertiary-fixed": "#ffddb8",
+              secondary: "#006c49",
+              error: "#ba1a1a",
+              "on-primary-fixed-variant": "#003ea8",
+              "inverse-surface": "#213145",
+              "surface-tint": "#0053db",
+              "surface-container-highest": "#d3e4fe",
+              surface: "#f8f9ff",
+              "primary-fixed-dim": "#b4c5ff",
+              "outline-variant": "#c3c6d7",
+              "on-surface": "#0b1c30",
+              background: "#f8f9ff",
+              tertiary: "#784b00",
+              "surface-container-high": "#dce9ff",
+              "secondary-container": "#6cf8bb",
+              "on-primary-fixed": "#00174b",
+              "on-error-container": "#93000a",
+              "surface-container-lowest": "#ffffff",
+              "surface-container": "#e5eeff",
+              "primary-container": "#2563eb",
+              "on-primary-container": "#eeefff",
+              "tertiary-fixed-dim": "#ffb95f",
+              "tertiary-container": "#996100",
+              "on-secondary-container": "#00714d",
+              "surface-container-low": "#eff4ff",
+              "on-tertiary-fixed": "#2a1700",
+              "secondary-fixed-dim": "#4edea3",
+              "on-secondary": "#ffffff",
+              "secondary-fixed": "#6ffbbe",
+              outline: "#737686",
+              "inverse-on-surface": "#eaf1ff",
+              "on-tertiary": "#ffffff",
+              "on-secondary-fixed-variant": "#005236",
+              "on-primary": "#ffffff",
+              "surface-bright": "#f8f9ff",
+              "inverse-primary": "#b4c5ff",
+              "surface-dim": "#cbdbf5",
+              "surface-variant": "#d3e4fe",
+              "on-secondary-fixed": "#002113",
+              "primary-fixed": "#dbe1ff",
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+            spacing: {
+              md: "24px",
+              xs: "4px",
+              xl: "80px",
+              base: "8px",
+              lg: "48px",
+              sm: "12px",
+              gutter: "24px",
+              "container-max": "1200px",
+            },
+            fontFamily: {
+              "headline-xl": ["Inter"],
+              "label-md": ["Inter"],
+              "label-sm": ["Inter"],
+              "headline-lg": ["Inter"],
+              "headline-md": ["Inter"],
+              "body-md": ["Inter"],
+              "body-lg": ["Inter"],
+              "headline-lg-mobile": ["Inter"],
+            },
+            fontSize: {
+              "headline-xl": [
+                "48px",
+                {
+                  lineHeight: "1.1",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "700",
+                },
+              ],
+              "label-md": [
+                "14px",
+                { lineHeight: "1", letterSpacing: "0.02em", fontWeight: "600" },
+              ],
+              "label-sm": ["12px", { lineHeight: "1", fontWeight: "500" }],
+              "headline-lg": [
+                "32px",
+                {
+                  lineHeight: "1.2",
+                  letterSpacing: "-0.01em",
+                  fontWeight: "700",
+                },
+              ],
+              "headline-md": ["24px", { lineHeight: "1.3", fontWeight: "600" }],
+              "body-md": ["16px", { lineHeight: "1.6", fontWeight: "400" }],
+              "body-lg": ["18px", { lineHeight: "1.6", fontWeight: "400" }],
+              "headline-lg-mobile": [
+                "24px",
+                { lineHeight: "1.2", fontWeight: "700" },
+              ],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body
+    class="bg-surface text-on-surface font-body-md min-h-screen flex flex-col"
+  >
+    <!-- TopNavBar -->
+    <header
+      class="w-full bg-surface-container-lowest border-b border-outline-variant sticky top-0 z-50"
+    >
+      <div
+        class="max-w-container-max mx-auto px-gutter h-xl flex items-center justify-between"
+      >
+        <div class="flex items-center gap-md">
+          <a
+            class="text-headline-md font-headline-md font-bold text-primary hover:opacity-90 transition-opacity"
+            href="index.html"
+          >
+            EnglishBoost
+          </a>
+          <nav class="hidden md:flex items-center gap-md ml-lg">
+            <a
+              class="text-label-md text-on-surface-variant hover:text-primary transition-colors py-md"
+              href="flashcard_eval.html"
+              >Vocabulary</a
+            >
+            <a
+              class="text-label-md text-on-surface-variant hover:text-primary transition-colors py-md"
+              href="listening.html"
+              >Listening</a
+            >
+            <a
+              class="text-label-md text-on-surface-variant hover:text-primary transition-colors py-md"
+              href="reading.html"
+              >Reading</a
+            >
+            <a
+              class="text-label-md text-primary font-bold border-b-2 border-primary py-md"
+              href="progress.html"
+              >Progress</a
+            >
+            <a
+              class="text-label-md text-on-surface-variant hover:text-primary transition-colors py-md"
+              href="ranking.html"
+              >Ranking</a
+            >
+          </nav>
+        </div>
+        <div class="flex items-center gap-sm">
+          <button
+            class="p-sm rounded-full hover:bg-surface-container-low transition-colors"
+          >
+            <span class="material-symbols-outlined text-on-surface-variant"
+              >notifications</span
+            >
+          </button>
+          <a
+            href="profile.html"
+            class="hover:scale-[0.98] transition-transform block"
+          >
+            <img
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYe0_3saYp4lA9zDzh5ewkwJPgVF6nRwDYx3DUTDFUBhu1V_wjxZKqxR2mPT7SxOd27v5HeZ_SYwoZeZifB225Ei-6ub6EF7m6poqgCXcW5Kkb0gkhRiZRoFY6006tdOAip9LxN07kRLxNFhpOCibPOJhP-bM5osBzL-fmzg2UuhKZNI_00fmf24mnr4xalabFpAOd2-ui5Qmwv9RSGD5vaTPzOzI9dY23oaIgfbvM9OgFlY3w8BbceeacHKx9U2f0JoxvaebLAJ4"
+              class="w-10 h-10 rounded-full object-cover border border-outline-variant"
+              alt="Student Profile"
+            />
+          </a>
+        </div>
+      </div>
+    </header>
+    <main class="max-w-container-max mx-auto px-gutter py-lg">
+      <!-- Header / Level Section -->
+      <section
+        class="mb-lg p-lg bg-surface-container-low rounded-xl border border-outline-variant relative overflow-hidden"
+      >
+        <div class="absolute inset-0 opacity-10 z-0">
+          <img
+            alt="Academic background"
+            class="w-full h-full object-cover"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuA44fqqcHXPGIROU7qu_XJNqGaD15uHT52gymAy9_E-kJpnJrPg11mJ7EX_I-pRQyfATZxjFL-c_hyD4enyF_Pg9lZajZos6-DfdLABGfGDoOLIFIU87Q1hG0mED6mjqXyDVRBUrOsPPXcSXQvCty_D1Wjr60CTPTLU3ZxyJrlAJnWfsN0qnaTpNRtLzYuojtdioi0Pn6TYZTlVk1-sBvx5wyVQMjiSn-aOUp6EearclonfXhBRhLm4fOCqZAeYh4NNDT94yHYeqdw"
+          />
+        </div>
+        <div
+          class="relative z-10 flex flex-col md:flex-row justify-between items-end md:items-center mb-md"
+        >
+          <div>
+            <h1 class="text-headline-xl font-headline-xl text-primary mb-xs">
+              My Achievements
+            </h1>
+            <p class="text-body-lg font-body-lg text-on-surface-variant">
+              University Edition Tracking
+            </p>
+          </div>
+          <div class="text-right mt-md md:mt-0">
+            <span
+              class="text-label-md font-label-md bg-primary-container text-on-primary-container px-md py-xs rounded-full"
+              >Level 4</span
+            >
+            <div
+              class="mt-xs text-headline-md font-headline-md text-on-surface"
+            >
+              9,850
+              <span
+                class="text-label-md font-label-md text-on-surface-variant uppercase"
+                >XP Total</span
+              >
+            </div>
+          </div>
+        </div>
+        <!-- Progress Bar -->
+        <div class="space-y-xs">
+          <div
+            class="flex justify-between items-center text-label-md font-label-md"
+          >
+            <span class="text-on-surface-variant">Next Level Progress</span>
+            <span class="text-primary">9,850 / 10,000 XP</span>
+          </div>
+          <div
+            class="w-full bg-surface-container-highest h-4 rounded-full overflow-hidden"
+          >
+            <div
+              class="bg-primary h-full rounded-full transition-all duration-1000 ease-out"
+              style="width: 98.5%"
+            ></div>
+          </div>
+          <div
+            class="flex justify-between items-center text-label-sm font-label-sm text-outline pt-xs"
+          >
+            <span class="">12 / 24 Badges Unlocked</span>
+            <span class="text-secondary font-bold">98.5% to Level 5</span>
+          </div>
+        </div>
+      </section>
+      <div class="bento-grid">
+        <!-- Badge Collection (Main Content) -->
+        <div class="col-span-12 space-y-md md:col-span-12">
+          <h2 class="text-headline-md font-headline-md text-on-surface">
+            Badge Collection
+          </h2>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-md">
+            <!-- Word Master (Unlocked) -->
+            <div
+              class="achievement-card bg-surface-container-lowest p-md rounded-xl border border-outline-variant shadow-sm hover:shadow-md transition-all duration-300 group"
+            >
+              <div class="flex items-start justify-between mb-sm">
+                <div class="bg-secondary-container p-sm rounded-lg">
+                  <span
+                    class="material-symbols-outlined text-on-secondary-container text-4xl"
+                    style="font-variation-settings: &quot;FILL&quot; 1"
+                    >menu_book</span
+                  >
+                </div>
+                <span
+                  class="text-label-sm font-label-sm bg-secondary text-on-secondary px-xs py-0.5 rounded uppercase"
+                  >Unlocked</span
+                >
+              </div>
+              <h3 class="text-headline-md font-headline-md mb-xs">
+                Word Master
+              </h3>
+              <p
+                class="text-body-md font-body-md text-on-surface-variant mb-md"
+              >
+                Learned 500 vocabulary words
+              </p>
+              <div
+                class="flex items-center text-secondary font-bold text-label-md"
+              >
+                <span class="material-symbols-outlined mr-xs text-sm"
+                  >stars</span
+                >
+                Reward: +500 XP
+              </div>
+            </div>
+            <!-- Listening Ace (Unlocked) -->
+            <div
+              class="achievement-card bg-surface-container-lowest p-md rounded-xl border border-outline-variant shadow-sm hover:shadow-md transition-all duration-300 group"
+            >
+              <div class="flex items-start justify-between mb-sm">
+                <div class="bg-secondary-container p-sm rounded-lg">
+                  <span
+                    class="material-symbols-outlined text-on-secondary-container text-4xl"
+                    style="font-variation-settings: &quot;FILL&quot; 1"
+                    >headset</span
+                  >
+                </div>
+                <span
+                  class="text-label-sm font-label-sm bg-secondary text-on-secondary px-xs py-0.5 rounded uppercase"
+                  >Unlocked</span
+                >
+              </div>
+              <h3 class="text-headline-md font-headline-md mb-xs">
+                Listening Ace
+              </h3>
+              <p
+                class="text-body-md font-body-md text-on-surface-variant mb-md"
+              >
+                Completed 20 listening lessons
+              </p>
+              <div
+                class="flex items-center text-secondary font-bold text-label-md"
+              >
+                <span class="material-symbols-outlined mr-xs text-sm"
+                  >stars</span
+                >
+                Reward: +300 XP
+              </div>
+            </div>
+            <!-- Scholar (Locked) -->
+            <div
+              class="achievement-card bg-surface-container-low p-md rounded-xl border border-dashed border-outline-variant opacity-80 group grayscale hover:grayscale-0 transition-all duration-300"
+            >
+              <div class="flex items-start justify-between mb-sm">
+                <div class="bg-surface-container-highest p-sm rounded-lg">
+                  <span
+                    class="material-symbols-outlined text-on-surface-variant text-4xl"
+                    >auto_stories</span
+                  >
+                </div>
+                <span
+                  class="text-label-sm font-label-sm bg-outline text-on-surface px-xs py-0.5 rounded uppercase"
+                  >Locked</span
+                >
+              </div>
+              <h3 class="text-headline-md font-headline-md mb-xs">Scholar</h3>
+              <p
+                class="text-body-md font-body-md text-on-surface-variant mb-md"
+              >
+                Read 50 academic articles
+              </p>
+              <div class="space-y-xs">
+                <div class="flex justify-between text-label-sm font-label-sm">
+                  <span class="">Progress</span>
+                  <span class="">32 / 50</span>
+                </div>
+                <div
+                  class="w-full bg-surface-container-highest h-2 rounded-full overflow-hidden"
+                >
+                  <div
+                    class="bg-primary h-full progress-fill transition-all duration-500"
+                    style="width: 64%"
+                  ></div>
+                </div>
+                <div
+                  class="flex items-center text-on-surface-variant font-bold text-label-md pt-xs"
+                >
+                  <span class="material-symbols-outlined mr-xs text-sm"
+                    >stars</span
+                  >
+                  Reward: +400 XP
+                </div>
+              </div>
+            </div>
+            <!-- Visual Placeholder for locked badge -->
+            <div
+              class="bg-surface-container-low p-md rounded-xl border border-dashed border-outline-variant flex flex-col items-center justify-center text-center relative"
+            >
+              <div class="absolute inset-0 z-0">
+                <img
+                  alt=""
+                  class="w-full h-full object-cover grayscale"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuA44fqqcHXPGIROU7qu_XJNqGaD15uHT52gymAy9_E-kJpnJrPg11mJ7EX_I-pRQyfATZxjFL-c_hyD4enyF_Pg9lZajZos6-DfdLABGfGDoOLIFIU87Q1hG0mED6mjqXyDVRBUrOsPPXcSXQvCty_D1Wjr60CTPTLU3ZxyJrlAJnWfsN0qnaTpNRtLzYuojtdioi0Pn6TYZTlVk1-sBvx5wyVQMjiSn-aOUp6EearclonfXhBRhLm4fOCqZAeYh4NNDT94yHYeqdw"
+                />
+              </div>
+              <div class="relative z-10 flex flex-col items-center">
+                <span
+                  class="material-symbols-outlined text-4xl mb-sm text-on-surface"
+                  >lock</span
+                ><span class="text-label-md font-label-md text-on-surface"
+                  >More Achievements Hidden</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Sidebar: Next Goal & Actions -->
+      </div>
+    </main>
+    <!-- Footer -->
+    <footer
+      class="w-full py-lg bg-surface-container-lowest border-t border-outline-variant mt-auto"
+    >
+      <div
+        class="flex flex-col md:flex-row justify-between items-center px-gutter max-w-container-max mx-auto"
+      >
+        <div
+          class="text-label-md font-label-md font-bold text-on-surface mb-md md:mb-0"
+        >
+          EnglishBoost
+        </div>
+        <div
+          class="text-body-md font-body-md text-on-surface-variant text-center md:text-left mb-md md:mb-0"
+        >
+          © 2024 EnglishBoost Engineering Psychology Lab
+        </div>
+        <div class="flex space-x-lg">
+          <a
+            class="text-on-surface-variant hover:text-primary text-label-sm transition-colors"
+            href="#"
+            >Privacy Policy</a
+          >
+          <a
+            class="text-on-surface-variant hover:text-primary text-label-sm transition-colors"
+            href="#"
+            >Terms of Service</a
+          >
+          <a
+            class="text-on-surface-variant hover:text-primary text-label-sm transition-colors"
+            href="#"
+            >University Portal</a
+          >
+        </div>
+      </div>
+    </footer>
+    <!-- Small Micro-interaction Script -->
+    <script>
+      document.querySelectorAll("button, a").forEach((el) => {
+        el.addEventListener("mousedown", () => {
+          el.style.transform = "scale(0.98)";
+        });
+        el.addEventListener("mouseup", () => {
+          el.style.transform = "";
+        });
+        el.addEventListener("mouseleave", () => {
+          el.style.transform = "";
+        });
+      });
+    </script>
+  </body>
+</html>
