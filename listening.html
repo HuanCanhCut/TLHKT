@@ -139,11 +139,12 @@
       <nav
         class="flex justify-between items-center w-full px-gutter max-w-container-max mx-auto h-16"
       >
-        <div
-          class="text-headline-md font-headline-md font-bold text-primary dark:text-primary-fixed-dim"
+        <a
+          class="text-headline-md font-headline-md font-bold text-primary dark:text-primary-fixed-dim hover:opacity-90 transition-opacity"
+          href="index.html"
         >
           EnglishBoost
-        </div>
+        </a>
         <div class="hidden md:flex items-center space-x-lg">
           <a
             class="text-on-surface-variant dark:text-on-surface-variant font-label-md text-label-md hover:text-primary transition-colors duration-200"
@@ -165,6 +166,11 @@
             href="progress.html"
             >Progress</a
           >
+          <a
+            class="text-on-surface-variant dark:text-on-surface-variant font-label-md text-label-md hover:text-primary transition-colors duration-200"
+            href="ranking.html"
+            >Ranking</a
+          >
         </div>
         <div class="flex items-center space-x-md">
           <button
@@ -172,11 +178,16 @@
           >
             notifications
           </button>
-          <button
-            class="material-symbols-outlined text-primary hover:scale-[0.98] transition-transform"
+          <a
+            href="profile.html"
+            class="hover:scale-[0.98] transition-transform block"
           >
-            account_circle
-          </button>
+            <img
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYe0_3saYp4lA9zDzh5ewkwJPgVF6nRwDYx3DUTDFUBhu1V_wjxZKqxR2mPT7SxOd27v5HeZ_SYwoZeZifB225Ei-6ub6EF7m6poqgCXcW5Kkb0gkhRiZRoFY6006tdOAip9LxN07kRLxNFhpOCibPOJhP-bM5osBzL-fmzg2UuhKZNI_00fmf24mnr4xalabFpAOd2-ui5Qmwv9RSGD5vaTPzOzI9dY23oaIgfbvM9OgFlY3w8BbceeacHKx9U2f0JoxvaebLAJ4"
+              class="w-8 h-8 rounded-full object-cover"
+              alt="Student Profile"
+            />
+          </a>
         </div>
       </nav>
     </header>

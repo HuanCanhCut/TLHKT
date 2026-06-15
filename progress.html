@@ -135,12 +135,14 @@
       class="hidden md:flex h-screen w-64 fixed left-0 top-0 bg-surface-container-low border-r border-outline-variant flex-col p-md space-y-sm z-50"
     >
       <div class="mb-lg">
-        <h1 class="text-headline-md font-headline-md font-bold text-primary">
-          EnglishBoost
-        </h1>
-        <p class="text-label-sm font-label-sm text-on-surface-variant">
-          University Edition
-        </p>
+        <a href="index.html" class="block hover:opacity-90 transition-opacity">
+          <h1 class="text-headline-md font-headline-md font-bold text-primary">
+            EnglishBoost
+          </h1>
+          <p class="text-label-sm font-label-sm text-on-surface-variant">
+            University Edition
+          </p>
+        </a>
       </div>
       <div class="space-y-xs flex-1">
         <a
@@ -171,6 +173,13 @@
           <span class="material-symbols-outlined">insights</span>
           <span class="text-label-md font-label-md">Progress</span>
         </a>
+        <a
+          class="flex items-center gap-sm p-sm text-on-surface-variant hover:bg-surface-container-high rounded-lg hover:scale-[1.02] transition-transform duration-200"
+          href="ranking.html"
+        >
+          <span class="material-symbols-outlined">leaderboard</span>
+          <span class="text-label-md font-label-md">Ranking</span>
+        </a>
       </div>
       <div class="border-t border-outline-variant pt-md space-y-xs">
         <a
@@ -193,16 +202,23 @@
     <header
       class="md:hidden fixed top-0 w-full z-40 bg-surface h-16 border-b border-outline-variant flex items-center justify-between px-gutter"
     >
-      <h1 class="text-headline-md font-headline-md font-bold text-primary">
+      <a
+        class="text-headline-md font-headline-md font-bold text-primary hover:opacity-90 transition-opacity"
+        href="index.html"
+      >
         EnglishBoost
-      </h1>
+      </a>
       <div class="flex items-center gap-md">
         <span class="material-symbols-outlined text-primary"
           >notifications</span
         >
-        <span class="material-symbols-outlined text-primary"
-          >account_circle</span
-        >
+        <a href="profile.html" class="block hover:scale-[0.98] transition-transform">
+          <img
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYe0_3saYp4lA9zDzh5ewkwJPgVF6nRwDYx3DUTDFUBhu1V_wjxZKqxR2mPT7SxOd27v5HeZ_SYwoZeZifB225Ei-6ub6EF7m6poqgCXcW5Kkb0gkhRiZRoFY6006tdOAip9LxN07kRLxNFhpOCibPOJhP-bM5osBzL-fmzg2UuhKZNI_00fmf24mnr4xalabFpAOd2-ui5Qmwv9RSGD5vaTPzOzI9dY23oaIgfbvM9OgFlY3w8BbceeacHKx9U2f0JoxvaebLAJ4"
+            class="w-8 h-8 rounded-full object-cover"
+            alt="Student Profile"
+          />
+        </a>
       </div>
     </header>
     <main class="md:ml-64 pt-20 md:pt-md min-h-screen pb-32">

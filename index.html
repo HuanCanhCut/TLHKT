@@ -192,7 +192,7 @@
             >Progress</a
           ><a
             class="text-label-md font-label-md text-on-surface-variant hover:text-primary transition-colors duration-200"
-            href="leaderboard.html"
+            href="ranking.html"
             >Ranking</a
           >
         </nav>
@@ -206,15 +206,16 @@
               >notifications</span
             >
           </button>
-          <button
-            class="p-base hover:bg-surface-container-high rounded-full transition-colors"
+          <a
+            href="profile.html"
+            class="p-base hover:bg-surface-container-high rounded-full transition-colors block hover:scale-[0.98] transition-transform"
           >
             <img
               src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYe0_3saYp4lA9zDzh5ewkwJPgVF6nRwDYx3DUTDFUBhu1V_wjxZKqxR2mPT7SxOd27v5HeZ_SYwoZeZifB225Ei-6ub6EF7m6poqgCXcW5Kkb0gkhRiZRoFY6006tdOAip9LxN07kRLxNFhpOCibPOJhP-bM5osBzL-fmzg2UuhKZNI_00fmf24mnr4xalabFpAOd2-ui5Qmwv9RSGD5vaTPzOzI9dY23oaIgfbvM9OgFlY3w8BbceeacHKx9U2f0JoxvaebLAJ4"
               class="w-8 h-8 rounded-full object-cover"
               alt="Student Profile"
             />
-          </button>
+          </a>
         </div>
       </div>
     </header>
@@ -278,9 +279,10 @@
               >
             </div>
             <div
+              id="weekly-goal-percent"
               class="text-headline-md font-headline-md text-on-surface mb-sm"
             >
-              75% Hoàn thành
+              0% Hoàn thành
             </div>
           </div>
           <div class="space-y-xs">
@@ -288,11 +290,12 @@
               class="h-2 w-full bg-surface-container-high rounded-full overflow-hidden"
             >
               <div
-                class="h-full bg-primary w-3/4 rounded-full transition-all duration-1000 animate-progress"
+                id="weekly-goal-fill"
+                class="h-full bg-primary w-0 rounded-full transition-all duration-1000 animate-progress"
               ></div>
             </div>
-            <div class="text-label-sm text-on-surface-variant">
-              Chỉ còn 3 bài tập nữa!
+            <div id="weekly-goal-subtext" class="text-label-sm text-on-surface-variant">
+              Chỉ còn 4 bài tập nữa!
             </div>
           </div>
         </div>
@@ -373,58 +376,58 @@
           <div
             class="p-md bg-white border border-outline-variant rounded-xl space-y-md flex-1 shadow-sm"
           >
-            <div
-              class="flex items-center gap-md p-sm rounded-lg hover:bg-surface-container transition-colors cursor-pointer group"
+            <a
+              id="today-goal-vocab"
+              href="flashcard_eval.html"
+              class="flex items-center gap-md p-sm rounded-lg hover:bg-surface-container transition-colors block group"
             >
               <div
-                class="w-5 h-5 rounded border-2 border-primary bg-primary flex items-center justify-center"
-              >
-                <span
-                  class="material-symbols-outlined text-xs text-white"
-                  data-icon="check"
-                  >check</span
-                >
-              </div>
-              <span
-                class="text-body-md font-body-md text-on-surface line-through opacity-60"
+                class="w-5 h-5 rounded border-2 border-primary/40 flex items-center justify-center group-hover:border-primary checkbox-icon shrink-0"
+              ></div>
+              <span class="text-body-md font-body-md text-on-surface goal-text"
                 >Review 20 Vocabulary cards</span
               >
-            </div>
-            <div
-              class="flex items-center gap-md p-sm rounded-lg hover:bg-surface-container transition-colors cursor-pointer group"
+            </a>
+            <a
+              id="today-goal-listening"
+              href="listening.html"
+              class="flex items-center gap-md p-sm rounded-lg hover:bg-surface-container transition-colors block group"
             >
               <div
-                class="w-5 h-5 rounded border-2 border-primary/40 flex items-center justify-center group-hover:border-primary"
+                class="w-5 h-5 rounded border-2 border-primary/40 flex items-center justify-center group-hover:border-primary checkbox-icon shrink-0"
               ></div>
-              <span class="text-body-md font-body-md text-on-surface"
+              <span class="text-body-md font-body-md text-on-surface goal-text"
                 >Complete 1 Listening lab</span
               >
-            </div>
-            <div
-              class="flex items-center gap-md p-sm rounded-lg hover:bg-surface-container transition-colors cursor-pointer group"
+            </a>
+            <a
+              id="today-goal-reading"
+              href="reading.html"
+              class="flex items-center gap-md p-sm rounded-lg hover:bg-surface-container transition-colors block group"
             >
               <div
-                class="w-5 h-5 rounded border-2 border-primary/40 flex items-center justify-center group-hover:border-primary"
+                class="w-5 h-5 rounded border-2 border-primary/40 flex items-center justify-center group-hover:border-primary checkbox-icon shrink-0"
               ></div>
-              <span class="text-body-md font-body-md text-on-surface"
+              <span class="text-body-md font-body-md text-on-surface goal-text"
                 >Read 1 Engineering article</span
               >
-            </div>
+            </a>
             <div class="mt-md pt-md border-t border-outline-variant">
               <div class="flex justify-between mb-xs">
                 <span
                   class="text-label-sm font-label-sm text-on-surface-variant"
                   >Tiến độ ngày</span
                 >
-                <span class="text-label-sm font-label-sm text-secondary"
-                  >33%</span
+                <span class="text-label-sm font-label-sm text-secondary" id="daily-progress-percent"
+                  >0%</span
                 >
               </div>
               <div
                 class="h-2 w-full bg-surface-container-high rounded-full overflow-hidden"
               >
                 <div
-                  class="h-full bg-secondary w-1/3 rounded-full animate-progress"
+                  id="daily-progress-fill"
+                  class="h-full bg-secondary w-0 rounded-full animate-progress"
                 ></div>
               </div>
             </div>
@@ -654,6 +657,81 @@
           // Subtle feedback logic could go here
         });
       });
+
+      // Dynamic Progress and Goals Calculation
+      function updateProgressAndGoals() {
+        const isVocabCompleted = localStorage.getItem("vocab_completed") === "true";
+        const isListeningCompleted = localStorage.getItem("listening_completed") === "true";
+        const isReadingCompleted = localStorage.getItem("reading_completed") === "true";
+        const isQuizCompleted = localStorage.getItem("quiz_completed") === "true";
+
+        // Today's Goal Items list
+        const goals = [
+          { id: "today-goal-vocab", completed: isVocabCompleted },
+          { id: "today-goal-listening", completed: isListeningCompleted },
+          { id: "today-goal-reading", completed: isReadingCompleted }
+        ];
+
+        let dailyCompletedCount = 0;
+        goals.forEach(goal => {
+          const el = document.getElementById(goal.id);
+          if (el) {
+            const checkbox = el.querySelector(".checkbox-icon");
+            const text = el.querySelector(".goal-text");
+            if (goal.completed) {
+              dailyCompletedCount++;
+              checkbox.innerHTML = '<span class="material-symbols-outlined text-xs text-white" data-icon="check">check</span>';
+              checkbox.className = "w-5 h-5 rounded border-2 border-primary bg-primary flex items-center justify-center checkbox-icon shrink-0";
+              text.className = "text-body-md font-body-md text-on-surface line-through opacity-60 goal-text";
+            } else {
+              checkbox.innerHTML = '';
+              checkbox.className = "w-5 h-5 rounded border-2 border-primary/40 flex items-center justify-center group-hover:border-primary checkbox-icon shrink-0";
+              text.className = "text-body-md font-body-md text-on-surface goal-text";
+            }
+          }
+        });
+
+        // Today's progress calculation (Vocab, Listening, Reading)
+        const dailyPercent = Math.round((dailyCompletedCount / 3) * 100);
+        const dailyProgressPercentEl = document.getElementById("daily-progress-percent");
+        const dailyProgressFillEl = document.getElementById("daily-progress-fill");
+        if (dailyProgressPercentEl) {
+          dailyProgressPercentEl.textContent = `${dailyPercent}%`;
+        }
+        if (dailyProgressFillEl) {
+          dailyProgressFillEl.style.width = `${dailyPercent}%`;
+        }
+
+        // Weekly progress calculation (Vocab, Listening, Reading, Quiz)
+        const weeklyTotalSteps = 4;
+        const weeklyCompletedCount = (isVocabCompleted ? 1 : 0) + 
+                                     (isListeningCompleted ? 1 : 0) + 
+                                     (isReadingCompleted ? 1 : 0) + 
+                                     (isQuizCompleted ? 1 : 0);
+        const weeklyPercent = Math.round((weeklyCompletedCount / weeklyTotalSteps) * 100);
+        const weeklyRemaining = weeklyTotalSteps - weeklyCompletedCount;
+
+        const weeklyGoalPercentEl = document.getElementById("weekly-goal-percent");
+        const weeklyGoalFillEl = document.getElementById("weekly-goal-fill");
+        const weeklyGoalSubtextEl = document.getElementById("weekly-goal-subtext");
+
+        if (weeklyGoalPercentEl) {
+          weeklyGoalPercentEl.textContent = `${weeklyPercent}% Hoàn thành`;
+        }
+        if (weeklyGoalFillEl) {
+          weeklyGoalFillEl.style.width = `${weeklyPercent}%`;
+        }
+        if (weeklyGoalSubtextEl) {
+          if (weeklyRemaining > 0) {
+            weeklyGoalSubtextEl.textContent = `Chỉ còn ${weeklyRemaining} bài tập nữa!`;
+          } else {
+            weeklyGoalSubtextEl.textContent = "Đã hoàn thành tất cả mục tiêu tuần!";
+          }
+        }
+      }
+
+      // Initialize dynamic values
+      updateProgressAndGoals();
 
       // Progress bar animation on load
       const observer = new IntersectionObserver((entries) => {

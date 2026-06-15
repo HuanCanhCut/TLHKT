@@ -114,10 +114,23 @@
 <!-- TopNavBar (Shared Component Identity) -->
 <header class="bg-surface docked full-width top-0 border-b border-outline-variant h-16 sticky z-50">
 <div class="flex justify-between items-center w-full px-gutter max-w-container-max mx-auto h-full">
-<div class="text-headline-md font-headline-md font-bold text-primary">EnglishBoost</div>
+<a class="text-headline-md font-headline-md font-bold text-primary hover:opacity-90 transition-opacity" href="index.html">EnglishBoost</a>
+<nav class="hidden md:flex items-center space-x-md">
+  <a class="text-label-md font-label-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="flashcard_eval.html">Vocabulary</a>
+  <a class="text-label-md font-label-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="listening.html">Listening</a>
+  <a class="text-label-md font-label-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="reading.html">Reading</a>
+  <a class="text-label-md font-label-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="progress.html">Progress</a>
+  <a class="text-label-md font-label-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="ranking.html">Ranking</a>
+</nav>
 <div class="flex items-center space-x-sm">
 <button class="p-xs text-on-surface-variant hover:text-primary transition-colors duration-200"><span class="material-symbols-outlined">notifications</span></button>
-<button class="p-xs text-primary font-bold"><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">account_circle</span></button>
+<a href="profile.html" class="p-xs hover:scale-[0.98] transition-transform block">
+  <img
+    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYe0_3saYp4lA9zDzh5ewkwJPgVF6nRwDYx3DUTDFUBhu1V_wjxZKqxR2mPT7SxOd27v5HeZ_SYwoZeZifB225Ei-6ub6EF7m6poqgCXcW5Kkb0gkhRiZRoFY6006tdOAip9LxN07kRLxNFhpOCibPOJhP-bM5osBzL-fmzg2UuhKZNI_00fmf24mnr4xalabFpAOd2-ui5Qmwv9RSGD5vaTPzOzI9dY23oaIgfbvM9OgFlY3w8BbceeacHKx9U2f0JoxvaebLAJ4"
+    class="w-8 h-8 rounded-full object-cover"
+    alt="Student Profile"
+  />
+</a>
 </div>
 </div>
 </header>

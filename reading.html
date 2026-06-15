@@ -138,11 +138,12 @@
         class="flex justify-between items-center w-full px-gutter max-w-container-max mx-auto h-16"
       >
         <div class="flex items-center gap-md">
-          <div
-            class="text-headline-md font-headline-md font-bold text-primary dark:text-primary-fixed-dim"
+          <a
+            class="text-headline-md font-headline-md font-bold text-primary dark:text-primary-fixed-dim hover:opacity-90 transition-opacity"
+            href="index.html"
           >
             EnglishBoost
-          </div>
+          </a>
           <div
             class="hidden sm:flex items-center gap-xs px-sm py-1 bg-secondary-container/30 text-on-secondary-container rounded-full text-label-sm border border-secondary/10"
           >
@@ -173,6 +174,11 @@
             href="progress.html"
             >Progress</a
           >
+          <a
+            class="text-on-surface-variant text-label-md font-label-md hover:text-primary transition-colors duration-200"
+            href="ranking.html"
+            >Ranking</a
+          >
         </nav>
         <div class="flex items-center space-x-sm">
           <button
@@ -184,15 +190,16 @@
               >notifications</span
             >
           </button>
-          <button
-            class="p-xs hover:bg-surface-container rounded-full transition-colors"
+          <a
+            href="profile.html"
+            class="p-xs hover:bg-surface-container rounded-full transition-colors block hover:scale-[0.98] transition-transform"
           >
-            <span
-              class="material-symbols-outlined text-primary"
-              data-icon="account_circle"
-              >account_circle</span
-            >
-          </button>
+            <img
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYe0_3saYp4lA9zDzh5ewkwJPgVF6nRwDYx3DUTDFUBhu1V_wjxZKqxR2mPT7SxOd27v5HeZ_SYwoZeZifB225Ei-6ub6EF7m6poqgCXcW5Kkb0gkhRiZRoFY6006tdOAip9LxN07kRLxNFhpOCibPOJhP-bM5osBzL-fmzg2UuhKZNI_00fmf24mnr4xalabFpAOd2-ui5Qmwv9RSGD5vaTPzOzI9dY23oaIgfbvM9OgFlY3w8BbceeacHKx9U2f0JoxvaebLAJ4"
+              class="w-8 h-8 rounded-full object-cover"
+              alt="Student Profile"
+            />
+          </a>
         </div>
       </div>
     </header>
