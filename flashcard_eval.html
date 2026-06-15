@@ -1,241 +1,173 @@
-<!doctype html>
+<!DOCTYPE html>
 <html class="light" lang="vi">
   <head>
-    <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
     <script id="tailwind-config">
       tailwind.config = {
         darkMode: "class",
         theme: {
           extend: {
-            colors: {
-              "on-surface-variant": "#434655",
-              primary: "#004ac6",
-              error: "#ba1a1a",
-              "inverse-on-surface": "#eaf1ff",
-              "tertiary-fixed": "#ffddb8",
-              "on-primary": "#ffffff",
-              "tertiary-fixed-dim": "#ffb95f",
-              "surface-container-highest": "#d3e4fe",
-              "on-error-container": "#93000a",
-              "on-primary-container": "#eeefff",
-              "error-container": "#ffdad6",
-              "on-primary-fixed-variant": "#003ea8",
-              "on-background": "#0b1c30",
-              "primary-fixed-dim": "#b4c5ff",
-              "tertiary-container": "#996100",
-              "surface-container-high": "#dce9ff",
-              "surface-bright": "#f8f9ff",
-              "on-error": "#ffffff",
-              "surface-container-low": "#eff4ff",
-              "inverse-primary": "#b4c5ff",
-              "on-tertiary-container": "#ffeedd",
-              "surface-container-lowest": "#ffffff",
-              "on-tertiary-fixed-variant": "#653e00",
-              "surface-container": "#e5eeff",
-              "surface-dim": "#cbdbf5",
-              background: "#f8f9ff",
-              tertiary: "#784b00",
-              "on-tertiary": "#ffffff",
-              "on-primary-fixed": "#00174b",
-              "surface-variant": "#d3e4fe",
-              "on-secondary": "#ffffff",
-              "secondary-container": "#6cf8bb",
-              secondary: "#006c49",
-              "primary-container": "#2563eb",
-              "secondary-fixed-dim": "#4edea3",
-              "on-secondary-fixed": "#002113",
-              "secondary-fixed": "#6ffbbe",
-              "on-surface": "#0b1c30",
-              "inverse-surface": "#213145",
-              "surface-tint": "#0053db",
-              surface: "#f8f9ff",
-              "on-tertiary-fixed": "#2a1700",
-              "outline-variant": "#c3c6d7",
-              "primary-fixed": "#dbe1ff",
-              outline: "#737686",
-              "on-secondary-container": "#00714d",
-              "on-secondary-fixed-variant": "#005236",
+            "colors": {
+                    "on-surface-variant": "#434655",
+                    "primary": "#004ac6",
+                    "error": "#ba1a1a",
+                    "inverse-on-surface": "#eaf1ff",
+                    "tertiary-fixed": "#ffddb8",
+                    "on-primary": "#ffffff",
+                    "tertiary-fixed-dim": "#ffb95f",
+                    "surface-container-highest": "#d3e4fe",
+                    "on-error-container": "#93000a",
+                    "on-primary-container": "#eeefff",
+                    "error-container": "#ffdad6",
+                    "on-primary-fixed-variant": "#003ea8",
+                    "on-background": "#0b1c30",
+                    "primary-fixed-dim": "#b4c5ff",
+                    "tertiary-container": "#996100",
+                    "surface-container-high": "#dce9ff",
+                    "surface-bright": "#f8f9ff",
+                    "on-error": "#ffffff",
+                    "surface-container-low": "#eff4ff",
+                    "inverse-primary": "#b4c5ff",
+                    "on-tertiary-container": "#ffeedd",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary-fixed-variant": "#653e00",
+                    "surface-container": "#e5eeff",
+                    "surface-dim": "#cbdbf5",
+                    "background": "#f8f9ff",
+                    "tertiary": "#784b00",
+                    "on-tertiary": "#ffffff",
+                    "on-primary-fixed": "#00174b",
+                    "surface-variant": "#d3e4fe",
+                    "on-secondary": "#ffffff",
+                    "secondary-container": "#6cf8bb",
+                    "secondary": "#006c49",
+                    "primary-container": "#2563eb",
+                    "secondary-fixed-dim": "#4edea3",
+                    "on-secondary-fixed": "#002113",
+                    "secondary-fixed": "#6ffbbe",
+                    "on-surface": "#0b1c30",
+                    "inverse-surface": "#213145",
+                    "surface-tint": "#0053db",
+                    "surface": "#f8f9ff",
+                    "on-tertiary-fixed": "#2a1700",
+                    "outline-variant": "#c3c6d7",
+                    "primary-fixed": "#dbe1ff",
+                    "outline": "#737686",
+                    "on-secondary-container": "#00714d",
+                    "on-secondary-fixed-variant": "#005236"
             },
-            borderRadius: {
-              DEFAULT: "0.25rem",
-              lg: "0.5rem",
-              xl: "0.75rem",
-              full: "9999px",
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
             },
-            spacing: {
-              md: "24px",
-              lg: "48px",
-              xs: "4px",
-              base: "8px",
-              xl: "80px",
-              sm: "12px",
-              gutter: "24px",
-              "container-max": "1200px",
+            "spacing": {
+                    "md": "24px",
+                    "lg": "48px",
+                    "xs": "4px",
+                    "base": "8px",
+                    "xl": "80px",
+                    "sm": "12px",
+                    "gutter": "24px",
+                    "container-max": "1200px"
             },
-            fontFamily: {
-              "headline-lg-mobile": ["Inter"],
-              "headline-xl": ["Inter"],
-              "label-sm": ["Inter"],
-              "body-lg": ["Inter"],
-              "headline-md": ["Inter"],
-              "headline-lg": ["Inter"],
-              "body-md": ["Inter"],
-              "label-md": ["Inter"],
+            "fontFamily": {
+                    "headline-lg-mobile": ["Inter"],
+                    "headline-xl": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "body-md": ["Inter"],
+                    "label-md": ["Inter"]
             },
-            fontSize: {
-              "headline-lg-mobile": [
-                "24px",
-                { lineHeight: "1.2", fontWeight: "700" },
-              ],
-              "headline-xl": [
-                "48px",
-                {
-                  lineHeight: "1.1",
-                  letterSpacing: "-0.02em",
-                  fontWeight: "700",
-                },
-              ],
-              "label-sm": ["12px", { lineHeight: "1", fontWeight: "500" }],
-              "body-lg": ["18px", { lineHeight: "1.6", fontWeight: "400" }],
-              "headline-md": ["24px", { lineHeight: "1.3", fontWeight: "600" }],
-              "headline-lg": [
-                "32px",
-                {
-                  lineHeight: "1.2",
-                  letterSpacing: "-0.01em",
-                  fontWeight: "700",
-                },
-              ],
-              "body-md": ["16px", { lineHeight: "1.6", fontWeight: "400" }],
-              "label-md": [
-                "14px",
-                { lineHeight: "1", letterSpacing: "0.02em", fontWeight: "600" },
-              ],
-            },
+            "fontSize": {
+                    "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label-sm": ["12px", {"lineHeight": "1", "fontWeight": "500"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "1", "letterSpacing": "0.02em", "fontWeight": "600"}]
+            }
           },
         },
-      };
+      }
     </script>
+    <style>
+        .flashcard-inner {
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            transform-style: preserve-3d;
+        }
+        .flashcard-flipped {
+            transform: rotateY(180deg);
+        }
+        .flashcard-front, .flashcard-back {
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+        }
+        .flashcard-back {
+            transform: rotateY(180deg);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+    </style>
   </head>
-  <body
-    class="bg-surface text-on-surface min-h-screen flex flex-col font-body-md overflow-hidden"
-  >
+  <body class="bg-surface text-on-surface min-h-screen flex flex-col font-body-md overflow-hidden">
     <!-- Focus Mode Header -->
-    <header
-      class="w-full h-16 flex items-center justify-between px-gutter max-w-container-max mx-auto relative"
-    >
-      <button
-        class="flex items-center text-on-surface-variant hover:text-primary transition-colors"
-        onclick="window.history.back()"
-      >
+    <header class="w-full h-16 flex items-center justify-between px-gutter max-w-container-max mx-auto relative">
+      <button class="flex items-center text-on-surface-variant hover:text-primary transition-colors" onclick="window.history.back()">
         <span class="material-symbols-outlined mr-base">close</span>
         <span class="font-label-md text-label-md">Đóng</span>
       </button>
-      <div
-        class="absolute left-1/2 -translate-x-1/2 flex flex-col items-center"
-      >
-        <span
-          class="text-label-sm font-label-sm uppercase tracking-widest text-primary opacity-60 mb-1"
-          >Chế độ tập trung</span
-        >
-        <div
-          class="h-1.5 w-48 bg-surface-container rounded-full overflow-hidden"
-        >
-          <div
-            class="h-full bg-secondary w-1/3 transition-all duration-500 rounded-full"
-          ></div>
+      <div class="absolute left-1/2 -translate-x-1/2 flex flex-col items-center">
+        <a href="flashcard_focus.html" class="text-label-sm font-label-sm uppercase tracking-widest text-primary opacity-60 mb-1">Vào chế độ tập trung</a>
+        <div class="h-1.5 w-48 bg-surface-container rounded-full overflow-hidden">
+          <div class="h-full bg-secondary w-1/3 transition-all duration-500 rounded-full"></div>
         </div>
-      </div>
-      <div class="flex items-center text-on-surface-variant">
-        <span class="font-label-md text-label-md">12 / 40</span>
-      </div>
+      <div class="w-[60px]"></div>
     </header>
     <!-- Main Content: Optimized for Focus (Attention Theory) -->
-    <main
-      class="flex-1 flex flex-col items-center justify-center p-md relative"
-    >
+    <main class="flex-1 flex flex-col items-center justify-center p-md relative">
       <!-- Center Flashcard Container -->
-      <div
-        class="relative w-full max-w-[480px] h-[520px] perspective-1000 group"
-      >
-        <div
-          class="flashcard-inner relative w-full h-full shadow-sm rounded-xl border border-outline-variant bg-surface-container-lowest flashcard-flipped"
-          id="flashcard"
-        >
+      <div class="relative w-full max-w-[480px] h-[520px] perspective-1000 group">
+        <div class="flashcard-inner relative w-full h-full shadow-sm rounded-xl border border-outline-variant bg-surface-container-lowest flashcard-flipped" id="flashcard">
           <!-- Front Side: Cognitive Focus -->
-          <div
-            class="flashcard-front absolute inset-0 flex flex-col items-center justify-center p-lg space-y-md"
-          >
-            <div
-              class="w-full aspect-square rounded-lg overflow-hidden bg-surface-container-low mb-md"
-            >
-              <img
-                alt="Memory Anchor Image"
-                class="w-full h-full object-cover"
-                data-alt="A clean, studio-lit high-angle shot of an open vintage book resting on a minimalist white desk."
-                src="https://lh3.googleusercontent.com/aida/AP1WRLs2XIxh706UAt-NnViG609JjTryusOYS9YWHjqe-90_UpHNSrjaxmvX5yklBATjY02ofGTQtK0eimlJKmIS7JhG6KwqUpVSqq_52C6KOOrwY6beKOwLgjYBF73L-pIhId_JSfYHAeILjmWEJtuSLBNN9weXmM1LWlgEqMD7P0ZE1LOON6GgHebl3ovx2Mfhl87RVOaONNdf6_RyDfJxMEF02B0ArqzorJ9tiBWDRfKpyl1ZAf3a7k9qjlY"
-              />
+          <div class="flashcard-front absolute inset-0 flex flex-col items-center justify-center p-lg space-y-md">
+            <div class="w-full aspect-square rounded-lg overflow-hidden bg-surface-container-low mb-md">
+              <img alt="Memory Anchor Image" class="w-full h-full object-cover" data-alt="A clean, studio-lit high-angle shot of an open vintage book resting on a minimalist white desk." src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&q=80&w=600">
             </div>
             <div class="text-center space-y-xs">
-              <h1
-                class="font-headline-xl text-headline-xl text-primary tracking-tight"
-              >
-                Psychology
-              </h1>
-              <div
-                class="flex items-center justify-center space-x-sm text-on-surface-variant"
-              >
+              <h1 class="font-headline-xl text-headline-xl text-primary tracking-tight">Psychology</h1>
+              <div class="flex items-center justify-center space-x-sm text-on-surface-variant">
                 <span class="font-body-md text-body-md">/saɪˈkɒlədʒi/</span>
-                <button
-                  class="p-base rounded-full hover:bg-primary-container/10 text-primary transition-colors active:scale-95"
-                  onclick="event.stopPropagation()"
-                >
-                  <span
-                    class="material-symbols-outlined"
-                    style="font-variation-settings: &quot;FILL&quot; 1"
-                    >volume_up</span
-                  >
+                <button class="p-base rounded-full hover:bg-primary-container/10 text-primary transition-colors active:scale-95" onclick="event.stopPropagation();">
+                  <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">volume_up</span>
                 </button>
               </div>
             </div>
           </div>
           <!-- Back Side: Meaning & Nuance -->
-          <div
-            class="flashcard-back absolute inset-0 flex flex-col items-center justify-center p-lg bg-surface-container-low"
-          >
+          <div class="flashcard-back absolute inset-0 flex flex-col items-center justify-center p-lg bg-surface-container-low">
             <div class="w-full max-w-sm space-y-md text-center">
               <div class="space-y-xs">
-                <h2
-                  class="font-headline-xl text-headline-xl text-primary tracking-tight"
-                >
-                  Psychology
-                </h2>
-                <p class="text-headline-md font-headline-md text-on-surface">
-                  Tâm lý học
-                </p>
+                <h2 class="font-headline-xl text-headline-xl text-primary tracking-tight">Psychology</h2>
+                <p class="text-headline-md font-headline-md text-on-surface">Tâm lý học</p>
               </div>
-              <div
-                class="bg-surface-container-lowest p-md rounded-xl border border-outline-variant/30 text-left space-y-sm"
-              >
+              <div class="bg-surface-container-lowest p-md rounded-xl border border-outline-variant/30 text-left space-y-sm">
                 <div class="space-y-xs">
                   <p class="text-label-md font-label-md text-primary">Ví dụ:</p>
-                  <p class="text-on-surface font-body-md leading-relaxed">
-                    Engineering psychology studies human behavior.
-                  </p>
-                  <p class="italic text-on-surface-variant font-body-md">
-                    Tâm lý học kỹ thuật nghiên cứu hành vi con người.
-                  </p>
+                  <p class="text-on-surface font-body-md leading-relaxed">Engineering psychology studies human behavior.</p>
+                  <p class="italic text-on-surface-variant font-body-md">Tâm lý học kỹ thuật nghiên cứu hành vi con người.</p>
                 </div>
               </div>
             </div>
@@ -245,47 +177,23 @@
       <!-- Action Section: Fitts's Law Implementation (Large, Central Targets) -->
       <div class="mt-lg w-full max-w-[480px] flex flex-col space-y-4">
         <div class="space-y-md w-full">
-          <p class="text-center font-label-md text-on-surface-variant">
-            Bạn nhớ từ này ở mức nào?
-          </p>
+          <p class="text-center font-label-md text-on-surface-variant">Bạn nhớ từ này ở mức nào?</p>
           <div class="grid grid-cols-3 gap-sm">
             <button id="btn-easy" class="flex flex-col items-center space-y-xs group">
-              <div
-                class="w-full py-md bg-error-container text-on-error-container rounded-xl font-label-md flex items-center justify-center active:scale-95 transition-transform"
-              >
-                ❌ Chưa biết
-              </div>
-              <span
-                class="text-[10px] leading-tight text-on-surface-variant opacity-70 text-center"
-                >Sẽ xuất hiện lại trong phiên học này</span
-              ></button
-            ><button id="btn-medium" class="flex flex-col items-center space-y-xs group">
-              <div
-                class="w-full py-md bg-tertiary-fixed text-on-tertiary-fixed-variant rounded-xl font-label-md flex items-center justify-center active:scale-95 transition-transform"
-              >
-                🔄 Cần ôn lại
-              </div>
-              <span
-                class="text-[10px] leading-tight text-on-surface-variant opacity-70 text-center"
-                >Sẽ được ôn lại sau 2 ngày</span
-              ></button
-            ><button id="btn-hard" class="flex flex-col items-center space-y-xs group">
-              <div
-                class="w-full py-md bg-secondary-container text-on-secondary-container rounded-xl font-label-md flex items-center justify-center active:scale-95 transition-transform"
-              >
-                ✅ Đã thuộc
-              </div>
-              <span
-                class="text-[10px] leading-tight text-on-surface-variant opacity-70 text-center"
-                >Sẽ được ôn lại sau 7 ngày</span
-              >
+              <div class="w-full py-md bg-error-container text-on-error-container rounded-xl font-label-md flex items-center justify-center active:scale-95 transition-transform">❌ Chưa biết</div>
+              <span class="text-[10px] leading-tight text-on-surface-variant opacity-70 text-center">Sẽ xuất hiện lại trong phiên học này</span>
+            </button>
+            <button id="btn-medium" class="flex flex-col items-center space-y-xs group">
+              <div class="w-full py-md bg-tertiary-fixed text-on-tertiary-fixed-variant rounded-xl font-label-md flex items-center justify-center active:scale-95 transition-transform">🔄 Cần ôn lại</div>
+              <span class="text-[10px] leading-tight text-on-surface-variant opacity-70 text-center">Sẽ được ôn lại sau 2 ngày</span>
+            </button>
+            <button id="btn-hard" class="flex flex-col items-center space-y-xs group">
+              <div class="w-full py-md bg-secondary-container text-on-secondary-container rounded-xl font-label-md flex items-center justify-center active:scale-95 transition-transform">✅ Đã thuộc</div>
+              <span class="text-[10px] leading-tight text-on-surface-variant opacity-70 text-center">Sẽ được ôn lại sau 7 ngày</span>
             </button>
           </div>
         </div>
-        <button
-          class="w-full h-16 border border-outline-variant text-on-surface-variant rounded-xl font-label-md text-label-md hover:bg-surface-container transition-all flex items-center justify-center space-x-sm"
-          id="nextBtn"
-        >
+        <button class="w-full h-16 border border-outline-variant text-on-surface-variant rounded-xl font-label-md text-label-md hover:bg-surface-container transition-all flex items-center justify-center space-x-sm" id="nextBtn">
           <span>Tiếp theo</span>
           <span class="material-symbols-outlined">arrow_forward</span>
         </button>

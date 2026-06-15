@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>My Learning Profile | EnglishBoost</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "error-container": "#ffdad6",
+                        "on-tertiary-fixed-variant": "#653e00",
+                        "on-surface-variant": "#434655",
+                        "primary": "#004ac6",
+                        "on-tertiary-container": "#ffeedd",
+                        "on-error": "#ffffff",
+                        "on-background": "#0b1c30",
+                        "tertiary-fixed": "#ffddb8",
+                        "secondary": "#006c49",
+                        "error": "#ba1a1a",
+                        "on-primary-fixed-variant": "#003ea8",
+                        "inverse-surface": "#213145",
+                        "surface-tint": "#0053db",
+                        "surface-container-highest": "#d3e4fe",
+                        "surface": "#f8f9ff",
+                        "primary-fixed-dim": "#b4c5ff",
+                        "outline-variant": "#c3c6d7",
+                        "on-surface": "#0b1c30",
+                        "background": "#f8f9ff",
+                        "tertiary": "#784b00",
+                        "surface-container-high": "#dce9ff",
+                        "secondary-container": "#6cf8bb",
+                        "on-primary-fixed": "#00174b",
+                        "on-error-container": "#93000a",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container": "#e5eeff",
+                        "primary-container": "#2563eb",
+                        "on-primary-container": "#eeefff",
+                        "tertiary-fixed-dim": "#ffb95f",
+                        "tertiary-container": "#996100",
+                        "on-secondary-container": "#00714d",
+                        "surface-container-low": "#eff4ff",
+                        "on-tertiary-fixed": "#2a1700",
+                        "secondary-fixed-dim": "#4edea3",
+                        "on-secondary": "#ffffff",
+                        "secondary-fixed": "#6ffbbe",
+                        "outline": "#737686",
+                        "inverse-on-surface": "#eaf1ff",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-fixed-variant": "#005236",
+                        "on-primary": "#ffffff",
+                        "surface-bright": "#f8f9ff",
+                        "inverse-primary": "#b4c5ff",
+                        "surface-dim": "#cbdbf5",
+                        "surface-variant": "#d3e4fe",
+                        "on-secondary-fixed": "#002113",
+                        "primary-fixed": "#dbe1ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "md": "24px",
+                        "xs": "4px",
+                        "xl": "80px",
+                        "base": "8px",
+                        "lg": "48px",
+                        "sm": "12px",
+                        "gutter": "24px",
+                        "container-max": "1200px"
+                    },
+                    "fontFamily": {
+                        "headline-xl": ["Inter"],
+                        "label-md": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-lg-mobile": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "label-md": ["14px", {"lineHeight": "1", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                        "label-sm": ["12px", {"lineHeight": "1", "fontWeight": "500"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #f8f9ff; color: #0b1c30; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .badge-scroll::-webkit-scrollbar { display: none; }
+        .badge-scroll { -ms-overflow-style: none; scrollbar-width: none; }
+        .glass-card { background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(10px); border: 1px solid rgba(226, 232, 240, 0.8); }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen">
+<!-- TopNavBar (Shared Component Identity) -->
+<header class="bg-surface docked full-width top-0 border-b border-outline-variant h-16 sticky z-50">
+<div class="flex justify-between items-center w-full px-gutter max-w-container-max mx-auto h-full">
+<div class="text-headline-md font-headline-md font-bold text-primary">EnglishBoost</div>
+<div class="flex items-center space-x-sm">
+<button class="p-xs text-on-surface-variant hover:text-primary transition-colors duration-200"><span class="material-symbols-outlined">notifications</span></button>
+<button class="p-xs text-primary font-bold"><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">account_circle</span></button>
+</div>
+</div>
+</header>
+<main class="max-w-container-max mx-auto px-gutter py-lg flex flex-col md:flex-row gap-lg">
+<!-- Sidebar Navigation (Desktop) -->
+<aside class="hidden md:flex flex-col w-64 space-y-sm shrink-0">
+<div class="p-md bg-surface-container-low rounded-xl border border-outline-variant space-y-md">
+<div class="flex items-center space-x-sm">
+<img alt="Student Profile" class="w-12 h-12 rounded-full border-2 border-primary object-cover" data-alt="A professional studio headshot of a focused university student with a warm, confident expression. The lighting is soft and natural, emphasizing a high-key academic aesthetic. The background is a minimalist, out-of-focus university library with clean white and blue tones, reflecting the EnglishBoost brand identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYe0_3saYp4lA9zDzh5ewkwJPgVF6nRwDYx3DUTDFUBhu1V_wjxZKqxR2mPT7SxOd27v5HeZ_SYwoZeZifB225Ei-6ub6EF7m6poqgCXcW5Kkb0gkhRiZRoFY6006tdOAip9LxN07kRLxNFhpOCibPOJhP-bM5osBzL-fmzg2UuhKZNI_00fmf24mnr4xalabFpAOd2-ui5Qmwv9RSGD5vaTPzOzI9dY23oaIgfbvM9OgFlY3w8BbceeacHKx9U2f0JoxvaebLAJ4"/>
+<div>
+<p class="font-bold text-on-surface text-body-md leading-tight">Alex Rivera</p>
+<p class="text-label-sm text-on-surface-variant">Engineering Psychology</p>
+</div>
+</div>
+</div>
+<div class="px-md py-sm">
+<p class="text-label-sm text-outline mb-sm">SYSTEM</p>
+<div class="space-y-xs">
+<a class="flex items-center space-x-sm p-sm text-on-surface-variant hover:bg-surface-container-high rounded-lg transition-transform duration-200 hover:scale-[1.02]" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-label-md font-label-md">Settings</span>
+</a>
+<a class="flex items-center space-x-sm p-sm text-on-surface-variant hover:bg-surface-container-high rounded-lg transition-transform duration-200 hover:scale-[1.02]" href="#">
+<span class="material-symbols-outlined">help_outline</span>
+<span class="text-label-md font-label-md">Help</span>
+</a>
+</div>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<div class="flex-1 space-y-lg">
+<!-- Profile Header -->
+<section class="bg-surface-container-lowest rounded-xl p-md border border-outline-variant relative overflow-hidden">
+<div class="absolute top-0 right-0 w-32 h-32 opacity-5 pointer-events-none">
+<span class="material-symbols-outlined text-[120px] text-primary">school</span>
+</div>
+<div class="flex flex-col md:flex-row items-center md:items-start gap-md">
+<div class="relative">
+<div class="w-24 h-24 rounded-full border-4 border-primary p-1">
+<img alt="Large Profile Avatar" class="w-full h-full rounded-full object-cover" data-alt="A close-up portrait of a professional-looking student with an approachable demeanor, set against a bright and airy backdrop. The composition is clean, centered, and reflects a modern academic focus, using a palette of soft blues and whites consistent with the Engineering Psychology brand aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYe0_3saYp4lA9zDzh5ewkwJPgVF6nRwDYx3DUTDFUBhu1V_wjxZKqxR2mPT7SxOd27v5HeZ_SYwoZeZifB225Ei-6ub6EF7m6poqgCXcW5Kkb0gkhRiZRoFY6006tdOAip9LxN07kRLxNFhpOCibPOJhP-bM5osBzL-fmzg2UuhKZNI_00fmf24mnr4xalabFpAOd2-ui5Qmwv9RSGD5vaTPzOzI9dY23oaIgfbvM9OgFlY3w8BbceeacHKx9U2f0JoxvaebLAJ4"/>
+</div>
+<div class="absolute -bottom-2 -right-2 bg-secondary text-on-secondary text-label-sm font-bold px-sm py-xs rounded-full shadow-md">LVL 4</div>
+</div>
+<div class="text-center md:text-left flex-1">
+<div class="flex flex-col md:flex-row md:items-end md:justify-between gap-sm mb-sm">
+<div>
+<h1 class="text-headline-lg font-headline-lg text-on-surface">Alex Rivera</h1>
+<p class="text-body-md text-on-surface-variant">University Edition | Engineering Psychology Major</p>
+</div>
+<div class="flex items-center justify-center space-x-md text-center">
+<div>
+<p class="text-label-sm text-outline">RANK</p>
+<p class="text-headline-md font-bold text-primary">#5</p>
+</div>
+<div class="w-px h-8 bg-outline-variant"></div>
+<div>
+<p class="text-label-sm text-outline">STREAK</p>
+<div class="flex items-center space-x-xs">
+<span class="material-symbols-outlined text-tertiary" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+<p class="text-headline-md font-bold text-on-surface">24</p>
+</div>
+</div>
+</div>
+</div>
+<div class="flex flex-wrap items-center justify-center md:justify-start gap-sm">
+<span class="bg-surface-container-high px-sm py-xs rounded-full text-label-md font-label-md flex items-center space-x-xs">
+<span class="material-symbols-outlined text-sm">stars</span>
+<span class="">9,850 XP</span>
+</span>
+<span class="bg-surface-container-high px-sm py-xs rounded-full text-label-md font-label-md flex items-center space-x-xs">
+<span class="material-symbols-outlined text-sm">military_tech</span>
+<span class="">12 Badges Earned</span>
+</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Recommended Next Action (Bento Focus) -->
+<section class="bg-primary-container text-on-primary-container p-md rounded-xl shadow-lg transform transition-transform hover:scale-[1.01] flex flex-col md:flex-row items-center justify-between gap-md">
+<div class="flex items-center space-x-md">
+<div class="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-headline-md">rocket_launch</span>
+</div>
+<div>
+<h2 class="text-headline-md font-headline-md leading-tight">Recommended Next Action</h2>
+<p class="text-body-md opacity-90">Complete 2 Reading lessons to reach Level 5</p>
+</div>
+</div>
+<button class="bg-white text-primary px-lg py-sm rounded-xl font-bold text-label-md hover:bg-surface-bright transition-all active:scale-[0.98] shadow-md">
+                    Continue Learning
+                </button>
+</section>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-lg">
+<!-- Achievement Summary -->
+<section class="space-y-sm">
+<h3 class="text-headline-md font-headline-md px-xs">Achievement Summary</h3>
+<div class="bg-surface-container-low border border-outline-variant rounded-xl p-md">
+<div class="flex overflow-x-auto badge-scroll gap-md pb-xs">
+<div class="flex flex-col items-center space-y-sm shrink-0 w-24 group">
+<div class="w-16 h-16 rounded-full bg-tertiary-container/20 flex items-center justify-center border-2 border-tertiary shadow-sm group-hover:scale-110 transition-transform duration-300">
+<span class="material-symbols-outlined text-tertiary text-headline-lg" style="font-variation-settings: 'FILL' 1;">history_edu</span>
+</div>
+<p class="text-label-sm text-center font-bold">Word Master</p>
+</div>
+<div class="flex flex-col items-center space-y-sm shrink-0 w-24 group">
+<div class="w-16 h-16 rounded-full bg-secondary-container/20 flex items-center justify-center border-2 border-secondary shadow-sm group-hover:scale-110 transition-transform duration-300">
+<span class="material-symbols-outlined text-secondary text-headline-lg" style="font-variation-settings: 'FILL' 1;">bolt</span>
+</div>
+<p class="text-label-sm text-center font-bold">Quick Quizzer</p>
+</div>
+<div class="flex flex-col items-center space-y-sm shrink-0 w-24 group">
+<div class="w-16 h-16 rounded-full bg-primary-container/20 flex items-center justify-center border-2 border-primary shadow-sm group-hover:scale-110 transition-transform duration-300">
+<span class="material-symbols-outlined text-primary text-headline-lg" style="font-variation-settings: 'FILL' 1;">forum</span>
+</div>
+<p class="text-label-sm text-center font-bold">Echo Pro</p>
+</div>
+<div class="flex flex-col items-center space-y-sm shrink-0 w-24 group opacity-40 grayscale">
+<div class="w-16 h-16 rounded-full bg-outline-variant/20 flex items-center justify-center border-2 border-outline-variant border-dashed shadow-sm">
+<span class="material-symbols-outlined text-outline text-headline-lg">lock</span>
+</div>
+<p class="text-label-sm text-center">Elite Scholar</p>
+</div>
+<div class="flex flex-col items-center space-y-sm shrink-0 w-24 group opacity-40 grayscale">
+<div class="w-16 h-16 rounded-full bg-outline-variant/20 flex items-center justify-center border-2 border-outline-variant border-dashed shadow-sm">
+<span class="material-symbols-outlined text-outline text-headline-lg">lock</span>
+</div>
+<p class="text-label-sm text-center">Night Owl</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Personal Goal -->
+<section class="space-y-sm">
+<h3 class="text-headline-md font-headline-md px-xs">Personal Goal</h3>
+<div class="bg-surface-container-low border border-outline-variant rounded-xl p-md">
+<div class="flex justify-between items-start mb-md">
+<div>
+<h4 class="text-headline-md font-bold text-on-surface">IELTS Goal 8.5</h4>
+<p class="text-label-sm text-on-surface-variant">Currently at 7.0 equivalent</p>
+</div>
+<span class="bg-tertiary-fixed text-on-tertiary-fixed-variant px-sm py-xs rounded-lg text-label-sm font-bold">IN PROGRESS</span>
+</div>
+<div class="space-y-sm">
+<div class="w-full bg-outline-variant/30 h-3 rounded-full overflow-hidden">
+<div class="bg-secondary h-full rounded-full transition-all duration-1000" style="width: 72%"></div>
+</div>
+<div class="flex justify-between text-label-sm text-on-surface-variant font-medium">
+<span class="">Progress: 72%</span>
+<span class="">Est. Completion: Oct 12</span>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Learning Statistics Grid -->
+<section class="space-y-sm">
+<h3 class="text-headline-md font-headline-md px-xs">Learning Statistics</h3>
+<div class="grid grid-cols-2 md:grid-cols-5 gap-md">
+<div class="bg-surface border border-outline-variant rounded-xl p-md flex flex-col items-center text-center space-y-xs hover:border-primary transition-colors cursor-default group">
+<span class="material-symbols-outlined text-primary mb-xs group-hover:scale-110 transition-transform">menu_book</span>
+<p class="text-headline-md font-bold">1,240</p>
+<p class="text-label-sm text-on-surface-variant">Vocab Learned</p>
+</div>
+<div class="bg-surface border border-outline-variant rounded-xl p-md flex flex-col items-center text-center space-y-xs hover:border-primary transition-colors cursor-default group">
+<span class="material-symbols-outlined text-primary mb-xs group-hover:scale-110 transition-transform">headphones</span>
+<p class="text-headline-md font-bold">42</p>
+<p class="text-label-sm text-on-surface-variant">Listenings</p>
+</div>
+<div class="bg-surface border border-outline-variant rounded-xl p-md flex flex-col items-center text-center space-y-xs hover:border-primary transition-colors cursor-default group">
+<span class="material-symbols-outlined text-primary mb-xs group-hover:scale-110 transition-transform">article</span>
+<p class="text-headline-md font-bold">18</p>
+<p class="text-label-sm text-on-surface-variant">Articles</p>
+</div>
+<div class="bg-surface border border-outline-variant rounded-xl p-md flex flex-col items-center text-center space-y-xs hover:border-primary transition-colors cursor-default group">
+<span class="material-symbols-outlined text-secondary mb-xs group-hover:scale-110 transition-transform">task_alt</span>
+<p class="text-headline-md font-bold text-secondary">94%</p>
+<p class="text-label-sm text-on-surface-variant">Quiz Accuracy</p>
+</div>
+<div class="bg-surface border border-outline-variant rounded-xl p-md flex flex-col items-center text-center space-y-xs hover:border-primary transition-colors cursor-default group col-span-2 md:col-span-1">
+<span class="material-symbols-outlined text-primary mb-xs group-hover:scale-110 transition-transform">schedule</span>
+<p class="text-headline-md font-bold">128h</p>
+<p class="text-label-sm text-on-surface-variant">Study Time</p>
+</div>
+</div>
+</section>
+<!-- Learning Journey Timeline -->
+<section class="space-y-sm">
+<h3 class="text-headline-md font-headline-md px-xs">Learning Journey</h3>
+<div class="bg-surface-container-low border border-outline-variant rounded-xl p-md relative">
+<div class="absolute left-[39px] top-md bottom-md w-0.5 bg-outline-variant/50"></div>
+<div class="space-y-lg relative">
+<!-- Milestone 1 (Current/Latest) -->
+<div class="flex items-start space-x-md group">
+<div class="z-10 w-8 h-8 rounded-full bg-primary flex items-center justify-center ring-4 ring-white shadow-md">
+<span class="material-symbols-outlined text-white text-body-md" style="font-variation-settings: 'FILL' 1;">emoji_events</span>
+</div>
+<div class="bg-white p-sm rounded-xl border border-outline-variant flex-1 shadow-sm group-hover:shadow-md transition-shadow">
+<div class="flex justify-between items-start">
+<h5 class="text-label-md font-bold">Reached Level 4</h5>
+<span class="text-label-sm text-outline">Yesterday</span>
+</div>
+<p class="text-body-md text-on-surface-variant">Unlocked "Advanced Engineering Linguistics" modules.</p>
+</div>
+</div>
+<!-- Milestone 2 -->
+<div class="flex items-start space-x-md group">
+<div class="z-10 w-8 h-8 rounded-full bg-tertiary flex items-center justify-center ring-4 ring-white shadow-md">
+<span class="material-symbols-outlined text-white text-body-md" style="font-variation-settings: 'FILL' 1;">military_tech</span>
+</div>
+<div class="bg-white p-sm rounded-xl border border-outline-variant flex-1 shadow-sm group-hover:shadow-md transition-shadow">
+<div class="flex justify-between items-start">
+<h5 class="text-label-md font-bold">Unlocked Word Master</h5>
+<span class="text-label-sm text-outline">Aug 15, 2024</span>
+</div>
+<p class="text-body-md text-on-surface-variant">Successfully mastered 1,000 academic vocabulary terms.</p>
+</div>
+</div>
+<!-- Milestone 3 -->
+<div class="flex items-start space-x-md group">
+<div class="z-10 w-8 h-8 rounded-full bg-secondary flex items-center justify-center ring-4 ring-white shadow-md">
+<span class="material-symbols-outlined text-white text-body-md" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div class="bg-white p-sm rounded-xl border border-outline-variant flex-1 shadow-sm group-hover:shadow-md transition-shadow">
+<div class="flex justify-between items-start">
+<h5 class="text-label-md font-bold">Reached Level 2</h5>
+<span class="text-label-sm text-outline">Jul 20, 2024</span>
+</div>
+<p class="text-body-md text-on-surface-variant">Completed the "Psychology Fundamentals in English" track.</p>
+</div>
+</div>
+</div>
+<button class="w-full mt-md py-sm text-label-md font-bold text-primary hover:bg-surface-container-high rounded-lg transition-colors">
+                        View All Milestones
+                    </button>
+</div>
+</section>
+</div>
+</main>
+<!-- Footer (Shared Component Identity) -->
+<footer class="bg-surface-container-lowest w-full py-lg border-t border-outline-variant mt-xl">
+<div class="flex flex-col md:flex-row justify-between items-center px-gutter max-w-container-max mx-auto space-y-md md:space-y-0">
+<div class="text-label-md font-label-md font-bold text-on-surface">EnglishBoost</div>
+<p class="text-body-md font-body-md text-on-surface-variant text-center md:text-left">© 2024 EnglishBoost Engineering Psychology Lab</p>
+<div class="flex space-x-md">
+<a class="text-on-surface-variant hover:text-primary transition-colors text-label-sm font-label-sm" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-label-sm font-label-sm" href="#">Terms of Service</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-label-sm font-label-sm" href="#">University Portal</a>
+</div>
+</div>
+</footer>
+<!-- Mobile Bottom Navigation (Shared Component Shell Rule) -->
+<nav class="md:hidden fixed bottom-0 left-0 right-0 bg-surface border-t border-outline-variant h-16 flex items-center justify-around z-50">
+<button class="flex flex-col items-center space-y-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-lg">menu_book</span>
+<span class="text-[10px] font-bold">Vocab</span>
+</button>
+<button class="flex flex-col items-center space-y-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-lg">headset</span>
+<span class="text-[10px] font-bold">Listen</span>
+</button>
+<button class="flex flex-col items-center space-y-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-lg">auto_stories</span>
+<span class="text-[10px] font-bold">Read</span>
+</button>
+<button class="flex flex-col items-center space-y-1 text-primary">
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">insights</span>
+<span class="text-[10px] font-bold">Progress</span>
+</button>
+</nav>
+<script>
+        // Simple micro-interaction for cards
+        document.querySelectorAll('.group').forEach(el => {
+            el.addEventListener('mousedown', () => {
+                el.style.transform = 'scale(0.98)';
+            });
+            el.addEventListener('mouseup', () => {
+                el.style.transform = '';
+            });
+        });
+    </script>
+</body></html>

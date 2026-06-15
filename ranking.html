@@ -1,0 +1,794 @@
+<!doctype html>
+<html class="light" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 400,
+          "GRAD" 0,
+          "opsz" 24;
+        display: inline-block;
+        vertical-align: middle;
+      }
+      body {
+        font-family: "Inter", sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      .podium-gradient {
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0) 0%,
+          rgba(229, 238, 255, 1) 100%
+        );
+      }
+      .glass-card {
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(8px);
+        border: 1px solid rgba(226, 232, 240, 0.8);
+      }
+    </style>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "error-container": "#ffdad6",
+              "on-tertiary-fixed-variant": "#653e00",
+              "on-surface-variant": "#434655",
+              primary: "#004ac6",
+              "on-tertiary-container": "#ffeedd",
+              "on-error": "#ffffff",
+              "on-background": "#0b1c30",
+              "tertiary-fixed": "#ffddb8",
+              secondary: "#006c49",
+              error: "#ba1a1a",
+              "on-primary-fixed-variant": "#003ea8",
+              "inverse-surface": "#213145",
+              "surface-tint": "#0053db",
+              "surface-container-highest": "#d3e4fe",
+              surface: "#f8f9ff",
+              "primary-fixed-dim": "#b4c5ff",
+              "outline-variant": "#c3c6d7",
+              "on-surface": "#0b1c30",
+              background: "#f8f9ff",
+              tertiary: "#784b00",
+              "surface-container-high": "#dce9ff",
+              "secondary-container": "#6cf8bb",
+              "on-primary-fixed": "#00174b",
+              "on-error-container": "#93000a",
+              "surface-container": "#e5eeff",
+              "primary-container": "#2563eb",
+              "on-primary-container": "#eeefff",
+              "tertiary-fixed-dim": "#ffb95f",
+              "tertiary-container": "#996100",
+              "on-secondary-container": "#00714d",
+              "surface-container-low": "#eff4ff",
+              "on-tertiary-fixed": "#2a1700",
+              "secondary-fixed-dim": "#4edea3",
+              "on-secondary": "#ffffff",
+              "secondary-fixed": "#6ffbbe",
+              outline: "#737686",
+              "inverse-on-surface": "#eaf1ff",
+              "on-tertiary": "#ffffff",
+              "on-secondary-fixed-variant": "#005236",
+              "on-primary": "#ffffff",
+              "surface-bright": "#f8f9ff",
+              "inverse-primary": "#b4c5ff",
+              "surface-dim": "#cbdbf5",
+              "surface-variant": "#d3e4fe",
+              "on-secondary-fixed": "#002113",
+              "primary-fixed": "#dbe1ff",
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+            spacing: {
+              md: "24px",
+              xs: "4px",
+              xl: "80px",
+              base: "8px",
+              lg: "48px",
+              sm: "12px",
+              gutter: "24px",
+              "container-max": "1200px",
+            },
+            fontFamily: {
+              "headline-xl": ["Inter"],
+              "label-md": ["Inter"],
+              "label-sm": ["Inter"],
+              "headline-lg": ["Inter"],
+              "headline-md": ["Inter"],
+              "body-md": ["Inter"],
+              "body-lg": ["Inter"],
+              "headline-lg-mobile": ["Inter"],
+            },
+            fontSize: {
+              "headline-xl": [
+                "48px",
+                {
+                  lineHeight: "1.1",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "700",
+                },
+              ],
+              "label-md": [
+                "14px",
+                { lineHeight: "1", letterSpacing: "0.02em", fontWeight: "600" },
+              ],
+              "label-sm": ["12px", { lineHeight: "1", fontWeight: "500" }],
+              "headline-lg": [
+                "32px",
+                {
+                  lineHeight: "1.2",
+                  letterSpacing: "-0.01em",
+                  fontWeight: "700",
+                },
+              ],
+              "headline-md": ["24px", { lineHeight: "1.3", fontWeight: "600" }],
+              "body-md": ["16px", { lineHeight: "1.6", fontWeight: "400" }],
+              "body-lg": ["18px", { lineHeight: "1.6", fontWeight: "400" }],
+              "headline-lg-mobile": [
+                "24px",
+                { lineHeight: "1.2", fontWeight: "700" },
+              ],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-background text-on-background min-h-screen flex flex-col">
+    <!-- TopNavBar -->
+    <header
+      class="bg-surface dark:bg-surface-dim border-b border-outline-variant dark:border-outline fixed top-0 w-full z-50 h-16"
+    >
+      <div
+        class="flex justify-between items-center w-full px-gutter max-w-container-max mx-auto h-full"
+      >
+        <a
+          class="text-headline-md font-headline-md font-bold text-primary dark:text-primary-fixed-dim hover:opacity-90 transition-opacity"
+          href="index.html"
+        >
+          EnglishBoost
+        </a>
+        <nav class="hidden md:flex space-x-md">
+          <a
+            class="text-on-surface-variant dark:text-on-surface-variant text-label-md font-label-md hover:text-primary transition-colors duration-200"
+            href="flashcard_eval.html"
+            >Vocabulary</a
+          >
+          <a
+            class="text-on-surface-variant dark:text-on-surface-variant text-label-md font-label-md hover:text-primary transition-colors duration-200"
+            href="listening.html"
+            >Listening</a
+          >
+          <a
+            class="text-on-surface-variant dark:text-on-surface-variant text-label-md font-label-md hover:text-primary transition-colors duration-200"
+            href="reading.html"
+            >Reading</a
+          >
+          <a
+            class="text-on-surface-variant dark:text-on-surface-variant text-label-md font-label-md hover:text-primary transition-colors duration-200"
+            href="progress.html"
+            >Progress</a
+          ><a
+            class="text-primary font-bold border-b-2 border-primary pb-1 text-label-md font-label-md"
+            href="ranking.html"
+            >Ranking</a
+          >
+        </nav>
+        <div class="flex items-center space-x-md">
+          <button class="material-symbols-outlined text-on-surface-variant">
+            notifications
+          </button>
+          <a href="profile.html" class="material-symbols-outlined text-primary">
+            account_circle
+          </a>
+        </div>
+      </div>
+    </header>
+    <main
+      class="flex-grow pt-24 pb-lg max-w-container-max mx-auto w-full px-gutter grid grid-cols-12 gap-md"
+    >
+      <!-- Left Column: Ranking Content -->
+      <div class="col-span-12 lg:col-span-8 space-y-md">
+        <!-- Academic Ranking Header -->
+        <section
+          class="bg-surface-container-lowest rounded-xl p-md border border-outline-variant"
+        >
+          <div
+            class="flex flex-col md:flex-row md:items-center justify-between gap-md mb-md"
+          >
+            <div>
+              <h1 class="text-headline-lg font-headline-lg text-on-surface">
+                Academic Ranking
+              </h1>
+              <p class="text-body-md font-body-md text-on-surface-variant">
+                University-wide achievement leaderboard
+              </p>
+            </div>
+            <div class="flex items-center space-x-lg">
+              <div class="text-center">
+                <p
+                  class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider"
+                >
+                  Current Rank
+                </p>
+                <p class="text-headline-md font-headline-md text-primary">#5</p>
+              </div>
+              <div class="h-10 w-px bg-outline-variant"></div>
+              <div class="text-center">
+                <p
+                  class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider"
+                >
+                  Total XP
+                </p>
+                <p class="text-headline-md font-headline-md text-primary">
+                  9,850
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="space-y-xs">
+            <div class="flex justify-between text-label-md font-label-md">
+              <span class="text-on-surface-variant"
+                >Next Rank: Silver Tier</span
+              >
+              <span class="text-primary">250 XP needed</span>
+            </div>
+            <div
+              class="w-full bg-surface-container-high rounded-full h-2.5 overflow-hidden"
+            >
+              <div
+                class="bg-secondary h-full rounded-full w-3/4 transition-all duration-1000"
+              ></div>
+            </div>
+          </div>
+        </section>
+        <!-- Top 3 Podium -->
+        <section
+          class="grid grid-cols-3 gap-xs items-end pb-sm pt-lg h-[400px]"
+          style="
+            background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuCGAl2zC05z3wZdIRa7XRf2h03XLNh0UM42bPDjEr8yvFjH45iMFAWMgo99y8lclAYp2QTr6ZY6pcuzZWeD5Bw0fuL6caCXZ5XNJ4o8mB07Kua7Y6LU8tTkkUfgDzBUJ6uSOTdrHBNAFMAvv8I2FjvKSa6X9RJLjsz2IxEceqTb4gp5SHjOmjGNqKpKbJTEBBl4FQULIXgRyH4gWy7NK1ApjB1UGgR5wokxgOHlNq0Tkd9HifguHJkbbICgVsxoqFGl9h49KOQCQCg&quot;);
+            background-size: cover;
+            background-position: center center;
+            position: relative;
+          "
+        >
+          <div class="absolute inset-0 bg-white/60 pointer-events-none"></div>
+          <!-- 2nd Place -->
+          <div class="flex flex-col items-center">
+            <div class="relative mb-md">
+              <img
+                alt="Felix Avatar"
+                class="w-20 h-20 rounded-full border-4 border-slate-300 bg-white"
+                data-alt="A professional studio portrait of a friendly male university student avatar with short brown hair and glasses, set against a soft blue background. The style is clean, modern, and minimalist, consistent with a high-end educational app interface using a bright light-mode aesthetic."
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCH42n6GxjuV-kPVkXNBeWDGrrpbpNjynQr55BYvfDBcbxJU4yG3nuTZdrMw2K8Z4XzeMYaiGIBMRM0B4bS5EQKA7LCVL-d_26mkZYsVFLWZKA9oDDqOQHPvFYlzvpH-O0lxpDP2NksANWKLBGKCMd6pCxyHeGPMUE6Knqq8ZILp_eTwQJsYj0pv6CrjdhPaeo9XxQgZ8jvqo6kw3MbQsLTpYPz6zvrIkFBQsAtdP783xyJE-wVumOPUDmjv8j29LziuJbGf8j1JPI"
+              />
+              <div
+                class="absolute -top-3 -right-3 bg-slate-300 text-on-surface w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm"
+              >
+                2
+              </div>
+            </div>
+            <div
+              class="bg-surface-container-low border-x border-t border-outline-variant w-full rounded-t-xl podium-gradient h-32 flex flex-col items-center justify-center p-xs text-center"
+            >
+              <p class="font-bold text-label-md">Felix K.</p>
+              <p class="text-label-sm text-on-surface-variant">
+                Lvl 42 • 12,400 XP
+              </p>
+              <div class="flex space-x-1 mt-1">
+                <span
+                  class="material-symbols-outlined text-[16px] text-tertiary"
+                  style="font-variation-settings: &quot;FILL&quot; 1"
+                  >stars</span
+                >
+                <span class="text-label-sm font-bold">14</span>
+              </div>
+            </div>
+          </div>
+          <!-- 1st Place -->
+          <div class="flex flex-col items-center">
+            <div class="relative mb-md scale-110">
+              <div
+                class="absolute -top-6 left-1/2 -translate-x-1/2 text-tertiary"
+              >
+                <span
+                  class="material-symbols-outlined text-4xl"
+                  style="font-variation-settings: &quot;FILL&quot; 1"
+                  >workspace_premium</span
+                >
+              </div>
+              <img
+                alt="Elena Avatar"
+                class="w-24 h-24 rounded-full border-4 border-tertiary bg-white"
+                data-alt="A high-quality 3D avatar of a focused female student with long blonde hair and a professional blazer, looking confidently at the viewer. The image is bright and airy, reflecting a professional engineering psychology aesthetic with subtle blue and orange accents."
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDaCVYJZ7q-LeOGIpivkq4ZRPZH8M1t3RTbM_0EKtD0aLvwB-RePgeVxRq2h7UJcHlguN8zlURHcan519okbv8-UP_UjlxwkWmnPwbxsybDZ-eGNHQV7_08WynSmSkOf4u7vDwtMR0K0tnXJjPrT3UGfMQe5MB9gO_aKufOVOMfkEO5lHPDe4ewTMRSi6kvb6TzrcQDT20mfWNPL3xSlj_9cWueXkjAOqhyDZ6ZAFKvubTiS--XOp2OFQFnecxoPIaA5b3dnq4t02k"
+              />
+              <div
+                class="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-tertiary text-white w-10 h-6 rounded-full flex items-center justify-center font-bold text-xs"
+              >
+                GOLD
+              </div>
+            </div>
+            <div
+              class="bg-surface-container-low border-x border-t border-outline-variant w-full rounded-t-xl podium-gradient h-48 flex flex-col items-center justify-center p-xs text-center"
+            >
+              <p class="font-bold text-body-md">Elena V.</p>
+              <p class="text-label-sm text-on-surface-variant">
+                Lvl 48 • 15,200 XP
+              </p>
+              <div class="flex space-x-1 mt-1">
+                <span
+                  class="material-symbols-outlined text-[16px] text-tertiary"
+                  style="font-variation-settings: &quot;FILL&quot; 1"
+                  >stars</span
+                >
+                <span class="text-label-sm font-bold">22</span>
+              </div>
+            </div>
+          </div>
+          <!-- 3rd Place -->
+          <div class="flex flex-col items-center">
+            <div class="relative mb-md">
+              <img
+                alt="Marco Avatar"
+                class="w-20 h-20 rounded-full border-4 border-orange-300 bg-white"
+                data-alt="A friendly male student avatar with dark hair and a polo shirt, designed in a clean vector style. The lighting is soft and natural, emphasizing a calm and focused learning environment. The color palette is dominated by whites and soft blues to match a premium university portal's visual language."
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJ90CNrn9apAu-IsCukzrfqmeOnDfX17eny-X3bv2H4_Aw9J16vcMB78l40C-v8TOo3rw2W6ebyK0kauKR-rdslWaJmayt0PkRPUyvTSMQvXaS-IIUg7gIifiRJAOVLeiuhVs5Uf5YpbXgZvtRHroRtSCaW39WNM--y2ar5c9KRiVy3d713SMQVV5nRMmsxpoXlBz7IkQ8TUWkoEMeEpP8b8ZxUaUabvqIztqlVLQfkCyse-vyd2ldvyt4MK1hZd-3RrvTGyMPmiw"
+              />
+              <div
+                class="absolute -top-3 -right-3 bg-orange-300 text-on-tertiary-fixed w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm"
+              >
+                3
+              </div>
+            </div>
+            <div
+              class="bg-surface-container-low border-x border-t border-outline-variant w-full rounded-t-xl podium-gradient h-24 flex flex-col items-center justify-center p-xs text-center"
+            >
+              <p class="font-bold text-label-md">Marco R.</p>
+              <p class="text-label-sm text-on-surface-variant">
+                Lvl 39 • 11,150 XP
+              </p>
+              <div class="flex space-x-1 mt-1">
+                <span
+                  class="material-symbols-outlined text-[16px] text-tertiary"
+                  style="font-variation-settings: &quot;FILL&quot; 1"
+                  >stars</span
+                >
+                <span class="text-label-sm font-bold">11</span>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- Ranking List -->
+        <section
+          class="bg-surface-container-lowest rounded-xl border border-outline-variant overflow-hidden"
+        >
+          <div
+            class="p-md border-b border-outline-variant bg-surface-container-low flex justify-between items-center"
+          >
+            <h3 class="font-bold text-label-md">Global Ranking</h3>
+            <div class="flex space-x-xs">
+              <button
+                class="px-3 py-1 text-label-sm font-label-sm bg-primary text-white rounded-full"
+              >
+                Weekly
+              </button>
+              <button
+                class="px-3 py-1 text-label-sm font-label-sm text-on-surface-variant hover:bg-surface-container-high rounded-full transition-colors"
+              >
+                All Time
+              </button>
+            </div>
+          </div>
+          <div class="divide-y divide-outline-variant">
+            <!-- Rank 4 -->
+            <div
+              class="flex items-center p-md hover:bg-surface-container-low transition-colors group"
+            >
+              <div class="w-12 text-center font-bold text-on-surface-variant">
+                4
+              </div>
+              <img
+                class="w-10 h-10 rounded-full mx-md bg-white border border-outline-variant"
+                data-alt="Female avatar for a student profile."
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDkKkV6Jpry4iQLeVzKWgFY7vp_ib24XyTBQb9yecFmlUcv68aF454mlrVRVx0VNZmrSbzsp-C-akrjB6Zf9I1HJIXTnwJOumRPqA8BWsS6pOgcKv0z0J0whvRC-kxmXRYEVi7-niIacF6X9fihvG8p3aJjMBqngD8QQ1abr5nHSDOw02CU0V4zD5QH1yWmjg8IgtBEVZZOEPXqKMFTtJF1I5Jxl1dVh4noij3oKQ64w20QcoO4mIGcdfuTZ4uuHEl3oxwVj8qnayY"
+              />
+              <div class="flex-grow">
+                <div class="flex items-center space-x-2">
+                  <span class="font-bold text-on-surface">Sophie T.</span>
+                  <span
+                    class="material-symbols-outlined text-primary text-sm"
+                    title="Word Master"
+                    >menu_book</span
+                  >
+                </div>
+                <span class="text-label-sm text-on-surface-variant"
+                  >Level 35</span
+                >
+              </div>
+              <div class="text-right flex items-center space-x-lg">
+                <div class="hidden md:block">
+                  <div class="flex items-center space-x-1">
+                    <span
+                      class="material-symbols-outlined text-tertiary text-sm"
+                      style="font-variation-settings: &quot;FILL&quot; 1"
+                      >stars</span
+                    >
+                    <span class="text-label-sm font-bold">9</span>
+                  </div>
+                </div>
+                <div class="w-24 text-right font-bold text-primary">
+                  10,200 XP
+                </div>
+              </div>
+            </div>
+            <!-- Rank 5 (User Row) -->
+            <div
+              class="flex items-center p-md bg-primary-container text-on-primary-container relative"
+            >
+              <div class="absolute left-0 top-0 bottom-0 w-1 bg-primary"></div>
+              <div class="w-12 text-center font-extrabold">5</div>
+              <img
+                class="w-10 h-10 rounded-full mx-md bg-white border-2 border-primary"
+                data-alt="Student user avatar."
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBj7TF3RjR3MMIP05OPx1zna3RN5BF7LBy0nHjcnu3PYlIvnsEawjIDnvouu-RS7NgPD0nP4wwdkvs8DDaYwJUSllrK17QzZl4GG9imHLL6ooq6xZKAUwcFdj5eG_PepAE-VgeLfkbGXIeRFWiAO9dngVPwd_sTsXwZoKRkDKi_7VJvLYFtj7HGptJ2W3rmZNei6WnGIa9CPgh-B3NBISJFoo6epwTmAxWWsYrPe_g2nXUbTDWGVW9PnUcGDhJuKpJYkL818wxsluE"
+              />
+              <div class="flex-grow">
+                <div class="flex items-center space-x-2">
+                  <span class="font-extrabold">You (Current)</span>
+                  <span
+                    class="material-symbols-outlined text-on-primary-container text-sm"
+                    title="Listening Ace"
+                    >headset</span
+                  >
+                </div>
+                <span class="text-label-sm opacity-80">Level 32</span>
+              </div>
+              <div class="text-right flex items-center space-x-lg">
+                <div class="hidden md:block">
+                  <div class="flex items-center space-x-1">
+                    <span
+                      class="material-symbols-outlined text-on-primary-container text-sm"
+                      style="font-variation-settings: &quot;FILL&quot; 1"
+                      >stars</span
+                    >
+                    <span class="text-label-sm font-bold">6</span>
+                  </div>
+                </div>
+                <div class="w-24 text-right font-extrabold">9,850 XP</div>
+              </div>
+            </div>
+            <!-- Rank 6 -->
+            <div
+              class="flex items-center p-md hover:bg-surface-container-low transition-colors"
+            >
+              <div class="w-12 text-center font-bold text-on-surface-variant">
+                6
+              </div>
+              <img
+                class="w-10 h-10 rounded-full mx-md bg-white border border-outline-variant"
+                data-alt="Male avatar for a student profile."
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDF49f5wqmaOYAtSlFV4kMtUQ9PM2w1YMLWwRL6isHcunNH8KdXoaJfdxQtpAzizIc3dRWxWpqJR_8U76Qz5Vm1VmSLYmYjKJtjiNeI5VdSe0lGgkK5UqzWxFw6UJbL7BGjCJBntum5Ad4DCXCxk1oqPF70_7hkF5EtAkycpmMG1Aj2aRMTY6oFFV4TYj2K7y9cKdfBrfNOQirt0L5W6_U0DJGZ7aRnGbRVVYxNi5L-jP45migw3CEGntwJXvDW8HoVw5UrovLg4i4"
+              />
+              <div class="flex-grow">
+                <div class="flex items-center space-x-2">
+                  <span class="font-bold text-on-surface">Julian M.</span>
+                </div>
+                <span class="text-label-sm text-on-surface-variant"
+                  >Level 31</span
+                >
+              </div>
+              <div class="text-right flex items-center space-x-lg">
+                <div class="hidden md:block">
+                  <div class="flex items-center space-x-1">
+                    <span
+                      class="material-symbols-outlined text-tertiary text-sm"
+                      style="font-variation-settings: &quot;FILL&quot; 1"
+                      >stars</span
+                    >
+                    <span class="text-label-sm font-bold">5</span>
+                  </div>
+                </div>
+                <div class="w-24 text-right font-bold text-primary">
+                  9,410 XP
+                </div>
+              </div>
+            </div>
+            <!-- Rank 7 -->
+            <div
+              class="flex items-center p-md hover:bg-surface-container-low transition-colors"
+            >
+              <div class="w-12 text-center font-bold text-on-surface-variant">
+                7
+              </div>
+              <img
+                class="w-10 h-10 rounded-full mx-md bg-white border border-outline-variant"
+                data-alt="Female avatar for a student profile."
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8vxF5eJONFfvISyBuN1Hag3BvZaeMri_0A81oQFeVqLmdBeNmOqTPfH4HH55BEkAhT5HQNCXo7jvdiiXIFKWMiJJyHtMHZy8PaYpuNzVX-Ga-Jufu1zXACHwjS0LV6CzeVyg8N6X7x3awtIPMcAkGL2_Hs3d-mwn1uvclBMhHMsTEzbxtIdo6FYrVphjCVPavgVHGZI2P0oKZb_J-bm-KPBoX4XOz23HFR62czPDEtvniywGzNa7ifeCq4XsYMgfYezATPBQRPrM"
+              />
+              <div class="flex-grow">
+                <div class="flex items-center space-x-2">
+                  <span class="font-bold text-on-surface">Isabella L.</span>
+                  <span
+                    class="material-symbols-outlined text-secondary text-sm"
+                    title="Grammar Specialist"
+                    >auto_stories</span
+                  >
+                </div>
+                <span class="text-label-sm text-on-surface-variant"
+                  >Level 29</span
+                >
+              </div>
+              <div class="text-right flex items-center space-x-lg">
+                <div class="hidden md:block">
+                  <div class="flex items-center space-x-1">
+                    <span
+                      class="material-symbols-outlined text-tertiary text-sm"
+                      style="font-variation-settings: &quot;FILL&quot; 1"
+                      >stars</span
+                    >
+                    <span class="text-label-sm font-bold">7</span>
+                  </div>
+                </div>
+                <div class="w-24 text-right font-bold text-primary">
+                  8,920 XP
+                </div>
+              </div>
+            </div>
+          </div>
+          <button
+            class="w-full py-md text-label-md font-label-md text-primary hover:bg-surface-container-low transition-colors border-t border-outline-variant"
+          >
+            View full leaderboard
+          </button>
+        </section>
+      </div>
+      <!-- Right Column: Sidebar Statistics -->
+      <aside class="col-span-12 lg:col-span-4 space-y-md sticky top-24">
+        <div
+          class="bg-surface-container-lowest rounded-xl border border-outline-variant p-md bg-white"
+        >
+          <h3 class="text-headline-md font-headline-md text-on-surface mb-md">
+            Your Statistics
+          </h3>
+          <div class="space-y-md">
+            <!-- Stat Card -->
+            <div
+              class="bg-surface-container-low rounded-lg p-md border border-outline-variant flex items-center space-x-md"
+            >
+              <div
+                class="w-12 h-12 bg-primary-container text-on-primary-container rounded-full flex items-center justify-center"
+              >
+                <span class="material-symbols-outlined">bolt</span>
+              </div>
+              <div>
+                <p
+                  class="text-label-sm font-label-sm text-on-surface-variant uppercase"
+                >
+                  Current XP
+                </p>
+                <p class="text-headline-md font-headline-md text-primary">
+                  9,850
+                </p>
+              </div>
+            </div>
+            <!-- Stat Row Grid -->
+            <div class="grid grid-cols-2 gap-sm">
+              <div
+                class="bg-surface-container-low rounded-lg p-md border border-outline-variant"
+              >
+                <p
+                  class="text-label-sm font-label-sm text-on-surface-variant uppercase"
+                >
+                  Level
+                </p>
+                <p class="text-headline-md font-headline-md">32</p>
+              </div>
+              <div
+                class="bg-surface-container-low rounded-lg p-md border border-outline-variant"
+              >
+                <p
+                  class="text-label-sm font-label-sm text-on-surface-variant uppercase"
+                >
+                  Badges
+                </p>
+                <p class="text-headline-md font-headline-md">6</p>
+              </div>
+            </div>
+            <!-- Streak Card -->
+            <div
+              class="bg-tertiary-container text-on-tertiary-container rounded-lg p-md flex items-center justify-between"
+            >
+              <div class="flex items-center space-x-md">
+                <span class="material-symbols-outlined text-3xl"
+                  >local_fire_department</span
+                >
+                <div>
+                  <p class="text-label-sm font-label-sm opacity-90 uppercase">
+                    Current Streak
+                  </p>
+                  <p class="text-headline-md font-headline-md">24 Days</p>
+                </div>
+              </div>
+            </div>
+            <!-- Rank summary -->
+            <div
+              class="bg-surface-container-low rounded-lg p-md border border-outline-variant"
+            >
+              <div class="flex justify-between items-center mb-sm">
+                <p
+                  class="text-label-sm font-label-sm text-on-surface-variant uppercase"
+                >
+                  Current Rank
+                </p>
+                <span class="text-primary font-bold text-label-md">Top 5%</span>
+              </div>
+              <div class="flex items-center space-x-md">
+                <span class="text-headline-xl font-headline-xl text-primary"
+                  >#5</span
+                >
+                <div class="text-on-surface-variant text-label-sm">
+                  <p class="">Progressing faster than</p>
+                  <p class="">85% of other students</p>
+                </div>
+              </div>
+            </div>
+            <button
+              class="w-full bg-primary text-white py-4 rounded-xl font-bold hover:scale-[1.02] transition-transform active:scale-[0.98]"
+            >
+              Share Progress
+            </button>
+          </div>
+        </div>
+        <!-- Recent Achievements -->
+        <div
+          class="bg-surface-container-lowest rounded-xl border border-outline-variant p-md"
+        >
+          <h4
+            class="text-label-md font-bold mb-md uppercase tracking-wider text-on-surface-variant"
+          >
+            Top Achievements
+          </h4>
+          <div class="space-y-md">
+            <div class="flex items-center space-x-md">
+              <div
+                class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-primary border border-outline-variant"
+              >
+                <span class="material-symbols-outlined">headset</span>
+              </div>
+              <div>
+                <p class="font-bold text-label-md">Listening Ace</p>
+                <p class="text-label-sm text-on-surface-variant">
+                  30 days of perfect scores
+                </p>
+              </div>
+            </div>
+            <div class="flex items-center space-x-md">
+              <div
+                class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-secondary border border-outline-variant"
+              >
+                <span class="material-symbols-outlined">menu_book</span>
+              </div>
+              <div>
+                <p class="font-bold text-label-md">Word Master</p>
+                <p class="text-label-sm text-on-surface-variant">
+                  Learned 500 new words
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </main>
+    <!-- Footer -->
+    <footer
+      class="bg-surface-container-lowest border-t border-outline-variant w-full py-lg mt-auto"
+    >
+      <div
+        class="flex flex-col md:flex-row justify-between items-center px-gutter max-w-container-max mx-auto"
+      >
+        <div
+          class="text-label-md font-label-md font-bold text-on-surface mb-md md:mb-0"
+        >
+          EnglishBoost
+        </div>
+        <div
+          class="text-body-md font-body-md text-on-surface-variant text-center md:text-left mb-md md:mb-0"
+        >
+          © 2024 EnglishBoost Engineering Psychology Lab
+        </div>
+        <div class="flex space-x-lg">
+          <a
+            class="text-on-surface-variant hover:text-primary text-label-sm transition-colors"
+            href="#"
+            >Privacy Policy</a
+          >
+          <a
+            class="text-on-surface-variant hover:text-primary text-label-sm transition-colors"
+            href="#"
+            >Terms of Service</a
+          >
+          <a
+            class="text-on-surface-variant hover:text-primary text-label-sm transition-colors"
+            href="#"
+            >University Portal</a
+          >
+        </div>
+      </div>
+    </footer>
+    <!-- Mobile BottomNavBar -->
+    <nav
+      class="md:hidden fixed bottom-0 left-0 w-full bg-surface border-t border-outline-variant flex justify-around items-center h-16 z-50"
+    >
+      <a
+        class="flex flex-col items-center text-on-surface-variant hover:text-primary transition-colors"
+        href="flashcard_eval.html"
+      >
+        <span class="material-symbols-outlined">menu_book</span>
+        <span class="text-[10px] font-bold">Vocabulary</span>
+      </a>
+      <a
+        class="flex flex-col items-center text-on-surface-variant hover:text-primary transition-colors"
+        href="listening.html"
+      >
+        <span class="material-symbols-outlined">headset</span>
+        <span class="text-[10px] font-bold">Listening</span>
+      </a>
+      <a
+        class="flex flex-col items-center text-on-surface-variant hover:text-primary transition-colors"
+        href="reading.html"
+      >
+        <span class="material-symbols-outlined">auto_stories</span>
+        <span class="text-[10px] font-bold">Reading</span>
+      </a>
+      <a
+        class="flex flex-col items-center text-primary transition-colors"
+        href="progress.html"
+      >
+        <span
+          class="material-symbols-outlined"
+          style="font-variation-settings: &quot;FILL&quot; 1"
+          >insights</span
+        >
+        <span class="text-[10px] font-bold">Progress</span>
+      </a>
+    </nav>
+    <script>
+      // Simple interaction for progress bar
+      window.addEventListener("DOMContentLoaded", () => {
+        const progressBars = document.querySelectorAll(".bg-secondary");
+        progressBars.forEach((bar) => {
+          const width = bar.style.width;
+          bar.style.width = "0%";
+          setTimeout(() => {
+            bar.style.width = width;
+          }, 300);
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,671 @@
+<!doctype html>
+<html class="light" lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 400,
+          "GRAD" 0,
+          "opsz" 24;
+        display: inline-block;
+        line-height: 1;
+        text-transform: none;
+        letter-spacing: normal;
+        word-wrap: normal;
+        white-space: nowrap;
+        direction: ltr;
+      }
+      body {
+        font-family: "Inter", sans-serif;
+        scroll-behavior: smooth;
+      }
+      .glass-tonal {
+        background: rgba(248, 250, 252, 0.8);
+        backdrop-filter: blur(8px);
+      }
+      .learning-progress-glow {
+        box-shadow: 0 0 20px rgba(0, 74, 198, 0.1);
+      }
+    </style>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-surface-variant": "#434655",
+              primary: "#004ac6",
+              error: "#ba1a1a",
+              "inverse-on-surface": "#eaf1ff",
+              "tertiary-fixed": "#ffddb8",
+              "on-primary": "#ffffff",
+              "tertiary-fixed-dim": "#ffb95f",
+              "surface-container-highest": "#d3e4fe",
+              "on-error-container": "#93000a",
+              "on-primary-container": "#eeefff",
+              "error-container": "#ffdad6",
+              "on-primary-fixed-variant": "#003ea8",
+              "on-background": "#0b1c30",
+              "primary-fixed-dim": "#b4c5ff",
+              "tertiary-container": "#996100",
+              "surface-container-high": "#dce9ff",
+              "surface-bright": "#f8f9ff",
+              "on-error": "#ffffff",
+              "surface-container-low": "#eff4ff",
+              "inverse-primary": "#b4c5ff",
+              "on-tertiary-container": "#ffeedd",
+              "surface-container-lowest": "#ffffff",
+              "on-tertiary-fixed-variant": "#653e00",
+              "surface-container": "#e5eeff",
+              "surface-dim": "#cbdbf5",
+              background: "#f8f9ff",
+              tertiary: "#784b00",
+              "on-tertiary": "#ffffff",
+              "on-primary-fixed": "#00174b",
+              "surface-variant": "#d3e4fe",
+              "on-secondary": "#ffffff",
+              "secondary-container": "#6cf8bb",
+              secondary: "#006c49",
+              "primary-container": "#2563eb",
+              "secondary-fixed-dim": "#4edea3",
+              "on-secondary-fixed": "#002113",
+              "secondary-fixed": "#6ffbbe",
+              "on-surface": "#0b1c30",
+              "inverse-surface": "#213145",
+              "surface-tint": "#0053db",
+              surface: "#f8f9ff",
+              "on-tertiary-fixed": "#2a1700",
+              "outline-variant": "#c3c6d7",
+              "primary-fixed": "#dbe1ff",
+              outline: "#737686",
+              "on-secondary-container": "#00714d",
+              "on-secondary-fixed-variant": "#005236",
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+            spacing: {
+              md: "24px",
+              lg: "48px",
+              xs: "4px",
+              base: "8px",
+              xl: "80px",
+              sm: "12px",
+              gutter: "24px",
+              "container-max": "1200px",
+            },
+            fontFamily: {
+              "headline-lg-mobile": ["Inter"],
+              "headline-xl": ["Inter"],
+              "label-sm": ["Inter"],
+              "body-lg": ["Inter"],
+              "headline-md": ["Inter"],
+              "headline-lg": ["Inter"],
+              "body-md": ["Inter"],
+              "label-md": ["Inter"],
+            },
+            fontSize: {
+              "headline-lg-mobile": [
+                "24px",
+                { lineHeight: "1.2", fontWeight: "700" },
+              ],
+              "headline-xl": [
+                "48px",
+                {
+                  lineHeight: "1.1",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "700",
+                },
+              ],
+              "label-sm": ["12px", { lineHeight: "1", fontWeight: "500" }],
+              "body-lg": ["18px", { lineHeight: "1.6", fontWeight: "400" }],
+              "headline-md": ["24px", { lineHeight: "1.3", fontWeight: "600" }],
+              "headline-lg": [
+                "32px",
+                {
+                  lineHeight: "1.2",
+                  letterSpacing: "-0.01em",
+                  fontWeight: "700",
+                },
+              ],
+              "body-md": ["16px", { lineHeight: "1.6", fontWeight: "400" }],
+              "label-md": [
+                "14px",
+                { lineHeight: "1", letterSpacing: "0.02em", fontWeight: "600" },
+              ],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body
+    class="bg-background text-on-background selection:bg-primary-fixed selection:text-on-primary-fixed"
+  >
+    <!-- Top Navigation Bar -->
+    <header
+      class="fixed top-0 z-50 w-full bg-surface/80 backdrop-blur-md border-b border-outline-variant"
+    >
+      <div
+        class="flex justify-between items-center w-full px-gutter max-w-container-max mx-auto h-16"
+      >
+        <a
+          class="text-headline-md font-headline-md font-bold text-primary hover:opacity-90 transition-opacity"
+          href="index.html"
+        >
+          EnglishBoost
+        </a>
+        <nav class="hidden md:flex items-center space-x-md">
+          <a
+            class="text-label-md font-label-md text-on-surface-variant hover:text-primary transition-colors duration-200"
+            href="flashcard_eval.html"
+            >Vocabulary</a
+          >
+          <a
+            class="text-label-md font-label-md text-on-surface-variant hover:text-primary transition-colors duration-200"
+            href="listening.html"
+            >Listening</a
+          >
+          <a
+            class="text-label-md font-label-md text-on-surface-variant hover:text-primary transition-colors duration-200"
+            href="reading.html"
+            >Reading</a
+          >
+          <a
+            class="text-label-md font-label-md text-primary font-bold border-b-2 border-primary pb-1"
+            href="progress.html"
+            >Progress</a
+          ><a
+            class="text-label-md font-label-md text-on-surface-variant hover:text-primary transition-colors duration-200"
+            href="leaderboard.html"
+            >Ranking</a
+          >
+        </nav>
+        <div class="flex items-center gap-sm">
+          <button
+            class="p-base hover:bg-surface-container-high rounded-full transition-colors"
+          >
+            <span
+              class="material-symbols-outlined text-on-surface-variant"
+              data-icon="notifications"
+              >notifications</span
+            >
+          </button>
+          <button
+            class="p-base hover:bg-surface-container-high rounded-full transition-colors"
+          >
+            <img
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYe0_3saYp4lA9zDzh5ewkwJPgVF6nRwDYx3DUTDFUBhu1V_wjxZKqxR2mPT7SxOd27v5HeZ_SYwoZeZifB225Ei-6ub6EF7m6poqgCXcW5Kkb0gkhRiZRoFY6006tdOAip9LxN07kRLxNFhpOCibPOJhP-bM5osBzL-fmzg2UuhKZNI_00fmf24mnr4xalabFpAOd2-ui5Qmwv9RSGD5vaTPzOzI9dY23oaIgfbvM9OgFlY3w8BbceeacHKx9U2f0JoxvaebLAJ4"
+              class="w-8 h-8 rounded-full object-cover"
+              alt="Student Profile"
+            />
+          </button>
+        </div>
+      </div>
+    </header>
+    <main class="pt-24 pb-xl px-gutter max-w-container-max mx-auto">
+      <!-- Hero Section -->
+      <section
+        class="relative mb-lg overflow-hidden rounded-xl bg-surface-container py-xl px-md md:px-lg flex flex-col md:flex-row items-center gap-lg"
+      >
+        <div class="flex-1 space-y-md z-10">
+          <h1
+            class="text-headline-xl font-headline-xl text-on-surface tracking-tight"
+          >
+            Chinh phục tiếng Anh mỗi ngày
+          </h1>
+          <p class="text-body-lg font-body-lg text-on-surface-variant max-w-xl">
+            Hệ thống học tập cá nhân hóa dựa trên tâm lý học kỹ thuật giúp bạn
+            ghi nhớ lâu hơn 40% so với phương pháp truyền thống.
+          </p>
+          <!-- Continue Learning Section (Fitts's Law) -->
+          <div class="pt-base flex flex-col gap-sm">
+            <a
+              href="progress.html"
+              class="min-h-[56px] w-full md:w-fit px-xl bg-primary text-on-primary rounded-xl font-label-md text-label-md hover:scale-[1.02] active:scale-[0.98] transition-all shadow-lg flex items-center justify-center gap-sm"
+            >
+              <span class="material-symbols-outlined" data-icon="play_circle"
+                >play_circle</span
+              >
+              Tiếp tục học ngay
+            </a>
+            <p class="text-label-sm text-on-surface-variant">
+              Lần học cuối: Bài 12 - English for Engineers (2 giờ trước)
+            </p>
+          </div>
+        </div>
+        <div
+          class="flex-1 w-full max-w-md aspect-square rounded-xl overflow-hidden shadow-xl"
+        >
+          <img
+            class="w-full h-full object-cover animate-progress"
+            alt="Modern university student using a laptop in a clean, minimalist library setting"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGAl2zC05z3wZdIRa7XRf2h03XLNh0UM42bPDjEr8yvFjH45iMFAWMgo99y8lclAYp2QTr6ZY6pcuzZWeD5Bw0fuL6caCXZ5XNJ4o8mB07Kua7Y6LU8tTkkUfgDzBUJ6uSOTdrHBNAFMAvv8I2FjvKSa6X9RJLjsz2IxEceqTb4gp5SHjOmjGNqKpKbJTEBBl4FQULIXgRyH4gWy7NK1ApjB1UGgR5wokxgOHlNq0Tkd9HifguHJkbbICgVsxoqFGl9h49KOQCQCg"
+          />
+        </div>
+      </section>
+      <!-- Quick Stats & Goals Grid -->
+      <section
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-md mb-lg"
+      >
+        <!-- Weekly Goal Card -->
+        <div
+          class="p-md bg-white border border-outline-variant rounded-xl shadow-sm flex flex-col justify-between h-full animate-progress"
+        >
+          <div>
+            <div class="flex justify-between items-start mb-base">
+              <span class="text-label-sm font-label-sm text-on-surface-variant"
+                >Mục tiêu tuần</span
+              >
+              <span
+                class="px-xs py-1 bg-primary-fixed text-on-primary-fixed text-[10px] font-bold rounded uppercase"
+                >IELTS 6.5</span
+              >
+            </div>
+            <div
+              class="text-headline-md font-headline-md text-on-surface mb-sm"
+            >
+              75% Hoàn thành
+            </div>
+          </div>
+          <div class="space-y-xs">
+            <div
+              class="h-2 w-full bg-surface-container-high rounded-full overflow-hidden"
+            >
+              <div
+                class="h-full bg-primary w-3/4 rounded-full transition-all duration-1000 animate-progress"
+              ></div>
+            </div>
+            <div class="text-label-sm text-on-surface-variant">
+              Chỉ còn 3 bài tập nữa!
+            </div>
+          </div>
+        </div>
+        <!-- Quick Stats (Adjusted for 4 columns) -->
+        <div
+          class="p-md bg-surface-container-low rounded-xl border border-outline-variant flex items-center gap-md"
+        >
+          <div
+            class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary"
+          >
+            <span class="material-symbols-outlined" data-icon="menu_book"
+              >menu_book</span
+            >
+          </div>
+          <div>
+            <div class="text-label-sm font-label-sm text-on-surface-variant">
+              Đã học
+            </div>
+            <div class="text-headline-md font-headline-md text-on-surface">
+              1,248
+            </div>
+          </div>
+        </div>
+        <div
+          class="p-md bg-surface-container-low rounded-xl border border-outline-variant flex items-center gap-md"
+        >
+          <div
+            class="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center text-secondary"
+          >
+            <span class="material-symbols-outlined" data-icon="task_alt"
+              >task_alt</span
+            >
+          </div>
+          <div>
+            <div class="text-label-sm font-label-sm text-on-surface-variant">
+              Hoàn thành
+            </div>
+            <div class="text-headline-md font-headline-md text-on-surface">
+              42
+            </div>
+          </div>
+        </div>
+        <div
+          class="p-md bg-surface-container-low rounded-xl border border-outline-variant flex items-center gap-md"
+        >
+          <div
+            class="w-12 h-12 rounded-full bg-tertiary/10 flex items-center justify-center text-tertiary"
+          >
+            <span
+              class="material-symbols-outlined"
+              data-icon="local_fire_department"
+              >local_fire_department</span
+            >
+          </div>
+          <div>
+            <div class="text-label-sm font-label-sm text-on-surface-variant">
+              Chuỗi ngày
+            </div>
+            <div class="text-headline-md font-headline-md text-on-surface">
+              15 Ngày
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Bento Layout: Goal and Courses -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-lg mb-lg">
+        <!-- Section: Mục tiêu hôm nay -->
+        <div class="lg:col-span-4 flex flex-col gap-md">
+          <div class="flex items-center justify-between">
+            <h2 class="text-headline-md font-headline-md text-on-surface">
+              Mục tiêu hôm nay
+            </h2>
+            <span
+              class="text-label-sm font-label-sm text-primary cursor-pointer hover:underline"
+              >Chi tiết</span
+            >
+          </div>
+          <div
+            class="p-md bg-white border border-outline-variant rounded-xl space-y-md flex-1 shadow-sm"
+          >
+            <div
+              class="flex items-center gap-md p-sm rounded-lg hover:bg-surface-container transition-colors cursor-pointer group"
+            >
+              <div
+                class="w-5 h-5 rounded border-2 border-primary bg-primary flex items-center justify-center"
+              >
+                <span
+                  class="material-symbols-outlined text-xs text-white"
+                  data-icon="check"
+                  >check</span
+                >
+              </div>
+              <span
+                class="text-body-md font-body-md text-on-surface line-through opacity-60"
+                >Review 20 Vocabulary cards</span
+              >
+            </div>
+            <div
+              class="flex items-center gap-md p-sm rounded-lg hover:bg-surface-container transition-colors cursor-pointer group"
+            >
+              <div
+                class="w-5 h-5 rounded border-2 border-primary/40 flex items-center justify-center group-hover:border-primary"
+              ></div>
+              <span class="text-body-md font-body-md text-on-surface"
+                >Complete 1 Listening lab</span
+              >
+            </div>
+            <div
+              class="flex items-center gap-md p-sm rounded-lg hover:bg-surface-container transition-colors cursor-pointer group"
+            >
+              <div
+                class="w-5 h-5 rounded border-2 border-primary/40 flex items-center justify-center group-hover:border-primary"
+              ></div>
+              <span class="text-body-md font-body-md text-on-surface"
+                >Read 1 Engineering article</span
+              >
+            </div>
+            <div class="mt-md pt-md border-t border-outline-variant">
+              <div class="flex justify-between mb-xs">
+                <span
+                  class="text-label-sm font-label-sm text-on-surface-variant"
+                  >Tiến độ ngày</span
+                >
+                <span class="text-label-sm font-label-sm text-secondary"
+                  >33%</span
+                >
+              </div>
+              <div
+                class="h-2 w-full bg-surface-container-high rounded-full overflow-hidden"
+              >
+                <div
+                  class="h-full bg-secondary w-1/3 rounded-full animate-progress"
+                ></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Section: Khóa học hiện tại -->
+        <div class="lg:col-span-8 flex flex-col gap-md">
+          <div class="flex items-center justify-between">
+            <h2 class="text-headline-md font-headline-md text-on-surface">
+              Khóa học hiện tại
+            </h2>
+            <button
+              class="text-label-md font-label-md text-primary hover:underline"
+            >
+              Tất cả khóa học
+            </button>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+            <div
+              class="group cursor-pointer rounded-xl overflow-hidden border border-outline-variant hover:shadow-lg transition-all bg-white"
+            >
+              <div class="h-32 bg-surface-container relative">
+                <img
+                  class="w-full h-full object-cover animate-progress"
+                  data-alt="A macro shot of a fountain pen laying on an open book."
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfCbiHl8ZlduFenBrunP_TmNFFEY_vCAhNJHJjVwUPvyMrr0tOUR_5WWihjjtmDY6aPnk08BG4sMWgsIh9ra3VQkTKwE4NoKkZRtakFsU0XeMBRdi5SqS_qcAfYp4wbjN6p0unn1CQW3a7u0jKDWcTKfUTB_BJt2dzcxJC0n6_pkjRzCfaTZpFVp2fIYE_vGHS5iborQJCU9LOqoEGGUU6zifSb9HtP7VO2m71S7s28SmmUUUZ0m5UXXbZSqOHtTdTno7nMRplOew"
+                />
+                <div
+                  class="absolute top-2 right-2 px-xs py-1 bg-white/90 rounded-lg text-label-sm font-label-sm shadow-sm"
+                >
+                  B2 Level
+                </div>
+              </div>
+              <div class="p-md">
+                <h3
+                  class="text-label-md font-label-md text-on-surface group-hover:text-primary transition-colors"
+                >
+                  English for Engineers
+                </h3>
+                <p
+                  class="text-label-sm font-label-sm text-on-surface-variant mt-xs"
+                >
+                  12 / 30 Lessons
+                </p>
+              </div>
+            </div>
+            <div
+              class="group cursor-pointer rounded-xl overflow-hidden border border-outline-variant hover:shadow-lg transition-all bg-white"
+            >
+              <div class="h-32 bg-surface-container relative">
+                <img
+                  class="w-full h-full object-cover animate-progress"
+                  data-alt="A professional workspace with a tablet."
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuASwLAEOQsvxuNABb0Xl9lHPAJZKy_bJ_jmoYMBUlDiPTEoSF7CXzR_jx4YQfSXaV2CPdPGHQbxjRpHHVJVAVxmEi8CU0lx8yRNMKKBIqHW5y6bFrshhoh671eee8j_cptdd5vPV3oBPVtSqq07K11QFAzNcCQELFehAunfG4nuq7mmPSb5KxTfcPCZ7x9vMoLw_Wi1_zblcF6e9wGParTGzGBpZVH50BNQJ5nRlMogO1oefnU7pD98m4Gu4dJfiKMXB_ygtKm29ek"
+                />
+                <div
+                  class="absolute top-2 right-2 px-xs py-1 bg-white/90 rounded-lg text-label-sm font-label-sm shadow-sm"
+                >
+                  C1 Level
+                </div>
+              </div>
+              <div class="p-md">
+                <h3
+                  class="text-label-md font-label-md text-on-surface group-hover:text-primary transition-colors"
+                >
+                  Advanced Communication
+                </h3>
+                <p
+                  class="text-label-sm font-label-sm text-on-surface-variant mt-xs"
+                >
+                  4 / 25 Lessons
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Achievements Area (Maslow & Motivation) -->
+      <section class="flex flex-col gap-md">
+        <div class="flex items-center justify-between">
+          <h2 class="text-headline-md font-headline-md text-on-surface">
+            Thành tích &amp; Động lực
+          </h2>
+          <button
+            class="text-label-md font-label-md text-primary hover:underline"
+          >
+            Hồ sơ cá nhân
+          </button>
+        </div>
+        <div
+          class="grid grid-cols-1 md:grid-cols-3 gap-lg p-lg bg-surface-container-low rounded-xl border border-outline-variant"
+        >
+          <!-- Newest Badge -->
+          <div class="flex flex-col items-center text-center gap-sm">
+            <div
+              class="text-label-sm font-bold text-on-surface-variant uppercase tracking-wider"
+            >
+              Huy hiệu mới nhất
+            </div>
+            <div class="relative">
+              <div
+                class="w-24 h-24 rounded-full bg-tertiary-fixed flex items-center justify-center text-tertiary shadow-lg border-4 border-white"
+              >
+                <span
+                  class="material-symbols-outlined text-5xl"
+                  data-icon="workspace_premium"
+                  style="font-variation-settings: &quot;FILL&quot; 1"
+                  >workspace_premium</span
+                >
+              </div>
+              <div
+                class="absolute -bottom-1 -right-1 bg-primary text-white p-xs rounded-full border-2 border-white shadow-sm"
+              >
+                <span
+                  class="material-symbols-outlined text-xs"
+                  data-icon="new_releases"
+                  >new_releases</span
+                >
+              </div>
+            </div>
+            <div class="space-y-xs">
+              <div class="text-label-md font-bold text-on-surface">
+                7-Day Streak Master
+              </div>
+              <div class="text-label-sm text-on-surface-variant">
+                Đạt được 2 giờ trước
+              </div>
+            </div>
+          </div>
+          <!-- Streak Status -->
+          <div
+            class="flex flex-col items-center text-center gap-sm border-x-0 md:border-x border-outline-variant px-lg"
+          >
+            <div
+              class="text-label-sm font-bold text-on-surface-variant uppercase tracking-wider"
+            >
+              Chuỗi ngày hiện tại
+            </div>
+            <div class="flex items-center justify-center h-24">
+              <span class="text-[64px] font-black text-tertiary leading-none"
+                >15</span
+              >
+              <span
+                class="material-symbols-outlined text-4xl text-tertiary ml-xs animate-pulse"
+                data-icon="local_fire_department"
+                style="font-variation-settings: &quot;FILL&quot; 1"
+                >local_fire_department</span
+              >
+            </div>
+            <div class="space-y-xs">
+              <div class="text-label-md font-bold text-on-surface">
+                Duy trì tuyệt vời!
+              </div>
+              <div class="text-label-sm text-on-surface-variant">
+                Còn 5 ngày nữa tới mốc 20 ngày
+              </div>
+            </div>
+          </div>
+          <!-- Recent Achievement Card -->
+          <div class="flex flex-col items-center text-center gap-sm">
+            <div
+              class="text-label-sm font-bold text-on-surface-variant uppercase tracking-wider"
+            >
+              Hoạt động gần đây
+            </div>
+            <div
+              class="w-24 h-24 rounded-2xl bg-secondary-fixed flex items-center justify-center text-on-secondary-container shadow-sm"
+            >
+              <span
+                class="material-symbols-outlined text-5xl"
+                data-icon="auto_stories"
+                style="font-variation-settings: &quot;FILL&quot; 1"
+                >auto_stories</span
+              >
+            </div>
+            <div class="space-y-xs">
+              <div class="text-label-md font-bold text-on-surface">
+                Đọc 5 bài báo kỹ thuật
+              </div>
+              <div class="text-label-sm text-on-surface-variant">
+                Hoàn thành sáng nay
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer
+      class="w-full py-lg bg-surface-container-lowest border-t border-outline-variant mt-xl"
+    >
+      <div
+        class="flex flex-col md:flex-row justify-between items-center px-gutter max-w-container-max mx-auto gap-md"
+      >
+        <div class="text-label-md font-label-md font-bold text-on-surface">
+          EnglishBoost
+        </div>
+        <div class="flex gap-md">
+          <a
+            class="text-label-sm font-label-sm text-on-surface-variant hover:text-primary transition-colors"
+            href="#"
+            >Privacy Policy</a
+          >
+          <a
+            class="text-label-sm font-label-sm text-on-surface-variant hover:text-primary transition-colors"
+            href="#"
+            >Terms of Service</a
+          >
+          <a
+            class="text-label-sm font-label-sm text-on-surface-variant hover:text-primary transition-colors"
+            href="#"
+            >University Portal</a
+          >
+        </div>
+        <div class="text-label-sm font-label-sm text-on-surface-variant">
+          © 2024 EnglishBoost Engineering Psychology Lab
+        </div>
+      </div>
+    </footer>
+    <!-- FAB: Contextual learning action (Fitts's Law secondary) -->
+    <button
+      class="fixed bottom-gutter right-gutter w-14 h-14 bg-primary text-on-primary rounded-xl shadow-lg hover:shadow-xl hover:scale-110 transition-all flex items-center justify-center z-40"
+    ></button>
+    <script>
+      // Micro-interactions for engagement
+      document.querySelectorAll(".group").forEach((item) => {
+        item.addEventListener("mouseenter", () => {
+          // Subtle feedback logic could go here
+        });
+      });
+
+      // Progress bar animation on load
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("animate-progress");
+          }
+        });
+      });
+      document
+        .querySelectorAll(".h-full")
+        .forEach((el) => observer.observe(el));
+    </script>
+  </body>
+</html>
