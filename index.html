@@ -187,7 +187,7 @@
             >Reading</a
           >
           <a
-            class="text-label-md font-label-md text-primary font-bold border-b-2 border-primary pb-1"
+            class="text-label-md font-label-md text-on-surface-variant hover:text-primary transition-colors duration-200"
             href="progress.html"
             >Progress</a
           ><a
@@ -294,7 +294,10 @@
                 class="h-full bg-primary w-0 rounded-full transition-all duration-1000 animate-progress"
               ></div>
             </div>
-            <div id="weekly-goal-subtext" class="text-label-sm text-on-surface-variant">
+            <div
+              id="weekly-goal-subtext"
+              class="text-label-sm text-on-surface-variant"
+            >
               Chỉ còn 4 bài tập nữa!
             </div>
           </div>
@@ -418,7 +421,9 @@
                   class="text-label-sm font-label-sm text-on-surface-variant"
                   >Tiến độ ngày</span
                 >
-                <span class="text-label-sm font-label-sm text-secondary" id="daily-progress-percent"
+                <span
+                  class="text-label-sm font-label-sm text-secondary"
+                  id="daily-progress-percent"
                   >0%</span
                 >
               </div>
@@ -660,41 +665,54 @@
 
       // Dynamic Progress and Goals Calculation
       function updateProgressAndGoals() {
-        const isVocabCompleted = localStorage.getItem("vocab_completed") === "true";
-        const isListeningCompleted = localStorage.getItem("listening_completed") === "true";
-        const isReadingCompleted = localStorage.getItem("reading_completed") === "true";
-        const isQuizCompleted = localStorage.getItem("quiz_completed") === "true";
+        const isVocabCompleted =
+          localStorage.getItem("vocab_completed") === "true";
+        const isListeningCompleted =
+          localStorage.getItem("listening_completed") === "true";
+        const isReadingCompleted =
+          localStorage.getItem("reading_completed") === "true";
+        const isQuizCompleted =
+          localStorage.getItem("quiz_completed") === "true";
 
         // Today's Goal Items list
         const goals = [
           { id: "today-goal-vocab", completed: isVocabCompleted },
           { id: "today-goal-listening", completed: isListeningCompleted },
-          { id: "today-goal-reading", completed: isReadingCompleted }
+          { id: "today-goal-reading", completed: isReadingCompleted },
         ];
 
         let dailyCompletedCount = 0;
-        goals.forEach(goal => {
+        goals.forEach((goal) => {
           const el = document.getElementById(goal.id);
           if (el) {
             const checkbox = el.querySelector(".checkbox-icon");
             const text = el.querySelector(".goal-text");
             if (goal.completed) {
               dailyCompletedCount++;
-              checkbox.innerHTML = '<span class="material-symbols-outlined text-xs text-white" data-icon="check">check</span>';
-              checkbox.className = "w-5 h-5 rounded border-2 border-primary bg-primary flex items-center justify-center checkbox-icon shrink-0";
-              text.className = "text-body-md font-body-md text-on-surface line-through opacity-60 goal-text";
+              checkbox.innerHTML =
+                '<span class="material-symbols-outlined text-xs text-white" data-icon="check">check</span>';
+              checkbox.className =
+                "w-5 h-5 rounded border-2 border-primary bg-primary flex items-center justify-center checkbox-icon shrink-0";
+              text.className =
+                "text-body-md font-body-md text-on-surface line-through opacity-60 goal-text";
             } else {
-              checkbox.innerHTML = '';
-              checkbox.className = "w-5 h-5 rounded border-2 border-primary/40 flex items-center justify-center group-hover:border-primary checkbox-icon shrink-0";
-              text.className = "text-body-md font-body-md text-on-surface goal-text";
+              checkbox.innerHTML = "";
+              checkbox.className =
+                "w-5 h-5 rounded border-2 border-primary/40 flex items-center justify-center group-hover:border-primary checkbox-icon shrink-0";
+              text.className =
+                "text-body-md font-body-md text-on-surface goal-text";
             }
           }
         });
 
         // Today's progress calculation (Vocab, Listening, Reading)
         const dailyPercent = Math.round((dailyCompletedCount / 3) * 100);
-        const dailyProgressPercentEl = document.getElementById("daily-progress-percent");
-        const dailyProgressFillEl = document.getElementById("daily-progress-fill");
+        const dailyProgressPercentEl = document.getElementById(
+          "daily-progress-percent",
+        );
+        const dailyProgressFillEl = document.getElementById(
+          "daily-progress-fill",
+        );
         if (dailyProgressPercentEl) {
           dailyProgressPercentEl.textContent = `${dailyPercent}%`;
         }
@@ -704,16 +722,23 @@
 
         // Weekly progress calculation (Vocab, Listening, Reading, Quiz)
         const weeklyTotalSteps = 4;
-        const weeklyCompletedCount = (isVocabCompleted ? 1 : 0) + 
-                                     (isListeningCompleted ? 1 : 0) + 
-                                     (isReadingCompleted ? 1 : 0) + 
-                                     (isQuizCompleted ? 1 : 0);
-        const weeklyPercent = Math.round((weeklyCompletedCount / weeklyTotalSteps) * 100);
+        const weeklyCompletedCount =
+          (isVocabCompleted ? 1 : 0) +
+          (isListeningCompleted ? 1 : 0) +
+          (isReadingCompleted ? 1 : 0) +
+          (isQuizCompleted ? 1 : 0);
+        const weeklyPercent = Math.round(
+          (weeklyCompletedCount / weeklyTotalSteps) * 100,
+        );
         const weeklyRemaining = weeklyTotalSteps - weeklyCompletedCount;
 
-        const weeklyGoalPercentEl = document.getElementById("weekly-goal-percent");
+        const weeklyGoalPercentEl = document.getElementById(
+          "weekly-goal-percent",
+        );
         const weeklyGoalFillEl = document.getElementById("weekly-goal-fill");
-        const weeklyGoalSubtextEl = document.getElementById("weekly-goal-subtext");
+        const weeklyGoalSubtextEl = document.getElementById(
+          "weekly-goal-subtext",
+        );
 
         if (weeklyGoalPercentEl) {
           weeklyGoalPercentEl.textContent = `${weeklyPercent}% Hoàn thành`;
@@ -725,7 +750,8 @@
           if (weeklyRemaining > 0) {
             weeklyGoalSubtextEl.textContent = `Chỉ còn ${weeklyRemaining} bài tập nữa!`;
           } else {
-            weeklyGoalSubtextEl.textContent = "Đã hoàn thành tất cả mục tiêu tuần!";
+            weeklyGoalSubtextEl.textContent =
+              "Đã hoàn thành tất cả mục tiêu tuần!";
           }
         }
       }
